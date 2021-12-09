@@ -7,15 +7,15 @@
   
   <title>1049 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DATA LAB能输入的数字都约束在0到255； 运算符约束； 1.bitXor 运算两数异或；  代码： 1234567891011&#x2F;*  * bitXor - x^y using only ~ and &amp;  *   Example: bitXor(4, 5) &#x3D; 1 *   Legal ops: ~ &amp; *   Max ops: 14 *   Rating: 1 *&#x2F;int b">
+  <meta name="description" content="None">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1049">
 <meta property="og:url" content="http://example.com/2021/12/09/1049/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="DATA LAB能输入的数字都约束在0到255； 运算符约束； 1.bitXor 运算两数异或；  代码： 1234567891011&#x2F;*  * bitXor - x^y using only ~ and &amp;  *   Example: bitXor(4, 5) &#x3D; 1 *   Legal ops: ~ &amp; *   Max ops: 14 *   Rating: 1 *&#x2F;int b">
+<meta property="og:description" content="None">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-12-09T09:32:35.000Z">
-<meta property="article:modified_time" content="2021-12-09T09:33:02.321Z">
+<meta property="article:modified_time" content="2021-12-09T09:36:25.037Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -88,65 +88,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="DATA-LAB"><a href="#DATA-LAB" class="headerlink" title="DATA LAB"></a>DATA LAB</h1><p>能输入的数字都约束在0到255；</p>
-<p>运算符约束；</p>
-<h2 id="1-bitXor"><a href="#1-bitXor" class="headerlink" title="1.bitXor"></a>1.bitXor</h2><blockquote>
-<p>运算两数异或；</p>
-</blockquote>
-<p>代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * bitXor - x^y using only ~ and &amp; </span></span><br><span class="line"><span class="comment"> *   Example: bitXor(4, 5) = 1</span></span><br><span class="line"><span class="comment"> *   Legal ops: ~ &amp;</span></span><br><span class="line"><span class="comment"> *   Max ops: 14</span></span><br><span class="line"><span class="comment"> *   Rating: 1</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">bitXor</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> result = ~(~x&amp;~y)&amp;~(x&amp;y)</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>二进制异或是相同0或相同1就变0，而不同为0或1就变1；</p>
-<p>让原来不同的地方变为相同，同的地方变为不同，再用 &amp; 运算就可得到该值；</p>
-<h2 id="2-tmin"><a href="#2-tmin" class="headerlink" title="2.tmin"></a>2.tmin</h2><blockquote>
-<p>返回最小的二进制补码整数；</p>
-</blockquote>
-<p>代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * tmin - return minimum two&#x27;s complement integer </span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</span></span><br><span class="line"><span class="comment"> *   Max ops: 4</span></span><br><span class="line"><span class="comment"> *   Rating: 1</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">tmin</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> result = <span class="number">0x80</span>&lt;&lt;<span class="number">24</span>;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最小二进制补码整数是一个负数，补码规则最高位为1表示负数，则最小的负数是10000000 00000000 00000000 0000000；也即是 0x80 00 00 00；</p>
-<h2 id="3-isTmax"><a href="#3-isTmax" class="headerlink" title="3.isTmax"></a>3.isTmax</h2><blockquote>
-<p>返回1，如果是二进制补码最大值，不然返回0；</p>
-</blockquote>
-<p>代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * isTmax - returns 1 if x is the maximum, two&#x27;s complement number,</span></span><br><span class="line"><span class="comment"> *     and 0 otherwise </span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | +</span></span><br><span class="line"><span class="comment"> *   Max ops: 10</span></span><br><span class="line"><span class="comment"> *   Rating: 1</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isTmax</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> result = x + x + <span class="number">1</span>;</span><br><span class="line">  result = ~result;</span><br><span class="line">  result = result + !(x + <span class="number">1</span>) <span class="comment">//排除-1特殊</span></span><br><span class="line">  <span class="keyword">return</span> !result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>最大值是开头为0，后面全为1；</p>
-<p>返回的需要是0，1，那应该想到用逻辑非 ！，当为最大时是0，其他情况当然就为非0，倒置一下就变为输出1时最大，其他情况为0；</p>
-<p>各个非0数 ！都为0，所以需要位 ~ ，所以要使得0111…. 变为全0；</p>
-<p>又因为溢出的效应，-1也有加1再加自己为全1的特点，所以来排除这种情况；</p>
-<h2 id="4-allOddBits"><a href="#4-allOddBits" class="headerlink" title="4.allOddBits"></a>4.allOddBits</h2><blockquote>
-<p>返回1，当所有奇数位为1时，否则返回0；</p>
-</blockquote>
-<p>代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * allOddBits - return 1 if all odd-numbered bits in word set to 1</span></span><br><span class="line"><span class="comment"> *   where bits are numbered from 0 (least significant) to 31 (most significant)</span></span><br><span class="line"><span class="comment"> *   Examples allOddBits(0xFFFFFFFD) = 0, allOddBits(0xAAAAAAAA) = 1</span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</span></span><br><span class="line"><span class="comment"> *   Max ops: 12</span></span><br><span class="line"><span class="comment"> *   Rating: 2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">allOddBits</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> mask = <span class="number">0xAA</span> + (<span class="number">0xAA</span>&lt;&lt;<span class="number">8</span>);</span><br><span class="line">    mask = mask + (mask&lt;&lt;<span class="number">16</span>); <span class="comment">//32位10101010....</span></span><br><span class="line">    result = (x&amp;mask)^mask;</span><br><span class="line">    <span class="keyword">return</span> !result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>根据例子可以知道，位数从0开始计算，而不是1；</p>
-<p>要使其奇数位全为1时（偶数位无关，则运算时把偶数全看为0），结果生成1，不难想到掩码；</p>
-<p>最后用异或转换；</p>
-<h2 id="5-negate"><a href="#5-negate" class="headerlink" title="5.negate"></a>5.negate</h2><blockquote>
-<p>返回x的负值；</p>
-</blockquote>
-<p>代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * negate - return -x </span></span><br><span class="line"><span class="comment"> *   Example: negate(1) = -1.</span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</span></span><br><span class="line"><span class="comment"> *   Max ops: 5</span></span><br><span class="line"><span class="comment"> *   Rating: 2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">negate</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  result = ~x + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>取反加1求补码的补码；</p>
-<h2 id="6-isAsciiDigit"><a href="#6-isAsciiDigit" class="headerlink" title="6.isAsciiDigit"></a>6.isAsciiDigit</h2><blockquote>
-<p>返回1,如果输入的时ascii中 ‘0’ ~ ‘9’ 的字符，否则返回0；</p>
-</blockquote>
-<p>代码：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment"> * isAsciiDigit - return 1 if 0x30 &lt;= x &lt;= 0x39 (ASCII codes for characters &#x27;0&#x27; to &#x27;9&#x27;)</span></span><br><span class="line"><span class="comment"> *   Example: isAsciiDigit(0x35) = 1.</span></span><br><span class="line"><span class="comment"> *            isAsciiDigit(0x3a) = 0.</span></span><br><span class="line"><span class="comment"> *            isAsciiDigit(0x05) = 0.</span></span><br><span class="line"><span class="comment"> *   Legal ops: ! ~ &amp; ^ | + &lt;&lt; &gt;&gt;</span></span><br><span class="line"><span class="comment"> *   Max ops: 15</span></span><br><span class="line"><span class="comment"> *   Rating: 3</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">isAsciiDigit</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> mini = <span class="number">0x80</span>&lt;&lt;<span class="number">24</span>;</span><br><span class="line">  <span class="keyword">int</span> min = (~<span class="number">0x2F</span> + x) &amp; mini; <span class="comment">//正确时，min是0000...</span></span><br><span class="line">  <span class="keyword">int</span> max = (~<span class="number">0x39</span> + x) &amp; mini; <span class="comment">//正确时，max是1000...</span></span><br><span class="line">  <span class="keyword">int</span> result = (min^max)&gt;&gt;<span class="number">31</span>;</span><br><span class="line">  result = ~result + <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>用位级运算判断x是否在这个范围内；</p>
-<p>已知~x + y（y小于等于x），该值为负数，而y大于x时，这个值是非负数；</p>
-<p>因此约定两个范围数：0x2F，0x39；</p>
-<p>结果如果在区间内，则两个算出的值必为 正数 与 负数，则返回值用符号位来计算，需要用到最小补码来&amp;运算得到符号位；</p>
-<p>注意移位是符号移位，最后得变一下；</p>
+        <p>None</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/12/09/1049/" data-id="ckwyriol50000uovcb6u5714i" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/12/09/1049/" data-id="ckwyrnbe000001svc0mqza99f" class="article-share-link">Share</a>
       
       
     </footer>
