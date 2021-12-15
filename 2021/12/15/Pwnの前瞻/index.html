@@ -7,20 +7,17 @@
   
   <title>Pwnの前瞻 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.简单の概述Pwn是什么Pwn是一个动作，攻击服务器或进程的一个动作，针对的目标也就是服务器和运行中的软件； 这些服务器和软件中必然需要存在着二进制漏洞等待挖掘； 一但找到漏洞并写出恶意代码，使目标运行，对方就可出现一些特殊的情况，从而拿到控制权限以及夺旗战中的旗帜； 要分析并挖掘二进制漏洞，必然少不了逆向工程和二进制知识的加持；  2.Pwn的前置知识：文件构架&amp;程序执行需要从一个服务">
+  <meta name="description" content="1.简单の概述Pwn是什么Pwn是一个动作，攻击服务器或进程的一个动作，针对的目标也就是服务器和运行中的软件； 这些服务器和软件中必然需要存在着二进制漏洞等待挖掘； 一但找到漏洞并写出恶意代码，使目标运行，对方就可出现一些特殊的情况，从而拿到控制权限以及夺旗战中的旗帜； 要分析并挖掘二进制漏洞，必然少不了逆向工程和二进制知识的加持； 2.Pwn的前置知识：文件构架&amp;程序执行需要从一个服务器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Pwnの前瞻">
 <meta property="og:url" content="https://secondbc.github.io/SecondBC/2021/12/15/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.简单の概述Pwn是什么Pwn是一个动作，攻击服务器或进程的一个动作，针对的目标也就是服务器和运行中的软件； 这些服务器和软件中必然需要存在着二进制漏洞等待挖掘； 一但找到漏洞并写出恶意代码，使目标运行，对方就可出现一些特殊的情况，从而拿到控制权限以及夺旗战中的旗帜； 要分析并挖掘二进制漏洞，必然少不了逆向工程和二进制知识的加持；  2.Pwn的前置知识：文件构架&amp;程序执行需要从一个服务">
+<meta property="og:description" content="1.简单の概述Pwn是什么Pwn是一个动作，攻击服务器或进程的一个动作，针对的目标也就是服务器和运行中的软件； 这些服务器和软件中必然需要存在着二进制漏洞等待挖掘； 一但找到漏洞并写出恶意代码，使目标运行，对方就可出现一些特殊的情况，从而拿到控制权限以及夺旗战中的旗帜； 要分析并挖掘二进制漏洞，必然少不了逆向工程和二进制知识的加持； 2.Pwn的前置知识：文件构架&amp;程序执行需要从一个服务器">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://secondbc.github.io/SecondBC/2021/12/15/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB/image/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB(1).png">
-<meta property="og:image" content="https://secondbc.github.io/SecondBC/2021/12/15/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB/image/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB(2).png">
 <meta property="article:published_time" content="2021-12-15T08:55:21.000Z">
-<meta property="article:modified_time" content="2021-12-15T09:07:05.458Z">
+<meta property="article:modified_time" content="2021-12-15T09:19:40.884Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://secondbc.github.io/SecondBC/2021/12/15/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB/image/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB(1).png">
   
     <link rel="alternate" href="/SecondBC/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -95,7 +92,6 @@
 <p>这些服务器和软件中必然需要存在着二进制漏洞等待挖掘；</p>
 <p>一但找到漏洞并写出恶意代码，使目标运行，对方就可出现一些特殊的情况，从而拿到控制权限以及夺旗战中的旗帜；</p>
 <p>要分析并挖掘二进制漏洞，必然少不了逆向工程和二进制知识的加持；</p>
-<p><img src="image/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB(1).png" alt="genshin"></p>
 <h2 id="2-Pwn的前置知识：文件构架-amp-程序执行"><a href="#2-Pwn的前置知识：文件构架-amp-程序执行" class="headerlink" title="2.Pwn的前置知识：文件构架&amp;程序执行"></a>2.Pwn的前置知识：文件构架&amp;程序执行</h2><p>需要从一个服务器或进程中找到漏洞就需要了解软件的框架，软件的结构层次分为不同的功能；</p>
 <p>两个名词：节，会在磁盘中的软件里出现，它的作用则是分配不同种类和作用的代码块和文本；</p>
 <p>段，可以理解为节的集合，不同的节对应不同的段，段存在于进程中，作用则是分配不同权限的代码块和文本（权限相同的节在一个段中）；</p>
@@ -111,12 +107,11 @@
 <p>只读数据（如字符串，声明函数）被划分到Text段区域中；</p>
 <p>可改（写权限）全局变量被划分到Data段区域中；</p>
 <p>局部变量被划分到栈区域中；malloc申请空间是来自于堆；</p>
-<p><img src="image/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB(2).png" alt="genshin"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://secondbc.github.io/SecondBC/2021/12/15/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB/" data-id="ckx7b9aml00002kvchdiuc491" class="article-share-link">Share</a>
+      <a data-url="https://secondbc.github.io/SecondBC/2021/12/15/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB/" data-id="ckx7bp66t0001xovcagbd13wk" class="article-share-link">Share</a>
       
       
     </footer>

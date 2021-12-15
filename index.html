@@ -90,7 +90,6 @@
 <p>这些服务器和软件中必然需要存在着二进制漏洞等待挖掘；</p>
 <p>一但找到漏洞并写出恶意代码，使目标运行，对方就可出现一些特殊的情况，从而拿到控制权限以及夺旗战中的旗帜；</p>
 <p>要分析并挖掘二进制漏洞，必然少不了逆向工程和二进制知识的加持；</p>
-<p><img src="image/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB(1).png" alt="genshin"></p>
 <h2 id="2-Pwn的前置知识：文件构架-amp-程序执行"><a href="#2-Pwn的前置知识：文件构架-amp-程序执行" class="headerlink" title="2.Pwn的前置知识：文件构架&amp;程序执行"></a>2.Pwn的前置知识：文件构架&amp;程序执行</h2><p>需要从一个服务器或进程中找到漏洞就需要了解软件的框架，软件的结构层次分为不同的功能；</p>
 <p>两个名词：节，会在磁盘中的软件里出现，它的作用则是分配不同种类和作用的代码块和文本；</p>
 <p>段，可以理解为节的集合，不同的节对应不同的段，段存在于进程中，作用则是分配不同权限的代码块和文本（权限相同的节在一个段中）；</p>
@@ -106,12 +105,11 @@
 <p>只读数据（如字符串，声明函数）被划分到Text段区域中；</p>
 <p>可改（写权限）全局变量被划分到Data段区域中；</p>
 <p>局部变量被划分到栈区域中；malloc申请空间是来自于堆；</p>
-<p><img src="image/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB(2).png" alt="genshin"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://secondbc.github.io/SecondBC/2021/12/15/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB/" data-id="ckx7b9aml00002kvchdiuc491" class="article-share-link">Share</a>
+      <a data-url="https://secondbc.github.io/SecondBC/2021/12/15/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB/" data-id="ckx7bp66t0001xovcagbd13wk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -261,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://secondbc.github.io/SecondBC/2021/12/10/Data-Lab/" data-id="ckx01jbht0000s8vc634a46oy" class="article-share-link">Share</a>
+      <a data-url="https://secondbc.github.io/SecondBC/2021/12/10/Data-Lab/" data-id="ckx7bp66n0000xovc0xng2ids" class="article-share-link">Share</a>
       
       
     </footer>
