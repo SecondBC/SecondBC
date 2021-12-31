@@ -5,14 +5,14 @@
   
 
   
-  <title>Bomb-Lab | Hexo</title>
+  <title>Bomb_Lab | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="bomb lab 的实验挺好玩的，实质上就是逆向分析，然后找到正确的输入，错误的输入会导致跳转”炸弹函数”，就会导致程序结束； 规则： 根据提示，我们不能调试，但可以使用逆向工程解决炸弹； 输入正确的字符串以拆除炸弹； 源码中没有什么有用信息，不过有提示，从代码中可看出有6个需要解决的炸弹； main进入IDA分析后，可以发现函数栏有main 以及 phase_1 ~ phase_6； 在puts">
+  <meta name="description" content="bomb lab 的实验挺好玩的，实质上就是逆向分析，然后找到正确的输入，错误的输入会导致跳转”炸弹函数”，就会导致程序结束； 规则： 根据提示，我们不能调试，但可以使用逆向工程解决炸弹； 输入正确的字符串以拆除炸弹； 源码中没有什么有用信息，不过有提示，从代码中可看出有6个需要解决的炸弹； main进入IDA分析后，可以发现函数栏有main，以及 phase_1 ~ phase_6； 在puts">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Bomb-Lab">
+<meta property="og:title" content="Bomb_Lab">
 <meta property="og:url" content="https://secondbc.github.io/SecondBC/2021/12/31/Bomb-Lab/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="bomb lab 的实验挺好玩的，实质上就是逆向分析，然后找到正确的输入，错误的输入会导致跳转”炸弹函数”，就会导致程序结束； 规则： 根据提示，我们不能调试，但可以使用逆向工程解决炸弹； 输入正确的字符串以拆除炸弹； 源码中没有什么有用信息，不过有提示，从代码中可看出有6个需要解决的炸弹； main进入IDA分析后，可以发现函数栏有main 以及 phase_1 ~ phase_6； 在puts">
+<meta property="og:description" content="bomb lab 的实验挺好玩的，实质上就是逆向分析，然后找到正确的输入，错误的输入会导致跳转”炸弹函数”，就会导致程序结束； 规则： 根据提示，我们不能调试，但可以使用逆向工程解决炸弹； 输入正确的字符串以拆除炸弹； 源码中没有什么有用信息，不过有提示，从代码中可看出有6个需要解决的炸弹； main进入IDA分析后，可以发现函数栏有main，以及 phase_1 ~ phase_6； 在puts">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2021/12/3f6df268f69e6757.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2021/12/08c818459546e239.png">
@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2021/12/6e1e89f80eb0d354.png">
 <meta property="og:image" content="https://i.bmp.ovh/imgs/2021/12/812d45bc015d6ef1.png">
 <meta property="article:published_time" content="2021-12-31T04:12:37.000Z">
-<meta property="article:modified_time" content="2021-12-31T04:13:42.982Z">
+<meta property="article:modified_time" content="2021-12-31T04:20:05.242Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.bmp.ovh/imgs/2021/12/3f6df268f69e6757.png">
@@ -100,7 +100,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Bomb-Lab
+      Bomb_Lab
     </h1>
   
 
@@ -113,7 +113,7 @@
 <p>根据提示，我们不能调试，但可以使用逆向工程解决炸弹；</p>
 <p>输入正确的字符串以拆除炸弹；</p>
 <p>源码中没有什么有用信息，不过有提示，从代码中可看出有6个需要解决的炸弹；</p>
-<h2 id="main"><a href="#main" class="headerlink" title="main"></a>main</h2><p>进入IDA分析后，可以发现函数栏有main 以及 phase_1 ~ phase_6；</p>
+<h2 id="main"><a href="#main" class="headerlink" title="main"></a>main</h2><p>进入IDA分析后，可以发现函数栏有main，以及 phase_1 ~ phase_6；</p>
 <p>在puts函数之前的判断函数与破解炸弹没什么大关系，所以直接跳过；</p>
 <p><img src="https://i.bmp.ovh/imgs/2021/12/3f6df268f69e6757.png" alt="main"></p>
 <p>直接分析phase；（终于找到图床了）</p>
@@ -228,7 +228,7 @@
       <ul>
         
           <li>
-            <a href="/SecondBC/2021/12/31/Bomb-Lab/">Bomb-Lab</a>
+            <a href="/SecondBC/2021/12/31/Bomb-Lab/">Bomb_Lab</a>
           </li>
         
           <li>
