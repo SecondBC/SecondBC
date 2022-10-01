@@ -64,6 +64,90 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Normal" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/SecondBC/2022/01/11/Normal/" class="article-date">
+  <time datetime="2022-01-11T09:41:30.000Z" itemprop="datePublished">2022-01-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/SecondBC/2022/01/11/Normal/">Normal</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://s3.bmp.ovh/imgs/2022/01/07fef9dbe2578528.png" alt="genshin"></p>
+<h2 id="Ⅰ"><a href="#Ⅰ" class="headerlink" title="Ⅰ"></a>Ⅰ</h2><p>IDA分析</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/01/315fdcd6d506c939.png" alt="main"></p>
+<p>进行了一次异或操作，然后让输入的v5进入函数sub_A84输出s2；</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/01/6eaf532461892172.png" alt="function"></p>
+<p>进入函数之后可以发现运算中存在移位2，4，6，而且有长度控制的判断（v5&lt;=5）让输入的长度变长了；</p>
+<p>进入sub_7FA之后是一个有64个case的switch，对应着不同的ascii码，这样的特色让人能联想到base64，因为base64的码表也是64个字符；</p>
+<p>把sub_7FA中的码表换成base64的标准码表后，用比较的数据进行一次解码，得到数据：</p>
+<p><em><strong>0xD2,0x51,0xD2,0x34,0xD7,0x1B,0xE5,0x08,0xA0,0x13,0xCE,0x11,0xF0,0x13,0xA2,0x56,0xA5,0x3F,0xF8,0x13,0xCE,0x11,0xF2,0x0A,0xFD,0x24,0xE6,0x07,0xC2,0x1D</strong></em></p>
+<p>再用一次异或便能得到flag：C1CTF{th1s_qas364_is_qcjlDwgS}</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">key = [<span class="number">0xD2</span>,<span class="number">0x51</span>,<span class="number">0xD2</span>,<span class="number">0x34</span>,<span class="number">0xD7</span>,<span class="number">0x1B</span>,<span class="number">0xE5</span>,<span class="number">0x08</span>,<span class="number">0xA0</span>,<span class="number">0x13</span>,<span class="number">0xCE</span>,<span class="number">0x11</span>,<span class="number">0xF0</span>,<span class="number">0x13</span>,<span class="number">0xA2</span>,<span class="number">0x56</span>,<span class="number">0xA5</span>,<span class="number">0x3F</span>,<span class="number">0xF8</span>,<span class="number">0x13</span>,<span class="number">0xCE</span>,<span class="number">0x11</span>,<span class="number">0xF2</span>,<span class="number">0x0A</span>,<span class="number">0xFD</span>,<span class="number">0x24</span>,<span class="number">0xE6</span>,<span class="number">0x07</span>,<span class="number">0xC2</span>,<span class="number">0x1D</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(key)):</span><br><span class="line">	<span class="keyword">if</span>((i&amp;<span class="number">1</span>)!=<span class="number">0</span>):</span><br><span class="line">		key[i] ^= <span class="number">0x60</span></span><br><span class="line">	<span class="keyword">else</span>:</span><br><span class="line">		key[i] ^= <span class="number">0x91</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(key)):</span><br><span class="line">	key[i] = <span class="built_in">chr</span>(key[i])</span><br><span class="line">key = <span class="string">&#x27;&#x27;</span>.join(key)</span><br><span class="line"><span class="built_in">print</span>(key)</span><br></pre></td></tr></table></figure>
+
+<p>没看出是base64的时候，想过根据加密函数的样子来逆推导，考虑到或运算的不可逆性，采用了走迷宫式的算法，用ascii码0~128来模拟129条路径，每个加密数据为一个节点，走出一条明文，经过几次修改代码，但很可惜失败了；</p>
+<h2 id="Ⅱ"><a href="#Ⅱ" class="headerlink" title="Ⅱ"></a>Ⅱ</h2><p><img src="https://i.bmp.ovh/imgs/2022/01/8fa2ce93422e7698.png" alt="main"></p>
+<p>用输入的字符串与生成好的String1运算得到密文v3，之后使用crpyto函数打印出v3的hex值与字符串比较；</p>
+<p>在检查sub_7FF7798A12A0的时候，发现了一个常数表：</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/01/58d600a1147d3bde.png" alt="box"></p>
+<p>对应着标准的aes加密表；</p>
+<p>比较字符串有64个字节，打印了32个16进制数，而aes加密的长度是16个16进制数，所以后面的是未加密的数据，而前16个是加密的16进制数据，对前面32字节hex进行解密得到数据：</p>
+<p><em><strong>68 78 62 32 30 31 38 7B  38 35 33 65 63 66 65 35</strong></em> </p>
+<p>数据很正常，有数字有字母，还有 7B （ { ）应该是flag没错了；</p>
+<p>之后加上后32位hex得到flag：hxb2018{853ecfe52aeb60989e8d3351}</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/01/85652ba66eb991e6.png" alt="flag"></p>
+<h3 id="AES"><a href="#AES" class="headerlink" title="AES"></a>AES</h3><p>不懂AES之前根本就不明白它的内部算法；所以去学习了一下最简单的AES加密；</p>
+<p>即为16字节明文配合16字节密钥运算得暗文；</p>
+<p>分为很多个步骤，总体的思路便是矩阵运算，让明文和密钥都构成4*4的矩阵；</p>
+<p><strong>①</strong> 明文矩阵与密钥矩阵对应异或得到矩阵0；</p>
+<p><strong>②</strong> 密钥矩阵用自身产生很多个轮密钥，特点在于是列的运算；且关于列是从0开始计算，且若列是4的倍数，就会复杂一些，动用到BOX里的数据；</p>
+<p><strong>②.⑤</strong> 矩阵0对照BOX表里的值进行替换成为矩阵1；</p>
+<p>**③ **矩阵1进行hang行变换，第一行左移0字节，第二行左移1字节，第三行左移2字节，第四行左移3字节，得到矩阵2；</p>
+<p><strong>④</strong> 矩阵2左乘一个规定好的特殊矩阵，变为矩阵3；</p>
+<p><strong>⑤</strong> 矩阵3与轮密钥运算得到暗文；</p>
+<p><strong>⑥</strong> 循环9次执行 ②.⑤ ~ ⑤ ，每次的轮密钥不同；</p>
+<p><strong>⑦</strong> 最后执行一遍 ②.⑤，③和⑤（不执行④），得到总共的暗文；</p>
+<h2 id="Ⅲ"><a href="#Ⅲ" class="headerlink" title="Ⅲ"></a>Ⅲ</h2><p><img src="https://i.bmp.ovh/imgs/2022/01/717d586524c7f2fd.png" alt="main"></p>
+<p>input和output和i都是全局变量；</p>
+<p>使用cry1函数让input变换为output；</p>
+<p><img src="https://i.bmp.ovh/imgs/2022/01/7d2d5f686a7b61e7.png" alt="cry1"></p>
+<p>变换的规则就是依次读取input的第a1位，然后继续调用cry1，不断读取64个数据；</p>
+<p>按照这个思路，output增长是不会有变换的，i一直都会顺着顺序变大，而读取input会有些许顺序；</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//跟踪数据</span></span><br><span class="line">a1  <span class="number">0</span> <span class="number">1</span> <span class="number">3</span> <span class="number">7</span> <span class="number">15</span> <span class="number">31</span> <span class="number">63</span> <span class="number">32</span> <span class="number">16</span> <span class="number">33</span> <span class="number">34</span> </span><br><span class="line">v1  <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>   <span class="number">6</span>   <span class="number">7</span></span><br><span class="line"><span class="keyword">return</span>   <span class="number">2</span> <span class="number">4</span> <span class="number">8</span> <span class="number">16</span> <span class="number">32</span> <span class="number">64</span> <span class="number">128</span> x-</span><br></pre></td></tr></table></figure>
+
+<p>但是没关系，因为i顺着变大，所以只需要将赋值顺序变一下，输入比较的数据，不就可以得到输入的数据了吗？</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> output[<span class="number">64</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">char</span> input[<span class="number">64</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cry1</span><span class="params">(<span class="keyword">int</span> a1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> v1;</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(a1 &lt;= <span class="number">63</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        v1 = i++;</span><br><span class="line">        input[a1] = output[v1]; <span class="comment">//交换</span></span><br><span class="line">        cry1(<span class="number">2</span>*a1+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> cry1(<span class="number">2</span>*(a1+<span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,output);</span><br><span class="line">    cry1(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,input);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>按着思路试了一下，果然用得到的数据就能进入if判断框了，下面的if同理；</p>
+<p>得到的flag：nctf{bc2e3b4c2eb03258c5102bf9de77f57dddad9edb70c6c20febc01773e5d81947}</p>
+<p><img src="https://s3.bmp.ovh/imgs/2022/01/a54f40d0e2b5dbd2.png" alt="genshin"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://secondbc.github.io/SecondBC/2022/01/11/Normal/" data-id="cky9xeq7n0000o0vc9iww0s1p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Bomb_Lab" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/SecondBC/2021/12/31/Bomb_Lab/" class="article-date">
@@ -468,7 +552,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2021/12/">December 2021</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2021/12/">December 2021</a></li></ul>
     </div>
   </div>
 
@@ -479,6 +563,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/SecondBC/2022/10/01/Proxy-lab/">Proxy_lab</a>
+          </li>
         
           <li>
             <a href="/SecondBC/2022/09/11/Malloc-Lab/">Malloc_Lab</a>
@@ -494,10 +582,6 @@
         
           <li>
             <a href="/SecondBC/2022/03/31/Angr-Lab/">Angr.Lab</a>
-          </li>
-        
-          <li>
-            <a href="/SecondBC/2022/02/24/VM%E5%AE%9E%E9%AA%8C%E5%A4%8D%E7%8E%B0/">VM实验¤复现</a>
           </li>
         
       </ul>
