@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://secondbc.github.io/SecondBC/2021/12/31/Bomb_Lab/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/03/31/Angr-Lab/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/categories/index.html</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://secondbc.github.io/SecondBC/2022/10/11/git%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
     
     <lastmod>2022-10-11</lastmod>
@@ -56,15 +83,6 @@
   </url>
   
   <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/03/31/Angr-Lab/</loc>
-    
-    <lastmod>2022-03-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://secondbc.github.io/SecondBC/2022/02/24/VM%E5%AE%9E%E9%AA%8C%E5%A4%8D%E7%8E%B0/</loc>
     
     <lastmod>2022-02-24</lastmod>
@@ -113,15 +131,6 @@
     <loc>https://secondbc.github.io/SecondBC/2022/01/11/Normal/</loc>
     
     <lastmod>2022-01-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2021/12/31/Bomb_Lab/</loc>
-    
-    <lastmod>2021-12-31</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
