@@ -1,94 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>Shell_Lab | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="壳实验，对应于csapp第8章，异常控制流；根据其提示可知，该实验要求编写一个完整的简单的壳； 在完成之后，有许多的检测关卡等待壳的成果； 实际上，此实验已经将大部分内容编写完毕，只要求完成7个函数的构造来完整壳即可； 这7个函数都是有关于信号，以及异常处理的； 现在来先说说这7个函数的大致功能以及目的： eval：解析和解释命令行的主例程；  builtin_cmd：识别并解释内置命令；  内置">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Shell_Lab">
-<meta property="og:url" content="https://secondbc.github.io/SecondBC/2022/04/23/Shell-Lab/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="壳实验，对应于csapp第8章，异常控制流；根据其提示可知，该实验要求编写一个完整的简单的壳； 在完成之后，有许多的检测关卡等待壳的成果； 实际上，此实验已经将大部分内容编写完毕，只要求完成7个函数的构造来完整壳即可； 这7个函数都是有关于信号，以及异常处理的； 现在来先说说这7个函数的大致功能以及目的： eval：解析和解释命令行的主例程；  builtin_cmd：识别并解释内置命令；  内置">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-23T08:23:15.000Z">
-<meta property="article:modified_time" content="2022-04-23T08:23:50.620Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/SecondBC/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/SecondBC/css/style.css">
-
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/SecondBC/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/SecondBC/">Home</a>
-        
-          <a class="main-nav-link" href="/SecondBC/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/SecondBC/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://secondbc.github.io/SecondBC"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Shell-Lab" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/SecondBC/2022/04/23/Shell-Lab/" class="article-date">
-  <time datetime="2022-04-23T08:23:15.000Z" itemprop="datePublished">2022-04-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Shell_Lab
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>壳实验，对应于csapp第8章，异常控制流；根据其提示可知，该实验要求编写一个完整的简单的壳；</p>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Shell_Lab"><meta name="keywords" content=""><meta name="author" content="John Doe,undefined"><meta name="copyright" content="John Doe"><title>Shell_Lab【Hexo】</title><link rel="stylesheet" href="/SecondBC/css/fan.css"><link rel="stylesheet" href="/SecondBC/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><link rel="icon" href="/SecondBC/favicon.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/SecondBC/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/SecondBC/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  gitment: ,
+  valine: ,
+}</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/SecondBC/atom.xml" title="Hexo" type="application/atom+xml">
+</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%B0%E5%9C%A8%E6%9D%A5%E5%85%88%E8%AF%B4%E8%AF%B4%E8%BF%997%E4%B8%AA%E5%87%BD%E6%95%B0%E7%9A%84%E5%A4%A7%E8%87%B4%E5%8A%9F%E8%83%BD%E4%BB%A5%E5%8F%8A%E7%9B%AE%E7%9A%84%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">现在来先说说这7个函数的大致功能以及目的：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%85%E5%8A%A9%E7%9A%84%E5%B7%B2%E6%9C%89%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">辅助的已有函数：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B9%8B%E5%90%8E%E6%9C%89%E7%BB%8F%E5%85%B8%E7%9A%84%E5%AE%9E%E9%AA%8C%E7%BA%A6%E6%9D%9F%E8%A7%84%E5%88%99%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">之后有经典的实验约束规则：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%88%E6%9D%A5%E7%9C%8BShell%E7%9A%84%E4%B8%BB%E5%87%BD%E6%95%B0%EF%BC%9A"><span class="toc-number">4.</span> <span class="toc-text">先来看Shell的主函数：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#I-Eval"><span class="toc-number">5.</span> <span class="toc-text">I . Eval</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#II-builtin-cmd"><span class="toc-number">6.</span> <span class="toc-text">II . builtin_cmd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#III-do-bgfg"><span class="toc-number">7.</span> <span class="toc-text">III . do_bgfg</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IV-waitfg"><span class="toc-number">8.</span> <span class="toc-text">IV . waitfg</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#V-sigint-handler"><span class="toc-number">9.</span> <span class="toc-text">V . sigint_handler</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VI-sigstp-handler"><span class="toc-number">10.</span> <span class="toc-text">VI . sigstp_handler</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VII-sigchld-handler"><span class="toc-number">11.</span> <span class="toc-text">VII . sigchld_handler</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">12.</span> <span class="toc-text">总结：</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/avatar.png"></div><div class="author-info-name">John Doe</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/" target="_blank">GitHub<i class="icon-dot bg-color1"></i></a><a class="links-button button-hover" href="mailto:1" target="_blank">E-Mail<i class="icon-dot bg-color5"></i></a><a class="links-button button-hover" href="tencent://message/?uin=2&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color8"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/SecondBC/archives"><span class="pull-top">日志</span><span class="pull-bottom">17</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/">首页</a><a class="menu-item" href="/tags">标签</a><a class="menu-item" href="/categories">分类</a><a class="menu-item" href="/archives">归档</a><a class="menu-item" href="/about">关于</a></nav><div class="right-info"><a class="title-name" href="/SecondBC/">Hexo</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">Shell_Lab</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2022-04-23 | 更新于 2022-04-23</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"></div><div class="button-hover tags"></div></div></div><div class="main-content"><p>壳实验，对应于csapp第8章，异常控制流；根据其提示可知，该实验要求编写一个完整的简单的壳；</p>
 <p>在完成之后，有许多的检测关卡等待壳的成果；</p>
 <p>实际上，此实验已经将大部分内容编写完毕，只要求完成7个函数的构造来完整壳即可；</p>
 <p>这7个函数都是有关于信号，以及异常处理的；</p>
@@ -195,131 +126,4 @@
 <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>这个实验主要是考察了安全信号处理内容，以及竞争关系；</p>
 <p>帮助疏通了对Shell的理解：接受指令，处理指令，以及增加进程和如何回收进程；</p>
 <p>对于小方向的话便是细节的考虑，阻塞顺序以及分类情况；</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://secondbc.github.io/SecondBC/2022/04/23/Shell-Lab/" data-id="cl2bli06t00007svc3b735rrq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/SecondBC/2022/08/18/%E5%81%87%E6%9C%9F%E5%A4%8D%E7%8E%B0/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          假期复现
-        
-      </div>
-    </a>
-  
-  
-    <a href="/SecondBC/2022/03/31/Angr-Lab/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Angr.Lab</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/02/">February 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2022/01/">January 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/SecondBC/archives/2021/12/">December 2021</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/SecondBC/2022/10/11/git%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">git学习日记</a>
-          </li>
-        
-          <li>
-            <a href="/SecondBC/2022/10/04/0x41414141/">0x41414141 CTF</a>
-          </li>
-        
-          <li>
-            <a href="/SecondBC/2022/10/01/Proxy-lab/">Proxy_lab</a>
-          </li>
-        
-          <li>
-            <a href="/SecondBC/2022/09/11/Malloc-Lab/">Malloc_Lab</a>
-          </li>
-        
-          <li>
-            <a href="/SecondBC/2022/08/18/%E5%81%87%E6%9C%9F%E5%A4%8D%E7%8E%B0/">假期复现</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/SecondBC/" class="mobile-nav-link">Home</a>
-  
-    <a href="/SecondBC/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/SecondBC/fancybox/jquery.fancybox.css">
-
-  
-<script src="/SecondBC/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/SecondBC/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="https://secondbc.github.io/SecondBC/2022/04/23/Shell-Lab/">https://secondbc.github.io/SecondBC/2022/04/23/Shell-Lab/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://secondbc.github.io/SecondBC">Hexo</a>！</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/SecondBC/2022/08/18/%E5%81%87%E6%9C%9F%E5%A4%8D%E7%8E%B0/"><i class="fas fa-angle-left">&nbsp;</i><span>假期复现</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/SecondBC/2022/03/31/Angr-Lab/"><span>Angr.Lab</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="copyright">&copy;2022 By John Doe</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/copy.js"></script><!--script(src=url)--></body></html>
