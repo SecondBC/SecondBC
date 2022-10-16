@@ -2,6 +2,132 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/02/19/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E5%A4%8D%E7%8E%B002/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2021/12/25/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E5%A4%8D%E7%8E%B001/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/08/18/%E5%81%87%E6%9C%9F%E5%A4%8D%E7%8E%B0/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/02/24/VM%E5%AE%9E%E9%AA%8C%E5%A4%8D%E7%8E%B0/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/04/23/Shell-Lab/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/01/19/ROP%E5%9F%BA%E7%A1%80%E9%A2%98/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2021/12/15/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/10/01/Proxy-lab/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/01/11/Normal/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/09/11/Malloc-Lab/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/01/26/Knight%E5%A4%BA%E6%97%97%E6%88%98/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/02/22/Hgame2022-ReverseWriteUp/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2022/10/11/git%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/2021/12/10/Data_Lab/</loc>
+    
+    <lastmod>2022-10-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://secondbc.github.io/SecondBC/2021/12/31/Bomb_Lab/</loc>
     
     <lastmod>2022-10-16</lastmod>
@@ -20,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://secondbc.github.io/SecondBC/categories/index.html</loc>
+    <loc>https://secondbc.github.io/SecondBC/2022/10/04/0x41414141/</loc>
     
     <lastmod>2022-10-16</lastmod>
     
@@ -29,135 +155,27 @@
   </url>
   
   <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/10/11/git%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</loc>
+    <loc>https://secondbc.github.io/SecondBC/about/index.html</loc>
     
-    <lastmod>2022-10-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/10/04/0x41414141/</loc>
-    
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-10-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/10/01/Proxy-lab/</loc>
+    <loc>https://secondbc.github.io/SecondBC/tags/index.html</loc>
     
-    <lastmod>2022-10-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/09/11/Malloc-Lab/</loc>
-    
-    <lastmod>2022-09-11</lastmod>
+    <lastmod>2022-10-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/08/18/%E5%81%87%E6%9C%9F%E5%A4%8D%E7%8E%B0/</loc>
+    <loc>https://secondbc.github.io/SecondBC/categories/index.html</loc>
     
-    <lastmod>2022-08-18</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/04/23/Shell-Lab/</loc>
-    
-    <lastmod>2022-04-23</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/02/24/VM%E5%AE%9E%E9%AA%8C%E5%A4%8D%E7%8E%B0/</loc>
-    
-    <lastmod>2022-02-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/02/22/Hgame2022-ReverseWriteUp/</loc>
-    
-    <lastmod>2022-02-22</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/02/19/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E5%A4%8D%E7%8E%B002/</loc>
-    
-    <lastmod>2022-02-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/01/26/Knight%E5%A4%BA%E6%97%97%E6%88%98/</loc>
-    
-    <lastmod>2022-01-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/01/19/ROP%E5%9F%BA%E7%A1%80%E9%A2%98/</loc>
-    
-    <lastmod>2022-01-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2022/01/11/Normal/</loc>
-    
-    <lastmod>2022-01-11</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2021/12/25/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E5%A4%8D%E7%8E%B001/</loc>
-    
-    <lastmod>2021-12-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2021/12/15/Pwn%E3%81%AE%E5%89%8D%E7%9E%BB/</loc>
-    
-    <lastmod>2021-12-15</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://secondbc.github.io/SecondBC/2021/12/10/Data_Lab/</loc>
-    
-    <lastmod>2021-12-10</lastmod>
+    <lastmod>2022-10-16</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -172,6 +190,69 @@
   </url>
 
   
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/tags/Reverse/</loc>
+    <lastmod>2022-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/tags/CSAPP/</loc>
+    <lastmod>2022-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/tags/Git/</loc>
+    <lastmod>2022-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/tags/Bin/</loc>
+    <lastmod>2022-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/tags/Pwn/</loc>
+    <lastmod>2022-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/tags/VM/</loc>
+    <lastmod>2022-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/categories/Lab/</loc>
+    <lastmod>2022-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/categories/WriteUp/</loc>
+    <lastmod>2022-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://secondbc.github.io/SecondBC/categories/Diary/</loc>
+    <lastmod>2022-10-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>
