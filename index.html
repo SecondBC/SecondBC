@@ -19,7 +19,144 @@ if (isPassword) {
   gitment: ,
   valine: ,
 }</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/SecondBC/atom.xml" title="Second_BC の BloG" type="application/atom+xml">
-</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="author-info"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/ss.png"></div><div class="author-info-name">Second_BC</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/" target="_blank">GitHub<i class="icon-dot bg-color3"></i></a><a class="links-button button-hover" href="mailto:1" target="_blank">E-Mail<i class="icon-dot bg-color2"></i></a><a class="links-button button-hover" href="tencent://message/?uin=2&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color7"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/SecondBC/archives"><span class="pull-top">日志</span><span class="pull-bottom">17</span></a><a class="author-info-articles-tags article-meta" href="/SecondBC/tags"><span class="pull-top">标签</span><span class="pull-bottom">6</span></a><a class="author-info-articles-categories article-meta" href="/SecondBC/categories"><span class="pull-top">分类</span><span class="pull-bottom">3</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/SecondBC">首页</a><a class="menu-item" href="/SecondBC/archives">归档</a><a class="menu-item" href="/SecondBC/categories">分类</a><a class="menu-item" href="/SecondBC/tags">标签</a><a class="menu-item" href="/SecondBC/about">关于</a></nav><div class="right-info"><a class="title-name" href="/SecondBC/">Second_BC の BloG</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><div id="recent-posts"><!-- each post in page.posts.sort('date', -1).limit(10).toArray()--><!-- config中配置按照什么排序--><div class="recent-post-item"><a class="post-title" href="/SecondBC/2022/10/11/git%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">git学习日记</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 更新于 2022-10-16</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/Diary/">Diary</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Git/">Git</a></div></div><div class="post-content"><div class="main-content content"><p>git是分布式版本控制系统；</p>
+</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="author-info"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/ss.png"></div><div class="author-info-name">Second_BC</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/" target="_blank">GitHub<i class="icon-dot bg-color9"></i></a><a class="links-button button-hover" href="mailto:1" target="_blank">E-Mail<i class="icon-dot bg-color6"></i></a><a class="links-button button-hover" href="tencent://message/?uin=2&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color7"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/SecondBC/archives"><span class="pull-top">日志</span><span class="pull-bottom">18</span></a><a class="author-info-articles-tags article-meta" href="/SecondBC/tags"><span class="pull-top">标签</span><span class="pull-bottom">7</span></a><a class="author-info-articles-categories article-meta" href="/SecondBC/categories"><span class="pull-top">分类</span><span class="pull-bottom">3</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/SecondBC">首页</a><a class="menu-item" href="/SecondBC/archives">归档</a><a class="menu-item" href="/SecondBC/categories">分类</a><a class="menu-item" href="/SecondBC/tags">标签</a><a class="menu-item" href="/SecondBC/about">关于</a></nav><div class="right-info"><a class="title-name" href="/SecondBC/">Second_BC の BloG</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><div id="recent-posts"><!-- each post in page.posts.sort('date', -1).limit(10).toArray()--><!-- config中配置按照什么排序--><div class="recent-post-item"><a class="post-title" href="/SecondBC/2022/10/28/C++%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">C++学习日记</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 更新于 2022-10-28</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/Diary/">Diary</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Cpp/">Cpp</a></div></div><div class="post-content"><div class="main-content content"><h2 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h2><p><code>namespace NameSpace&#123;&#125;</code>，为解决变量以及函数重名而出现；</p>
+<p>只能在全局中声明，可以嵌套，使用<code>NameSpace::Items</code>，调用内容；</p>
+<p>可以在函数开头用 <code>using NameSpace::Items</code>，来声明引用内容，或者用 <code>using namespace NameSpace</code>，来声明引用全部内容；</p>
+<p>可以匿名，引用内容则为<code>::Items</code>，等效于全局内容；</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>定义的时候就需要赋值：<code>int &amp;ra = a;</code> ，前面加地址符号，意义是使得ra和a共享地址（取个别名）；</p>
+<p>数组定义时记得加括号明确计算意义：<code>int (&amp;ra)[10] = a[10]</code> ；</p>
+<p>类似指针，函数传参时可以间接影响外部变量，并且返回时不能返回局部变量，因为是一个地址，内容会发生改变；</p>
+<h3 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h3><p><code>int &amp;ra = a </code>  等价于 <code>int * const ra = &amp;a</code> ；</p>
+<p>目的为了简化源码理解，不需要构造多级指针，传参时传入引用可以体现出改变外部变量的意思；</p>
+<h2 id="面向对象与类"><a href="#面向对象与类" class="headerlink" title="面向对象与类"></a>面向对象与类</h2><p>特征：封装，继承，多态；</p>
+<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><p>将一类的函数和数据装在一个类里，设置私有数据域，和公共方法称为<strong>封装</strong>；</p>
+<p>结构体等同于类，类里的对象拥有<strong>属性</strong>（数据），<strong>行为</strong>（函数），以及<strong>构造函数</strong>（初始化数据的函数，与类同名无返回）；</p>
+<p>初始化定义：声明同时赋值；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//构造函数后面加冒号变量为初始化，意义在于控制常量</span></span><br><span class="line"><span class="built_in">matrix</span>(<span class="keyword">int</span> input):<span class="built_in">line</span>(input)</span><br></pre></td></tr></table></figure>
+
+<p><strong>析构函数</strong>：与类名同名，前面加~，局部变量返回时自动执行，一般做扫尾工作，如free；</p>
+<p>调用类函数的时候，实际上编译器将外部变量的引用（匿名 / this ）传入了类函数中；</p>
+<p>定义在类中的函数，可以使用 this 指针，这个指针用于操控类里的变量，防止同名冲突；</p>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><p>将一个类的内容添加到另一个类的起始；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> same;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span>:</span>Father <span class="comment">//继承</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> same;</span><br><span class="line">    <span class="keyword">int</span> height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相当于：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> same;</span><br><span class="line">    <span class="keyword">int</span> age;</span><br><span class="line">    <span class="keyword">int</span> same;</span><br><span class="line">    <span class="keyword">int</span> height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以通过父类引用访问子类，但只能指到age结束，要访问子类后续可以用操作指针；</p>
+<p>同样可以通过子类引用访问父类，但需要强制转换，且指针可以访问父类后面的空白区域；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Child ch;</span><br><span class="line">Father *pfa = &amp;ch;</span><br><span class="line">pfa-&gt;age; <span class="comment">//通过父类指针访问继承age；</span></span><br><span class="line">---</span><br><span class="line">Father fa;</span><br><span class="line">Child *pch = (Child *)&amp;fa;</span><br><span class="line">pch-&gt;age; <span class="comment">//通过子类指针访问父类age；</span></span><br></pre></td></tr></table></figure>
+
+<p>若继承里有同名变量，则使用就近原则使用子类的内容；若要访问父类的同名变量，加上父类名：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Child a;</span><br><span class="line">a.same = <span class="number">1</span>; <span class="comment">//改变原子类内容</span></span><br><span class="line">a.Father::same = <span class="number">2</span>; <span class="comment">//改变继承内容</span></span><br></pre></td></tr></table></figure>
+
+<p>C++拥有多继承，按顺序排的类，哪个在前，其内容内存地址继承在最上方；</p>
+<p><strong>权限继承：</strong></p>
+<p>class修饰默认为private，若以public继承，则父类内容里保持不变（public还是public，private还是private）；</p>
+<p>private修饰的内容继承，子类不能访问，但protected可以；（protected和private就只有这个区别）</p>
+<p>构造析构函数也会继承；</p>
+<h3 id="new-amp-delete"><a href="#new-amp-delete" class="headerlink" title="new&amp;delete"></a>new&amp;delete</h3><p>创建类指针时，在堆开辟类内存空间并执行构造函数： <code>Child *pch = new Child();</code> 类似于java；</p>
+<p>使用delete释放空间并执行析构函数： <code>delete pch;</code> ;</p>
+<h3 id="拷贝构造函数"><a href="#拷贝构造函数" class="headerlink" title="拷贝构造函数"></a>拷贝构造函数</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Test::<span class="built_in">Test</span>(Test &amp;testaddr)</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>用于对象，复制属性时候执行，只是浅拷贝，值转换，指针可能出错；一般对象作为参数和返回值时就会调用；</p>
+<h3 id="虚继承"><a href="#虚继承" class="headerlink" title="虚继承"></a>虚继承</h3><p>用于避免多继承的多义变量产生；如：A -&gt; B，A -&gt; C；B,C -&gt; D；使得D里有两组A内容；</p>
+<p>继承时，在继承类的前面用 virtual 修饰，称其为<strong>虚基类</strong>；此时，虚基类不会直接继承其内容给子类，而是会给子类一个<strong>虚基类表</strong>，这是一个指针，指向两个数据，第一个表示<strong>虚基类表位于当前所在类</strong>的偏移，第二个表示<strong>继承父类位于虚基类表</strong>的偏移；</p>
+<p>一般虚继承的父类内容放在子类内存的下方；</p>
+<h3 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h3><p>在类中定义，用 friend 修饰，可以为另类和函数，使其能够直接使用 private 修饰的内容；</p>
+<h3 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h3><p>类类型的对象进行运算是没有意义的，所以可以自己给运算符定义意义；</p>
+<p>使用以下内容重载运算符 加号,使得当两个对象相加时执行 “+” 函数的语句：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">A <span class="keyword">operator</span>+ (A a1, A a2)</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>明确一些专有名词：</p>
+<ol>
+<li>重载：同一类里，同名函数，不同参数表；</li>
+<li>重写：不同类，且类有继承关系，同名函数；</li>
+<li>静态联编：程序编译时定死函数符号以及类指针的引用；动态联编则相反；</li>
+</ol>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">HaHa</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;233&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>:</span><span class="keyword">public</span> A</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">HaHa</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cout&lt;&lt;<span class="string">&quot;lol&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">---</span><br><span class="line"><span class="comment">//此为静态联编，当 *p 定为 A 类型时，默认A -&gt; HaHa() 调用 A 类里的函数；则两个都输出 233 ；</span></span><br><span class="line"><span class="comment">//当父类A里函数用 virtual 修饰时为动态联编，两个分别输出 233 和 lol；</span></span><br><span class="line">    </span><br><span class="line">A a;</span><br><span class="line">B b;</span><br><span class="line">A *p = <span class="literal">NULL</span>;</span><br><span class="line">A = &amp;a;</span><br><span class="line">A -&gt; <span class="built_in">HaHa</span>();</span><br><span class="line">A = &amp;b;</span><br><span class="line">A -&gt; <span class="built_in">HaHa</span>();</span><br></pre></td></tr></table></figure>
+
+<p>可以抽象地将函数理解成是存在于类中（实际上并没有），继承后盖在子类头上，一共有两个HaHa函数，就近原则选择父类的函数（父类指针），而虚函数的声明免除了这个误会，就类似于虚继承了；</p>
+<p>同一个指针，指向不同对象，展现出不同效果的情况，称其为多态，为了实现多态而不产生歧义，才有的<strong>虚函数</strong>；</p>
+<p>定义：一个类中声明了虚函数，但是没给出实现，此称为<strong>纯虚函数</strong>，这个类叫做<strong>抽象类</strong>；抽象类不配有对象；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">func</span><span class="params">()</span> </span>= <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Q:为什么这么做？</p>
+<p>A:用于构造模型，用子类去实现具体内容，并由一个指向父类的指针去实现多个子类的多态；</p>
+<p>如果定义了虚函数，则类里会存在虚表指针独占内存，指向<strong>虚表</strong>，虚表里包含各个虚函数的地址；</p>
+<p>继承会合并父类虚表为一个，如果是多继承，则合并第一个继承的虚表，后面的会保留下来；</p>
+<h2 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h2><p>为解决多次重载不同**类型(重点)**参数的函数而出现；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> DD&gt;</span></span><br><span class="line"><span class="function">DD <span class="title">func</span><span class="params">(DD a, DD b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a-b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>使用时，直接代入函数就行，DD需同类型，但不能指针；</p>
+<p>需要指针时，需要使<strong>模板特化</strong>：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//紧跟上面的内容写</span></span><br><span class="line">---</span><br><span class="line"><span class="keyword">template</span>&lt;&gt;</span><br><span class="line"><span class="keyword">int</span> *func&lt;<span class="keyword">int</span> *&gt;(<span class="keyword">int</span> *a, <span class="keyword">int</span>*b)			<span class="comment">//尖括号内容可有可无</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> *(a + b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果有重载函数，模板特化，函数模板都满足使用的类型，则优先级由最特化到最不特化；</p>
+<p>类也有模板，用 <code>template&lt;class DD&gt;</code> 声明；DD则可替换类里属性的类型；</p>
+<p>使用时，用 <code>ClassName&lt;type&gt; a;</code> 来创建一个类对象；</p>
+<p><strong>模板的机制：</strong></p>
+<p>实际上，模板通过把一个数据类型用通用参数符号来<strong>代替</strong>，实际使用时，用某种数据类型进行替换；</p>
+<p>达到处理类型不同，实现功能相同的效果；</p>
+<p>模板技术成为<strong>泛型编程</strong>；</p>
+<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>三个关键词：</p>
+<p><strong>throw</strong> : 手动抛出异常，一般满足if关系式后执行，也一般存在try包括中；</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">throw</span> code;		<span class="comment">//code为之后的捕获catch返回的内容</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>try</strong> 和 <strong>catch</strong> 成对出现，前者会用大括号包住可能出现异常的<strong>语句块</strong>；后者作为函数跟随： <code>catch(type code)</code> , <strong>接收</strong>抛出的code，<strong>并执行</strong>catch函数里的内容；</p>
+<p>catch里也能放 <code>...</code> ，意思是捕获<strong>任意类型</strong>(包括类)异常（接收任意类型code）;</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">func</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="number">12</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> a/b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="built_in">func</span>(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in"><span class="keyword">catch</span></span>(<span class="keyword">int</span> code)</span><br><span class="line">&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;异常了，且code为&quot;</span> &lt;&lt; code &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上面代码会使得打印catch中的语句，且code值为12；</p>
+<h2 id="STL"><a href="#STL" class="headerlink" title="STL"></a>STL</h2><p>标准模板库；</p>
+<p>其部件：容器，算法，迭代器；目的是为了更好地存储数据（如排序和查找遍历）</p>
+<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><p>顺序容器：</p>
+<ul>
+<li><p>Vector：向量，动态数组</p>
+<p>可扩大数组，每次扩大自身2倍；</p>
+<p>用法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">push_back	<span class="comment">//插入到末尾</span></span><br><span class="line">insert 		<span class="comment">//指定位置插入</span></span><br><span class="line">Pop_back	<span class="comment">//删末尾元素</span></span><br><span class="line">erase		<span class="comment">//删除指定位置</span></span><br><span class="line">Clear		<span class="comment">//清空所有</span></span><br><span class="line">Vec[i]		<span class="comment">//访问索引元素</span></span><br><span class="line">at			<span class="comment">//返回指定下标处元素</span></span><br><span class="line">begin		<span class="comment">//返回 iterator 指向第一个元素</span></span><br><span class="line">End 		<span class="comment">//返回 iterator 指向末尾下一个</span></span><br><span class="line">empty		<span class="comment">//是否为空？</span></span><br><span class="line">size		<span class="comment">//获取元素个数</span></span><br><span class="line">swap		<span class="comment">//交换两个元素</span></span><br><span class="line">  </span><br><span class="line">---</span><br><span class="line">vector&lt;type&gt; item;	<span class="comment">//创建</span></span><br><span class="line">vector::iterator it = item.<span class="built_in">begin</span>();		<span class="comment">//创建迭代器（指针）</span></span><br></pre></td></tr></table></figure></li>
+<li><p>String：字符串</p>
+</li>
+<li><p>List：双向链表</p>
+<p>不能操控下标，只能添加和删除以及遍历；</p>
+<p>用法和维克托差不多，多了个对头的操作：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Push_front		<span class="comment">//插入头部</span></span><br><span class="line">Pop_front		<span class="comment">//头部删除</span></span><br><span class="line"></span><br><span class="line">---</span><br><span class="line">list&lt;type&gt; item;	<span class="comment">//创建</span></span><br><span class="line">list::iterator it = item.<span class="built_in">begin</span>();		<span class="comment">//创建迭代器（指针）</span></span><br></pre></td></tr></table></figure>
+
+<p>若要操作插入，需要创建迭代器，并且用for循环让iterator++,对list而言，迭代器不能直接加一个数；</p>
+</li>
+<li><p>Deque：双端队列</p>
+</li>
+</ul>
+<p>关联容器：</p>
+<ul>
+<li><p>Set</p>
+</li>
+<li><p>Map</p>
+<p>类似于python字典，有 key 和 value，其类型位pair；</p>
+<p>可以用 <code>map[key] = value</code> 实现赋值；</p>
+<p>用法：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line">map&lt;<span class="keyword">const</span> <span class="keyword">char</span>*, <span class="keyword">int</span>&gt; item;</span><br><span class="line">item.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="string">&quot;BC&quot;</span>,<span class="number">12</span>));</span><br><span class="line">map::iterator it = item.<span class="built_in">begin</span>();</span><br><span class="line">it -&gt; first <span class="comment">//访问key值</span></span><br><span class="line">it -&gt; second<span class="comment">//访问value值</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Multiset</p>
+</li>
+<li><p>Multimap</p>
+</li>
+</ul>
+<p>容器适配器：</p>
+<ul>
+<li>Stack</li>
+<li>Queue</li>
+<li>Prority queue</li>
+</ul>
+<h2 id="接口的概念"><a href="#接口的概念" class="headerlink" title="接口的概念"></a>接口的概念</h2><p>在<strong>面向对象</strong>的过程中，接口就是公共属性的函数，是类内部私有属性和用户的桥梁；</p>
+<p>在<strong>多态</strong>的解释中，接口是抽象类函数，运用这个接口去实现不同子类的多态；</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>实际学下来花了接近2个星期吧，说多不多说少不少，要真的掌握和吃牢固还是比较难受；</p>
+<p>这么多内容实际上和C的差别也就是编译器，底层展现的代码其实都差不多（比如引用），按java的说法，其实对于这类语言还有更多说法，比如类里定义另类型对象这种<strong>聚集</strong>关系，以及链式异常（两种不同嵌套）；</p>
+<h3 id="关于多态的思考"><a href="#关于多态的思考" class="headerlink" title="关于多态的思考"></a>关于多态的思考</h3><p>类型变量实际上也是一个引用，只不过CPP是声明即创建，只不过没赋值，而java是需要声明和创建的；所以导致一个结果：java只需要声明后创建子类类型就能实现多态，而CPP需要创建一个类指针来接收子类引用；</p>
+<h3 id="关于类的思考"><a href="#关于类的思考" class="headerlink" title="关于类的思考"></a>关于类的思考</h3><p>STL的思想就很像java，感觉STL在往java和python靠，把一些容器的实现都弄成类，而且是泛型的；但是用之前记得调用头文件和std命名空间；</p>
+</div></div><a class="button-hover more" href="/SecondBC/2022/10/28/C++%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/#more">阅读全文</a></div><div class="recent-post-item"><a class="post-title" href="/SecondBC/2022/10/11/git%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">git学习日记</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 更新于 2022-10-16</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/Diary/">Diary</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Git/">Git</a></div></div><div class="post-content"><div class="main-content content"><p>git是分布式版本控制系统；</p>
 <h2 id="什么是版本控制系统？"><a href="#什么是版本控制系统？" class="headerlink" title="什么是版本控制系统？"></a>什么是版本控制系统？</h2><p>比如写游戏，会分版本，从一代的基础上复制并修改为二代，一代保留（类似MC的1.7.10和1.19）；</p>
 <p>当出了很多个版本之后，<strong>一点</strong>是想要回去玩之前的经典版本，但在版本丛中不好找；第<strong>二点</strong>是两个部门合作一个版本时分工不同，需要对一个共享文件进行改动，但是不知道另一个部门在什么时候做了什么改动，要合并内容，会比较难顶；</p>
 <p>而一个软件能解决这些毛病，<strong>记录每次文件的改动，且允许共同编辑</strong>，称其为版本控制系统，目的为了方便开发大项目；</p>
@@ -1123,74 +1260,4 @@ if (isPassword) {
 <p><strong>运行得flag：hgame{right_your_asm_is_good!!}</strong></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这次hgame的逆向之旅收获了很多，应该可以说有了叫baby和easy题的题感；更多的包括JAVA的语法，z3的模型可运算，UPX的标签规则，POWERPC的PCC架构，Blowfish标准河豚算法，RSA大素数算法，DES加密的了解；有两道题并不是特别理解，一道是第三周的hardened，另一道就是第四周的ezvm了；前一道没有可用手机或是kali虚拟机，所以无从下手；另一道虚拟机因为还不太理解虚拟机的构造，所以无法翻译；</p>
 <p>因此接下来的任务就是抽空把虚拟机的实验完成，以及ROOT手机到手；</p>
-</div></div><a class="button-hover more" href="/SecondBC/2022/02/22/Hgame2022-ReverseWriteUp/#more">阅读全文</a></div><div class="recent-post-item"><a class="post-title" href="/SecondBC/2022/02/19/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E5%A4%8D%E7%8E%B002/">逆向工程核心原理复现02</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 更新于 2022-10-16</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/Diary/">Diary</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Reverse/">Reverse</a></div></div><div class="post-content"><div class="main-content content"><p>这一章讲的是PE构造以及压缩加壳，因为之前看到过epf文件的构造，所以理解PE起来会容易很多，也可以去类比；</p>
-<p>先总结一下PE文件的特点：有个头来控制各个节区的偏移，且在文件和内存中的形式相似却不一样；可以把内存中运行的程序成为文件的映像；</p>
-<h2 id="第一：PE头"><a href="#第一：PE头" class="headerlink" title="第一：PE头"></a>第一：PE头</h2><p>PE头是个结构体，里面包含了更多的结构体，每个结构体有着调控和指向的作用；</p>
-<ul>
-<li><p><strong>DOS头</strong>，40个字节，名称 IMAGE_DOS_HEADER；里面的内容中，<strong>e_magic</strong> 代表签名，一般是4D5A；<strong>e_ifanew</strong> 代表NT头偏移量；</p>
-</li>
-<li><p>DOS头后有个<strong>DOS存根</strong>，PE文件可要可不要；</p>
-</li>
-<li><p><strong>NT头</strong>，包含三个成员，签名（<strong>signature</strong>），一般是PE00；以及文件头和可选头；</p>
-<p><strong>文件头</strong>包含4个重要成员：<strong>Machine</strong> CPU唯一对应码；<strong>NumberOfSections</strong> 节区数量；<strong>SizeOfOptionalHeader</strong> 可选头大小；<strong>Characteristics</strong> 文件的信息情况；</p>
-<p><strong>可选头</strong>的成员：<strong>Magic</strong> 可选头签名，32位是10B，64位是20B；<strong>AddressOfEntryPoint</strong> 俗称EP，显示的是EP的RVA值，这是程序执行的入口地址；<strong>ImageBase</strong> 文件的优先装入地址，exe和dll 在 0 ~ 7fffffff，sys在后面的内存中，其中，dll的起始值为 10000000；<strong>SectionAlignment FileAlignment</strong> 前者针对内存而言，后者针对磁盘而言，他们都是对齐，所以是节区的最小单位；<strong>SizeOfImage</strong> PE文件在内存中的空间大小；<strong>SizeOfHeader</strong> 整个PE头的大小；<strong>SubSystem</strong> 是否为sys后缀又或是exe和dll后缀；<strong>NumberOfRvaAndSizes</strong>  DataDirectory数组的下标数；<strong>DataDirectory</strong> 由IMAGE_DATA_DIRECTORY组成的数组；</p>
-</li>
-<li><p><strong>节区头</strong>，分三类，code（可执行，可读）；data（可写，可读）；resource（可读）；</p>
-</li>
-</ul>
-<h2 id="第二：压缩和UPX"><a href="#第二：压缩和UPX" class="headerlink" title="第二：压缩和UPX"></a>第二：压缩和UPX</h2><p>这个部分讲述了内存和磁盘以及压缩如何处理文件的内容；</p>
-<ul>
-<li><p><strong>Rva to Raw</strong> 可以这么理解，raw就是生肉，还没烤熟，所以在磁盘中为文件，没有驱动；那么它的意思就是，从 内存 到 磁盘；具体是在说它们的偏移映射；</p>
-<p>具体算法：<strong>Raw = Rva - VirtualAddress + PointerToRawData</strong>；</p>
-</li>
-<li><p><strong>INT</strong> 与 <strong>IAT</strong>，前者全称：import name table，后者全称：import address table，后者叫做 导入地址表；</p>
-</li>
-<li><p><strong>DLL</strong> 全称：动态链接库，一共两种方式，显式连接，隐式连接；前者是使用时链接，使用后释放，后者是启动时链接，结束后释放（类似于静态链接）；</p>
-</li>
-<li><p><strong>CreateFileW()</strong> 函数，因为不知道PE的实际版本，所以用（<strong>01001104</strong>）地址处的值来进行跳转；</p>
-</li>
-<li><p><strong>IMAGE_IMPORT_DESCRIPTOR</strong> 导入库；</p>
-</li>
-<li><p><strong>IMAGE_OPTIONAL_Header32.DataDirectory[1].VirtualAddress</strong> DataDirectory数组，这个值是导入库的起始地址；</p>
-</li>
-<li><p><strong>EAT</strong> 和 <strong>API</strong> 前者能求出相应库中导出函数的起始地址，后者通过<strong>GetProcAddress()</strong> 函数获取要取函数的地址；</p>
-</li>
-<li><p><strong>压缩即运行时压缩——UPX</strong>，因为解压通常会有解码循环，所以在逆向加壳产物的思想就是，尽量避免循环；</p>
-<p>UPX的<strong>特征</strong>：EP码在 pushad 和 popad 之间；且跳转到OEP处的JUMP指令紧跟 popad 之后；</p>
-<p><strong>硬件断点</strong>：由CPU支持，最多打4个，与普通断点的区别是：在断点处的指令完成之后暂停调试；</p>
-</li>
-</ul>
-<h2 id="第三：重定位"><a href="#第三：重定位" class="headerlink" title="第三：重定位"></a>第三：重定位</h2><p>讲述PE文件链接后成为程序时，从文件到磁盘地址的变化内容；PE文件加入内存时，文件会被加载到 ImageBase 所指地址，若再加入DLL，那么加入的DLL会被重新定位；</p>
-<p><strong>原理</strong>：</p>
-<ul>
-<li>在应用程序中查找硬编码地址位置；</li>
-<li>用读值减去ImageBase（VA -&gt; RVA）；</li>
-<li>加上实际加载地址（RVA -&gt; VA）；</li>
-</ul>
-<p>首先需要了解：<strong>基址重定位表</strong>（Relocation Table），这个表也在DataDirectory数组中，下标为5；</p>
-<p>其中的重要成员：<strong>VirtualAddress</strong> 基准地址，RVA值，4字节，可以用来算 Rva To Raw；<strong>SizeOfBlock</strong> 重定位块大小，4字节；<strong>TypeOffset</strong> 偏移，由4位Type和12位offset组成，共2字节；</p>
-<p>删除reloc节以理解整个PE的工作：整理节区头，删除节区，修改文件头和可选头；</p>
-<ul>
-<li><p>节区头从文件偏移270处开始，大小28个字节，节区起始位置偏移为C000；</p>
-</li>
-<li><p>文件头中的 NumberOfSections 改少1，因为删除了一个节区；</p>
-</li>
-<li><p>可选头中 SizeOfImage 减少，减少量：知晓reloc节中的VirtualSize值，并根据SectionAlignment扩展变化后的值；</p>
-</li>
-</ul>
-<h2 id="第四：Upack压缩和内嵌补丁"><a href="#第四：Upack压缩和内嵌补丁" class="headerlink" title="第四：Upack压缩和内嵌补丁"></a>第四：Upack压缩和内嵌补丁</h2><p>Upack也是PE文件运行时的压缩器；但因为神奇的压缩技巧，会导致一些查看器认为文件损坏无法查看，所以需要特别地用Stud_PE来查看；</p>
-<p><strong>压缩技巧</strong>：</p>
-<ul>
-<li><strong>重叠文件头</strong>，把PE头和MZ头重叠；</li>
-<li><strong>修改文件头中 SizeOfOptionalHeader 的值</strong>，明面上改了可选头大小，实际上增大了可选头和节区头之间的距离，在空隙之间插入解码代码；</li>
-<li><strong>修改可选头中 NumberOfRvaAndSizes 的值</strong>，增多DataDirectory数组，向文件头插入自身代码；</li>
-<li><strong>修改节区头</strong>，Upack把自身代码记录到程序运行不需要的目录，不用特别增加节区；</li>
-<li><strong>重叠节区</strong>；</li>
-<li>Rva to Raw 时，<strong>使用异常处理</strong>：PointerToRawData应该遵循对齐，但Upack会改值，运行时强制将这个值改为对齐的整数倍，一般是0；</li>
-<li><strong>导入表</strong>，看似结尾没有NULL结尾会出错，实际上映射到内存后，后面会有空区域自行补充0；</li>
-<li><strong>导入地址表</strong>；</li>
-</ul>
-<p><strong>解码循环</strong>：Upack把压缩后的数据放到第二个节区，在运行解码循环解压到第一个节区；解压后设置IAT，用导入的两个API；之后一边循环一边构建原本的IAT，完成后连接到OEP；</p>
-<p><strong>内嵌补丁</strong>：注入的代码，一般用于针对难以直接修改的代码的更新升级或者恶意篡改；需要对PE文件熟悉来更改PE的控制设定增添节区；</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>了解完PE和压缩部分的知识过后，也懂得了UPX的实际作用，以及如何逆向简单加壳程序；PE展示的成果其实远不止于此，正因为了解了PE构造和压缩，才能更好地藏匿木马节区和后门函数；现在学习地正是以前看不懂的电脑思维，以前就会思考为什么编译器能读懂高级语言呢？怎么编译成可执行文件呢？懂得了它的思维，就可以利用它的漏洞；实验还多，任重而道远，继续冲冲冲！</p>
-</div></div><a class="button-hover more" href="/SecondBC/2022/02/19/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E5%A4%8D%E7%8E%B002/#more">阅读全文</a></div></div><div id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/SecondBC/page/2/">2</a><a class="extend next" rel="next" href="/SecondBC/page/2/">&lt;i class&#x3D;&quot;fas fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a></div></div></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fas fa-user"></i></span><span id="busuanzi_value_site_uv"></span><span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i></span><span id="busuanzi_value_site_pv"></span><span></span></div><div class="copyright">&copy;2022 By Second_BC</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/copy.js"></script><!--script(src=url)--></body></html>
+</div></div><a class="button-hover more" href="/SecondBC/2022/02/22/Hgame2022-ReverseWriteUp/#more">阅读全文</a></div></div><div id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/SecondBC/page/2/">2</a><a class="extend next" rel="next" href="/SecondBC/page/2/">&lt;i class&#x3D;&quot;fas fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a></div></div></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fas fa-user"></i></span><span id="busuanzi_value_site_uv"></span><span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i></span><span id="busuanzi_value_site_pv"></span><span></span></div><div class="copyright">&copy;2022 By Second_BC</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/copy.js"></script><!--script(src=url)--></body></html>
