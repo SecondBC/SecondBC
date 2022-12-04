@@ -1,3 +1,4 @@
+https://secondbc.github.io/SecondBC/2022/12/04/Windows%E7%BC%96%E7%A8%8B/
 https://secondbc.github.io/SecondBC/2022/11/12/PE%E7%AE%80%E5%8D%95%E8%A7%A3%E6%9E%90%E5%99%A8/
 https://secondbc.github.io/SecondBC/2022/11/06/2022-syc-bin%E4%BA%8C%E9%9D%A2/
 https://secondbc.github.io/SecondBC/2022/10/28/C++%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/
@@ -30,6 +31,7 @@ https://secondbc.github.io/SecondBC/tags/Pwn/
 https://secondbc.github.io/SecondBC/tags/VM/
 https://secondbc.github.io/SecondBC/tags/Git/
 https://secondbc.github.io/SecondBC/tags/Syc/
+https://secondbc.github.io/SecondBC/tags/Win/
 https://secondbc.github.io/SecondBC/categories/WriteUp/
 https://secondbc.github.io/SecondBC/categories/Lab/
 https://secondbc.github.io/SecondBC/categories/Diary/
