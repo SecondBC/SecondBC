@@ -19,7 +19,77 @@ if (isPassword) {
   gitment: ,
   valine: ,
 }</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/SecondBC/atom.xml" title="Second_BC の BloG" type="application/atom+xml">
-</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="author-info"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/SecondBC/ss.jpg"></div><div class="author-info-name">Second_BC</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/" target="_blank">GitHub<i class="icon-dot bg-color7"></i></a><a class="links-button button-hover" href="mailto:1" target="_blank">E-Mail<i class="icon-dot bg-color0"></i></a><a class="links-button button-hover" href="tencent://message/?uin=2&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color0"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/SecondBC/archives"><span class="pull-top">日志</span><span class="pull-bottom">27</span></a><a class="author-info-articles-tags article-meta" href="/SecondBC/tags"><span class="pull-top">标签</span><span class="pull-bottom">9</span></a><a class="author-info-articles-categories article-meta" href="/SecondBC/categories"><span class="pull-top">分类</span><span class="pull-bottom">3</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/SecondBC">首页</a><a class="menu-item" href="/SecondBC/archives">归档</a><a class="menu-item" href="/SecondBC/categories">分类</a><a class="menu-item" href="/SecondBC/tags">标签</a><a class="menu-item" href="/SecondBC/about">关于</a></nav><div class="right-info"><a class="title-name" href="/SecondBC/">Second_BC の BloG</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><div id="recent-posts"><!-- each post in page.posts.sort('date', -1).limit(10).toArray()--><!-- config中配置按照什么排序--><div class="recent-post-item"><a class="post-title" href="/SecondBC/2022/01/26/Knight%E5%A4%BA%E6%97%97%E6%88%98/">Knight夺旗战</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 更新于 2022-10-16</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/WriteUp/">WriteUp</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Bin/">Bin</a></div></div><div class="post-content"><div class="main-content content"><h2 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h2><p>由孟加拉国第一次举办的为期27小时的夺旗战；</p>
+</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="author-info"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/SecondBC/ss.jpg"></div><div class="author-info-name">Second_BC</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/" target="_blank">GitHub<i class="icon-dot bg-color3"></i></a><a class="links-button button-hover" href="mailto:1" target="_blank">E-Mail<i class="icon-dot bg-color5"></i></a><a class="links-button button-hover" href="tencent://message/?uin=2&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color0"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/SecondBC/archives"><span class="pull-top">日志</span><span class="pull-bottom">28</span></a><a class="author-info-articles-tags article-meta" href="/SecondBC/tags"><span class="pull-top">标签</span><span class="pull-bottom">9</span></a><a class="author-info-articles-categories article-meta" href="/SecondBC/categories"><span class="pull-top">分类</span><span class="pull-bottom">3</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/SecondBC">首页</a><a class="menu-item" href="/SecondBC/archives">归档</a><a class="menu-item" href="/SecondBC/categories">分类</a><a class="menu-item" href="/SecondBC/tags">标签</a><a class="menu-item" href="/SecondBC/about">关于</a></nav><div class="right-info"><a class="title-name" href="/SecondBC/">Second_BC の BloG</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><div id="recent-posts"><!-- each post in page.posts.sort('date', -1).limit(10).toArray()--><!-- config中配置按照什么排序--><div class="recent-post-item"><a class="post-title" href="/SecondBC/2022/02/19/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E5%A4%8D%E7%8E%B002/">逆向工程核心原理复现02</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 更新于 2022-10-16</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/Diary/">Diary</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Reverse/">Reverse</a></div></div><div class="post-content"><div class="main-content content"><p>这一章讲的是PE构造以及压缩加壳，因为之前看到过epf文件的构造，所以理解PE起来会容易很多，也可以去类比；</p>
+<p>先总结一下PE文件的特点：有个头来控制各个节区的偏移，且在文件和内存中的形式相似却不一样；可以把内存中运行的程序成为文件的映像；</p>
+<h2 id="第一：PE头"><a href="#第一：PE头" class="headerlink" title="第一：PE头"></a>第一：PE头</h2><p>PE头是个结构体，里面包含了更多的结构体，每个结构体有着调控和指向的作用；</p>
+<ul>
+<li><p><strong>DOS头</strong>，40个字节，名称 IMAGE_DOS_HEADER；里面的内容中，<strong>e_magic</strong> 代表签名，一般是4D5A；<strong>e_ifanew</strong> 代表NT头偏移量；</p>
+</li>
+<li><p>DOS头后有个<strong>DOS存根</strong>，PE文件可要可不要；</p>
+</li>
+<li><p><strong>NT头</strong>，包含三个成员，签名（<strong>signature</strong>），一般是PE00；以及文件头和可选头；</p>
+<p><strong>文件头</strong>包含4个重要成员：<strong>Machine</strong> CPU唯一对应码；<strong>NumberOfSections</strong> 节区数量；<strong>SizeOfOptionalHeader</strong> 可选头大小；<strong>Characteristics</strong> 文件的信息情况；</p>
+<p><strong>可选头</strong>的成员：<strong>Magic</strong> 可选头签名，32位是10B，64位是20B；<strong>AddressOfEntryPoint</strong> 俗称EP，显示的是EP的RVA值，这是程序执行的入口地址；<strong>ImageBase</strong> 文件的优先装入地址，exe和dll 在 0 ~ 7fffffff，sys在后面的内存中，其中，dll的起始值为 10000000；<strong>SectionAlignment FileAlignment</strong> 前者针对内存而言，后者针对磁盘而言，他们都是对齐，所以是节区的最小单位；<strong>SizeOfImage</strong> PE文件在内存中的空间大小；<strong>SizeOfHeader</strong> 整个PE头的大小；<strong>SubSystem</strong> 是否为sys后缀又或是exe和dll后缀；<strong>NumberOfRvaAndSizes</strong>  DataDirectory数组的下标数；<strong>DataDirectory</strong> 由IMAGE_DATA_DIRECTORY组成的数组；</p>
+</li>
+<li><p><strong>节区头</strong>，分三类，code（可执行，可读）；data（可写，可读）；resource（可读）；</p>
+</li>
+</ul>
+<h2 id="第二：压缩和UPX"><a href="#第二：压缩和UPX" class="headerlink" title="第二：压缩和UPX"></a>第二：压缩和UPX</h2><p>这个部分讲述了内存和磁盘以及压缩如何处理文件的内容；</p>
+<ul>
+<li><p><strong>Rva to Raw</strong> 可以这么理解，raw就是生肉，还没烤熟，所以在磁盘中为文件，没有驱动；那么它的意思就是，从 内存 到 磁盘；具体是在说它们的偏移映射；</p>
+<p>具体算法：<strong>Raw = Rva - VirtualAddress + PointerToRawData</strong>；</p>
+</li>
+<li><p><strong>INT</strong> 与 <strong>IAT</strong>，前者全称：import name table，后者全称：import address table，后者叫做 导入地址表；</p>
+</li>
+<li><p><strong>DLL</strong> 全称：动态链接库，一共两种方式，显式连接，隐式连接；前者是使用时链接，使用后释放，后者是启动时链接，结束后释放（类似于静态链接）；</p>
+</li>
+<li><p><strong>CreateFileW()</strong> 函数，因为不知道PE的实际版本，所以用（<strong>01001104</strong>）地址处的值来进行跳转；</p>
+</li>
+<li><p><strong>IMAGE_IMPORT_DESCRIPTOR</strong> 导入库；</p>
+</li>
+<li><p><strong>IMAGE_OPTIONAL_Header32.DataDirectory[1].VirtualAddress</strong> DataDirectory数组，这个值是导入库的起始地址；</p>
+</li>
+<li><p><strong>EAT</strong> 和 <strong>API</strong> 前者能求出相应库中导出函数的起始地址，后者通过<strong>GetProcAddress()</strong> 函数获取要取函数的地址；</p>
+</li>
+<li><p><strong>压缩即运行时压缩——UPX</strong>，因为解压通常会有解码循环，所以在逆向加壳产物的思想就是，尽量避免循环；</p>
+<p>UPX的<strong>特征</strong>：EP码在 pushad 和 popad 之间；且跳转到OEP处的JUMP指令紧跟 popad 之后；</p>
+<p><strong>硬件断点</strong>：由CPU支持，最多打4个，与普通断点的区别是：在断点处的指令完成之后暂停调试；</p>
+</li>
+</ul>
+<h2 id="第三：重定位"><a href="#第三：重定位" class="headerlink" title="第三：重定位"></a>第三：重定位</h2><p>讲述PE文件链接后成为程序时，从文件到磁盘地址的变化内容；PE文件加入内存时，文件会被加载到 ImageBase 所指地址，若再加入DLL，那么加入的DLL会被重新定位；</p>
+<p><strong>原理</strong>：</p>
+<ul>
+<li>在应用程序中查找硬编码地址位置；</li>
+<li>用读值减去ImageBase（VA -&gt; RVA）；</li>
+<li>加上实际加载地址（RVA -&gt; VA）；</li>
+</ul>
+<p>首先需要了解：<strong>基址重定位表</strong>（Relocation Table），这个表也在DataDirectory数组中，下标为5；</p>
+<p>其中的重要成员：<strong>VirtualAddress</strong> 基准地址，RVA值，4字节，可以用来算 Rva To Raw；<strong>SizeOfBlock</strong> 重定位块大小，4字节；<strong>TypeOffset</strong> 偏移，由4位Type和12位offset组成，共2字节；</p>
+<p>删除reloc节以理解整个PE的工作：整理节区头，删除节区，修改文件头和可选头；</p>
+<ul>
+<li><p>节区头从文件偏移270处开始，大小28个字节，节区起始位置偏移为C000；</p>
+</li>
+<li><p>文件头中的 NumberOfSections 改少1，因为删除了一个节区；</p>
+</li>
+<li><p>可选头中 SizeOfImage 减少，减少量：知晓reloc节中的VirtualSize值，并根据SectionAlignment扩展变化后的值；</p>
+</li>
+</ul>
+<h2 id="第四：Upack压缩和内嵌补丁"><a href="#第四：Upack压缩和内嵌补丁" class="headerlink" title="第四：Upack压缩和内嵌补丁"></a>第四：Upack压缩和内嵌补丁</h2><p>Upack也是PE文件运行时的压缩器；但因为神奇的压缩技巧，会导致一些查看器认为文件损坏无法查看，所以需要特别地用Stud_PE来查看；</p>
+<p><strong>压缩技巧</strong>：</p>
+<ul>
+<li><strong>重叠文件头</strong>，把PE头和MZ头重叠；</li>
+<li><strong>修改文件头中 SizeOfOptionalHeader 的值</strong>，明面上改了可选头大小，实际上增大了可选头和节区头之间的距离，在空隙之间插入解码代码；</li>
+<li><strong>修改可选头中 NumberOfRvaAndSizes 的值</strong>，增多DataDirectory数组，向文件头插入自身代码；</li>
+<li><strong>修改节区头</strong>，Upack把自身代码记录到程序运行不需要的目录，不用特别增加节区；</li>
+<li><strong>重叠节区</strong>；</li>
+<li>Rva to Raw 时，<strong>使用异常处理</strong>：PointerToRawData应该遵循对齐，但Upack会改值，运行时强制将这个值改为对齐的整数倍，一般是0；</li>
+<li><strong>导入表</strong>，看似结尾没有NULL结尾会出错，实际上映射到内存后，后面会有空区域自行补充0；</li>
+<li><strong>导入地址表</strong>；</li>
+</ul>
+<p><strong>解码循环</strong>：Upack把压缩后的数据放到第二个节区，在运行解码循环解压到第一个节区；解压后设置IAT，用导入的两个API；之后一边循环一边构建原本的IAT，完成后连接到OEP；</p>
+<p><strong>内嵌补丁</strong>：注入的代码，一般用于针对难以直接修改的代码的更新升级或者恶意篡改；需要对PE文件熟悉来更改PE的控制设定增添节区；</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>了解完PE和压缩部分的知识过后，也懂得了UPX的实际作用，以及如何逆向简单加壳程序；PE展示的成果其实远不止于此，正因为了解了PE构造和压缩，才能更好地藏匿木马节区和后门函数；现在学习地正是以前看不懂的电脑思维，以前就会思考为什么编译器能读懂高级语言呢？怎么编译成可执行文件呢？懂得了它的思维，就可以利用它的漏洞；实验还多，任重而道远，继续冲冲冲！</p>
+</div></div><a class="button-hover more" href="/SecondBC/2022/02/19/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E5%A4%8D%E7%8E%B002/#more">阅读全文</a></div><div class="recent-post-item"><a class="post-title" href="/SecondBC/2022/01/26/Knight%E5%A4%BA%E6%97%97%E6%88%98/">Knight夺旗战</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 更新于 2022-10-16</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/WriteUp/">WriteUp</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Bin/">Bin</a></div></div><div class="post-content"><div class="main-content content"><h2 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h2><p>由孟加拉国第一次举办的为期27小时的夺旗战；</p>
 <p>KnightCTF做起来二进制方向确实算签到题；</p>
 <p>同时KnightCTF偏小众，但是个很好的新手训练平台，能很好的入门各个方向；</p>
 <p>但同时KnightCTF有很多个扩展方向，不只是局限于web，re，crypto，pwn，misc；</p>
