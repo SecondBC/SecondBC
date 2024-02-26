@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="SQL学习日记"><meta name="keywords" content="Web"><meta name="author" content="Second_BC,undefined"><meta name="copyright" content="Second_BC"><title>SQL学习日记【Second_BC の BloG】</title><link rel="stylesheet" href="/SecondBC/css/fan.css"><link rel="stylesheet" href="/SecondBC/css/thirdparty/jquery.mCustomScrollbar.min.css"><link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css"><link rel="icon" href="/SecondBC/favicon.ico"><!-- script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML")--><script src="/SecondBC/js/mathjax/mathjax.js"></script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$', '$'], ['\\(', '\\)']]}
+});
+</script><script>var isPassword = '' || false;
+if (isPassword) {
+    if (prompt('请输入文章密码') !== '') {
+        alert('密码错误！');
+        history.back();
+    }
+}</script><script>window.GLOBAL_CONFIG = {
+  root: '/SecondBC/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  gitment: ,
+  valine: ,
+}</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/SecondBC/atom.xml" title="Second_BC の BloG" type="application/atom+xml">
+</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="toggle-sidebar-info button-hover"><span data-toggle="文章目录">站点概览</span></div><div class="sidebar-toc"><div class="sidebar-toc-title">目录</div><div class="sidebar-toc-progress"><span class="progress-notice">您已阅读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc-progress-bar"></div></div><div class="sidebar-toc-content" id="sidebar-toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E7%9A%84%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5"><span class="toc-number">1.</span> <span class="toc-text">表的增删改查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SELECT"><span class="toc-number">1.1.</span> <span class="toc-text">SELECT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#INSERT"><span class="toc-number">1.2.</span> <span class="toc-text">INSERT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UPDATE"><span class="toc-number">1.3.</span> <span class="toc-text">UPDATE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DELETE"><span class="toc-number">1.4.</span> <span class="toc-text">DELETE</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.</span> <span class="toc-text">数据查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%85%B3%E7%B3%BB"><span class="toc-number">2.1.</span> <span class="toc-text">单关系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.1.1.</span> <span class="toc-text">无条件查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.1.2.</span> <span class="toc-text">条件查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.1.3.</span> <span class="toc-text">聚合函数查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E7%BB%84%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.1.4.</span> <span class="toc-text">分组查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E6%8E%92%E5%BA%8F"><span class="toc-number">2.1.5.</span> <span class="toc-text">查询排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E6%9F%A5%E8%AF%A2"><span class="toc-number">2.1.6.</span> <span class="toc-text">限制查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E5%85%B3%E7%B3%BB"><span class="toc-number">2.2.</span> <span class="toc-text">多关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE"><span class="toc-number">3.</span> <span class="toc-text">视图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95"><span class="toc-number">4.</span> <span class="toc-text">索引</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7"><span class="toc-number">5.</span> <span class="toc-text">用户</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%81"><span class="toc-number">6.</span> <span class="toc-text">锁</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E4%BA%8EALTER%E6%93%8D%E4%BD%9C"><span class="toc-number">7.</span> <span class="toc-text">对于ALTER操作</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/SecondBC/ss.jpg"></div><div class="author-info-name">Second_BC</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/" target="_blank">GitHub<i class="icon-dot bg-color8"></i></a><a class="links-button button-hover" href="mailto:1" target="_blank">E-Mail<i class="icon-dot bg-color9"></i></a><a class="links-button button-hover" href="tencent://message/?uin=2&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color9"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/SecondBC/archives"><span class="pull-top">日志</span><span class="pull-bottom">34</span></a><a class="author-info-articles-tags article-meta" href="/SecondBC/tags"><span class="pull-top">标签</span><span class="pull-bottom">10</span></a><a class="author-info-articles-categories article-meta" href="/SecondBC/categories"><span class="pull-top">分类</span><span class="pull-bottom">3</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/SecondBC">首页</a><a class="menu-item" href="/SecondBC/archives">归档</a><a class="menu-item" href="/SecondBC/categories">分类</a><a class="menu-item" href="/SecondBC/tags">标签</a><a class="menu-item" href="/SecondBC/about">关于</a></nav><div class="right-info"><a class="title-name" href="/SecondBC/">Second_BC の BloG</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><article id="post"><div class="post-header"><div class="title">SQL学习日记</div><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 发表于 2024-02-26 | 更新于 2024-02-26</time><!--time.button-hover.post-date #[i.fas.fa-calendar-alt.article-icon(aria-hidden="true")] #[=__('post.modified')] #[=date(page['updated'], config.date_format)]--><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/Diary/">Diary</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Web/">Web</a></div></div></div><div class="main-content"><p>说实话这篇写的不算什么好玩意儿，没有参考价值，对我有记忆的价值，仅此而已；</p>
+<h2 id="表的增删改查"><a href="#表的增删改查" class="headerlink" title="表的增删改查"></a>表的增删改查</h2><p>假设一张表称为tableA，其结构如下：</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th>major</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>a001</td>
+<td>bear</td>
+<td>a</td>
+</tr>
+<tr>
+<td>a002</td>
+<td>child</td>
+<td>b</td>
+</tr>
+<tr>
+<td>a003</td>
+<td>steve</td>
+<td>c</td>
+</tr>
+</tbody></table>
+<h3 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h3><p>查找语句，一般用法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> tableA                 #从tableA里查找所有</span><br><span class="line"><span class="keyword">SELECT</span> tableA.id,major <span class="keyword">from</span> tableA   #从tableA里查找除了name的</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> student <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;%e%&#x27;</span> #从tableA里模糊查找带e的内容 <span class="operator">%</span>为任意</span><br></pre></td></tr></table></figure>
+
+<p>like为模糊查找;</p>
+<h3 id="INSERT"><a href="#INSERT" class="headerlink" title="INSERT"></a>INSERT</h3><p>增添语句，一般用法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> tableA <span class="keyword">VALUES</span>(<span class="string">&#x27;a004&#x27;</span>,<span class="string">&#x27;crazy&#x27;</span>,<span class="string">&#x27;d&#x27;</span>)   #对tableA插入一行内容</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h3><p>改动语句，一般用法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE tableA <span class="keyword">set</span> id <span class="operator">=</span> <span class="string">&#x27;a007&#x27;</span> <span class="keyword">where</span> id <span class="operator">=</span> <span class="string">&#x27;a001&#x27;</span> #讲a001的id改为a007，<span class="keyword">set</span> <span class="keyword">where</span>不可颠倒</span><br></pre></td></tr></table></figure>
+
+<p>where即条件查询，后面跟条件，不加where，则全体内容的id都设置为a007，如果id是pk则会失败；</p>
+<p>set是设置，设置一个字段等于一个新值；</p>
+<h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><p>删除语句，一般用法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">from</span> tableA <span class="keyword">where</span> id <span class="operator">=</span> <span class="string">&#x27;a001&#x27;</span>  #删除id为a001的所有字段</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="数据查询"><a href="#数据查询" class="headerlink" title="数据查询"></a>数据查询</h2><h3 id="单关系"><a href="#单关系" class="headerlink" title="单关系"></a>单关系</h3><h4 id="无条件查询"><a href="#无条件查询" class="headerlink" title="无条件查询"></a>无条件查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> tableA</span><br></pre></td></tr></table></figure>
+
+<p>只有from的语句；</p>
+<h4 id="条件查询"><a href="#条件查询" class="headerlink" title="条件查询"></a>条件查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> tableA <span class="keyword">where</span> ...</span><br></pre></td></tr></table></figure>
+
+<p>where后面跟的…即为条件，可以是简单的运算比较符、逻辑运算；</p>
+<ul>
+<li>对于逻辑运算除了用&amp;&amp;，||，！来表示，也可用英文的AND，OR,NOT；</li>
+<li>使用BETWEEN AND可以约束条件范围，用法为： <code>SELECT * from tableA where id BETWEEN 30 AND 40</code> ；</li>
+<li>使用IN可以查询属于集合的元组，用法为： <code>SELECT * from tableA where id IN （&#39;123&#39;，&#39;123&#39;）</code>;</li>
+<li>上面两种查找都可以用运算符来<strong>代替</strong>；</li>
+<li>使用NULL可以查询对应字段为空的空值查询，用法为： <code>SELECT * from tableA where id IS NULL</code>;</li>
+<li>使用LIKE进行模糊查找，用法在上方已给出；</li>
+</ul>
+<h4 id="聚合函数查询"><a href="#聚合函数查询" class="headerlink" title="聚合函数查询"></a>聚合函数查询</h4><p>使用以下函数来操控选择查询的字段值：</p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>AVG</td>
+<td>字段平均值</td>
+</tr>
+<tr>
+<td>SUM</td>
+<td>字段总和</td>
+</tr>
+<tr>
+<td>MAX</td>
+<td>字段中最大值</td>
+</tr>
+<tr>
+<td>MIN</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>COUNT</td>
+<td>字段值的个数</td>
+</tr>
+</tbody></table>
+<p>使用方法如下： <code>SELECT SUM(score), COUNT(number) from student where ...</code></p>
+<p>上述语句的含义为，查询student表中满足条件的score总和以及number的个数；</p>
+<p>使用<strong>DISTINCT</strong>消除重复元组；</p>
+<h4 id="分组查询"><a href="#分组查询" class="headerlink" title="分组查询"></a>分组查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> major, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">from</span> tableA <span class="keyword">GROUP</span> <span class="keyword">BY</span> id <span class="keyword">HAVING</span> ...</span><br></pre></td></tr></table></figure>
+
+<p>一般用于数字统计的查询，针对于某个字段来分组；</p>
+<p>having类似于group by的where，设置条件，其含义是只显示满足having条件的组；</p>
+<h4 id="查询排序"><a href="#查询排序" class="headerlink" title="查询排序"></a>查询排序</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ... <span class="keyword">from</span> tableA <span class="keyword">order</span> <span class="keyword">by</span> id <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>
+
+<p>对于…的查询按照id的降序排序；</p>
+<p>DESC为降序，ASC为升序；</p>
+<h4 id="限制查询"><a href="#限制查询" class="headerlink" title="限制查询"></a>限制查询</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ... <span class="keyword">from</span> tableA LIMIT <span class="number">1</span>,<span class="number">3</span>		#从第一行往下<span class="number">1</span>行开始（<span class="number">2</span>行）往后找三行</span><br><span class="line"><span class="keyword">SELECT</span> ... <span class="keyword">from</span> tableA LIMIT <span class="number">3</span> <span class="keyword">OFFSET</span> <span class="number">1</span> #和上面等效</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="多关系"><a href="#多关系" class="headerlink" title="多关系"></a>多关系</h3><p>内连方法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ... <span class="keyword">from</span> tableA,tableB <span class="keyword">where</span> ...  #等效于下方</span><br><span class="line"><span class="keyword">SELECT</span> ... <span class="keyword">from</span> tableA <span class="keyword">inner</span> <span class="keyword">join</span> tableB <span class="keyword">ON</span> ...</span><br></pre></td></tr></table></figure>
+
+<p>对于内连而言，不满足条件即不显示，外联会跟随某张表（主表）显示这张表满足条件的所有跟随项，不满足条件的内容会以NULL显示：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ... <span class="keyword">from</span> tableA <span class="keyword">LEFT</span> <span class="keyword">outer</span> <span class="keyword">join</span> tableB <span class="keyword">on</span> ...</span><br></pre></td></tr></table></figure>
+
+<p>外连分左右外连，意思是选择左右哪张表作为主表，上述语句tableA在左，所以其为主表；</p>
+<p>关于交叉连接：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">from</span> A <span class="keyword">cross</span> <span class="keyword">JOIN</span> B</span><br></pre></td></tr></table></figure>
+
+<p>字段为A,B一起的总字段，元组则是一个关于A,B元组的笛卡尔积；</p>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><p>创建：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> view_name <span class="keyword">AS</span> ...</span><br></pre></td></tr></table></figure>
+
+<p>…为完整的select语句构成；</p>
+<p>其意义为，将此select生成的子表封装，称为视图，可直接当作一个表来操作； </p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>创建：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">unique</span> index a <span class="keyword">on</span> tableA(id,name);   #建立id和name的复合唯一索引</span><br><span class="line"><span class="keyword">create</span> index b <span class="keyword">on</span> tableA(name(<span class="number">4</span>),<span class="keyword">DESC</span>);     #建立普通索引对name前<span class="number">4</span>字符以降序排列</span><br><span class="line"><span class="keyword">create</span> fulltext index c <span class="keyword">on</span> tableA(text);    #建立对text的全文索引</span><br></pre></td></tr></table></figure>
+
+<p>目的是为了加速数据查找的速度；</p>
+<p>对于限定属性的值可以有：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tableA <span class="keyword">add</span>(<span class="keyword">constraint</span> 限定名 <span class="keyword">check</span>(major regexp <span class="string">&#x27;[0-9]&#x27;</span>))  #限定major只能填<span class="number">0</span><span class="number">-9</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> tableA <span class="keyword">add</span>(<span class="keyword">constraint</span> 限定名 <span class="keyword">check</span>(major <span class="operator">=</span> <span class="string">&#x27;1&#x27;</span> <span class="keyword">and</span> major <span class="operator">=</span> <span class="string">&#x27;2&#x27;</span>)) #限定只能为<span class="number">1</span>或<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h2><p>创建：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> if <span class="keyword">not</span> <span class="keyword">exists</span> <span class="string">&#x27;Second_BC&#x27;</span> <span class="keyword">BY</span> <span class="string">&#x27;123321&#x27;</span>   #以<span class="number">123321</span>口令建立此用户</span><br></pre></td></tr></table></figure>
+
+<p>在sql中，权限组叫角色（role）</p>
+<p>权限是针对于用户对对象的命令使用权；</p>
+<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lock <span class="keyword">table</span> xxx read; 		#读锁<span class="operator">/</span>共享</span><br><span class="line">lock <span class="keyword">table</span> xxx write;		#写锁<span class="operator">/</span>最高限定</span><br><span class="line">#解锁</span><br><span class="line">unlock <span class="keyword">table</span> xxx;</span><br></pre></td></tr></table></figure>
+
+<p>另外还有行级锁：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> tableA <span class="keyword">where</span> id <span class="operator">=</span> xxx LOCK <span class="keyword">IN</span> SHARE MODE;   #共享</span><br><span class="line"><span class="keyword">select</span> ... <span class="keyword">FOR</span> UPDATE;      #操作类型指令为写锁</span><br></pre></td></tr></table></figure>
+
+<p>行级锁限定时总会存在where来指定行；</p>
+<h2 id="对于ALTER操作"><a href="#对于ALTER操作" class="headerlink" title="对于ALTER操作"></a>对于ALTER操作</h2><p>改表名：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rename <span class="keyword">table</span> 表名 <span class="keyword">to</span> 新表名;</span><br></pre></td></tr></table></figure>
+
+<p>改字段名：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> 表名 change 字段名 新字段名 类型;</span><br></pre></td></tr></table></figure>
+
+<p>类型可以与之前一样就行；</p>
+</div><div class="post-copyright"><div class="post-copyright-author"><span class="post-copyright-meta">本文作者: </span><span class="post-copyright-info"><a href="mailto:undefined">Second_BC</a></span></div><div class="post-copyright-type"><span class="post-copyright-meta">本文链接: </span><span class="post-copyright-info"><a href="https://secondbc.github.io/SecondBC/2024/02/26/SQL%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/">https://secondbc.github.io/SecondBC/2024/02/26/SQL%E5%AD%A6%E4%B9%A0%E6%97%A5%E8%AE%B0/</a></span></div><div class="post-copyright-notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://secondbc.github.io/SecondBC">Second_BC の BloG</a>！</span></div></div></article><div id="pagination"><div class="prev-post pull-left"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/SecondBC/2024/02/26/SQL%E6%B3%A8%E5%85%A5-sqlilabs/"><i class="fas fa-angle-left">&nbsp;</i><span>SQL注入-sqlilabs</span></a></div><div class="next-post pull-right"><span class="line line-top"></span><span class="line line-right"></span><span class="line line-bottom"></span><span class="line line-left"></span><a href="/SecondBC/2023/06/19/Windows_Shellcode/"><span>Windows_Shellcode</span><span>&nbsp;</span><i class="fas fa-angle-right"></i></a></div></div><!--div!= paginator()--></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fas fa-file-o"></i></span><span id="busuanzi_value_page_pv"></span><span></span></div><div class="copyright">&copy;2022 ～ 2024 By Second_BC</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/copy.js"></script><!--script(src=url)--></body></html>
