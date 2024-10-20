@@ -40,8 +40,8 @@ https://secondbc.github.io/SecondBC/about/index.html
 https://secondbc.github.io/SecondBC/tags/index.html
 https://secondbc.github.io/SecondBC/categories/index.html
 https://secondbc.github.io/SecondBC
-https://secondbc.github.io/SecondBC/tags/Syc/
 https://secondbc.github.io/SecondBC/tags/Reverse/
+https://secondbc.github.io/SecondBC/tags/Syc/
 https://secondbc.github.io/SecondBC/tags/CSAPP/
 https://secondbc.github.io/SecondBC/tags/Cpp/
 https://secondbc.github.io/SecondBC/tags/Bin/
@@ -50,6 +50,6 @@ https://secondbc.github.io/SecondBC/tags/Web/
 https://secondbc.github.io/SecondBC/tags/VM/
 https://secondbc.github.io/SecondBC/tags/Win/
 https://secondbc.github.io/SecondBC/tags/Git/
-https://secondbc.github.io/SecondBC/categories/Lab/
 https://secondbc.github.io/SecondBC/categories/WriteUp/
+https://secondbc.github.io/SecondBC/categories/Lab/
 https://secondbc.github.io/SecondBC/categories/Diary/
