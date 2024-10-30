@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://secondbc.github.io/SecondBC/2024/10/30/%E6%A0%88%E6%BA%A2%E5%87%BA%E8%BF%9B%E9%98%B6/</loc>
+    
+    <lastmod>2024-10-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://secondbc.github.io/SecondBC/2024/10/20/2024-%E5%BC%BA%E7%BD%91%E6%8B%9F%E6%80%81-easyre/</loc>
     
     <lastmod>2024-10-20</lastmod>
@@ -373,7 +382,7 @@
 
   <url>
     <loc>https://secondbc.github.io/SecondBC</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -381,70 +390,70 @@
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/tags/Reverse/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/tags/Syc/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/tags/CSAPP/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/tags/Cpp/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/tags/Bin/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/tags/Pwn/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/tags/Web/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/tags/VM/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/tags/Win/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/tags/Git/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -453,21 +462,21 @@
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/categories/WriteUp/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/categories/Lab/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://secondbc.github.io/SecondBC/categories/Diary/</loc>
-    <lastmod>2024-10-20</lastmod>
+    <lastmod>2024-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
